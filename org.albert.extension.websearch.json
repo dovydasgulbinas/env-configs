@@ -1,0 +1,44 @@
+[
+    {
+        "enabled": true,
+        "iconPath": ":google",
+        "name": "Google",
+        "trigger": "gg ",
+        "url": "https://www.google.com/search?q=%s"
+    },
+    {
+        "enabled": true,
+        "iconPath": ":default",
+        "name": "Rastija",
+        "trigger": "rr",
+        "url": "https://www.xn--ratija-ckb.lt/?act=search&f%5Bq%5D=%s"
+    },
+    {
+        "enabled": true,
+        "iconPath": "/home/hermes/.cache/albert/inbox-0.png",
+        "name": "inbox",
+        "trigger": "ii",
+        "url": "https://inbox.google.com/search/%s"
+    },
+    {
+        "enabled": true,
+        "iconPath": ":youtube",
+        "name": "Youtube",
+        "trigger": "yy",
+        "url": "https://www.youtube.com/results?search_query=%s"
+    },
+    {
+        "enabled": true,
+        "iconPath": ":default",
+        "name": "NounProject",
+        "trigger": "np",
+        "url": "https://thenounproject.com/search/?q=%s"
+    },
+    {
+        "enabled": true,
+        "iconPath": ":github",
+        "name": "GitHub",
+        "trigger": "gh ",
+        "url": "https://github.com/search?utf8=✓&q=%s"
+    }
+]
