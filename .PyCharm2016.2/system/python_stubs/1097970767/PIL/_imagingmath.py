@@ -1,0 +1,81 @@
+# encoding: utf-8
+# module PIL._imagingmath
+# from /opt/odoo/_venv/local/lib/python2.7/site-packages/PIL/_imagingmath.so
+# by generator 1.143
+# no doc
+# no imports
+
+# Variables with simple values
+
+abs_F = 139834452859680
+abs_I = 139834452857216
+
+add_F = 139834452859904
+add_I = 139834452857408
+
+and_I = 139834452858224
+
+diff_F = 139834452860368
+diff_I = 139834452858000
+
+div_F = 139834452860240
+div_I = 139834452857744
+
+eq_F = 139834452860704
+eq_I = 139834452859008
+
+ge_F = 139834452861392
+ge_I = 139834452859568
+
+gt_F = 139834452861248
+gt_I = 139834452859456
+
+invert_I = 139834452858128
+
+le_F = 139834452861104
+le_I = 139834452859344
+
+lshift_I = 139834452858560
+
+lt_F = 139834452860960
+lt_I = 139834452859232
+
+max_F = 139834452860592
+max_I = 139834452858896
+
+min_F = 139834452860480
+min_I = 139834452858784
+
+mod_F = 139834452861808
+mod_I = 139834452857872
+
+mul_F = 139834452860128
+mul_I = 139834452857632
+
+neg_F = 139834452859792
+neg_I = 139834452857312
+
+ne_F = 139834452860832
+ne_I = 139834452859120
+
+or_I = 139834452858336
+
+pow_F = 139834452862048
+pow_I = 139834452861536
+
+rshift_I = 139834452858672
+
+sub_F = 139834452860016
+sub_I = 139834452857520
+
+xor_I = 139834452858448
+
+# functions
+
+def binop(*args, **kwargs): # real signature unknown
+    pass
+
+def unop(*args, **kwargs): # real signature unknown
+    pass
+
+# no classes

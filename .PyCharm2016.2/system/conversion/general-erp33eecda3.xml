@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<conversion>
+  <applied-converters>
+    <converter id="PythonTestConverterProvider" />
+  </applied-converters>
+  <project-files>
+    <file path="/home/hermes/Desktop/general-erp/.idea/general-erp.iml" timestamp="1483348528000" />
+    <file path="/home/hermes/Desktop/general-erp/.idea/misc.xml" timestamp="1483348482000" />
+    <file path="/home/hermes/Desktop/general-erp/.idea/modules.xml" timestamp="1483348482000" />
+    <file path="/home/hermes/Desktop/general-erp/.idea/vcs.xml" timestamp="1483348528000" />
+    <file path="/home/hermes/Desktop/general-erp/.idea/workspace.xml" timestamp="1483352796000" />
+  </project-files>
+</conversion>
+

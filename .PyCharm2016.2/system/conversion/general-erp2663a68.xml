@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<conversion>
+  <applied-converters>
+    <converter id="PythonTestConverterProvider" />
+  </applied-converters>
+  <project-files>
+    <file path="/opt/odoo/clients/general-erp/../../addons/.idea/addons.iml" timestamp="1488876282000" />
+    <file path="/opt/odoo/clients/general-erp/../../odoo-10/.idea/odoo-10.iml" timestamp="1488876282000" />
+    <file path="/opt/odoo/clients/general-erp/.idea/dictionaries/hermes.xml" timestamp="1488888266000" />
+    <file path="/opt/odoo/clients/general-erp/.idea/general-erp.iml" timestamp="1488793020000" />
+    <file path="/opt/odoo/clients/general-erp/.idea/inspectionProfiles/Project_Default.xml" timestamp="1488192216000" />
+    <file path="/opt/odoo/clients/general-erp/.idea/inspectionProfiles/profiles_settings.xml" timestamp="1486655207000" />
+    <file path="/opt/odoo/clients/general-erp/.idea/markdown-navigator.xml" timestamp="1486643790000" />
+    <file path="/opt/odoo/clients/general-erp/.idea/markdown-navigator/profiles_settings.xml" timestamp="1486643637000" />
+    <file path="/opt/odoo/clients/general-erp/.idea/misc.xml" timestamp="1488368665000" />
+    <file path="/opt/odoo/clients/general-erp/.idea/modules.xml" timestamp="1488793021000" />
+    <file path="/opt/odoo/clients/general-erp/.idea/vcs.xml" timestamp="1488297237000" />
+    <file path="/opt/odoo/clients/general-erp/.idea/workspace.xml" timestamp="1489663865000" />
+  </project-files>
+</conversion>
+

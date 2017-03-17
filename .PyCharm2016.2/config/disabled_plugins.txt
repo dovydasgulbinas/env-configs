@@ -1,0 +1,5 @@
+Subversion
+com.vladsch.idea.multimarkdown
+hg4idea
+net.vektah.codeglance
+org.jetbrains.plugins.ipnb

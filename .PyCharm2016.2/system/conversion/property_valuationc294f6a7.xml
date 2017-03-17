@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<conversion>
+  <applied-converters>
+    <converter id="PythonTestConverterProvider" />
+  </applied-converters>
+  <project-files>
+    <file path="/home/hermes/Projects/odoo-vagrant/odoo_service/general-erp/digi_addons/property_valuation/.idea/misc.xml" timestamp="1477298950000" />
+    <file path="/home/hermes/Projects/odoo-vagrant/odoo_service/general-erp/digi_addons/property_valuation/.idea/modules.xml" timestamp="1477298950000" />
+    <file path="/home/hermes/Projects/odoo-vagrant/odoo_service/general-erp/digi_addons/property_valuation/.idea/property_valuation.iml" timestamp="1477299105000" />
+    <file path="/home/hermes/Projects/odoo-vagrant/odoo_service/general-erp/digi_addons/property_valuation/.idea/workspace.xml" timestamp="1477388319000" />
+  </project-files>
+</conversion>
+

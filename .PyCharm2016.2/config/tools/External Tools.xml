@@ -1,0 +1,16 @@
+<toolSet name="External Tools">
+  <tool name="chrome" description="runs-chrome" showInMainMenu="true" showInEditor="true" showInProject="true" showInSearchPopup="true" disabled="false" useConsole="false" showConsoleOnStdOut="false" showConsoleOnStdErr="false" synchronizeAfterRun="true">
+    <exec>
+      <option name="COMMAND" value="google-chrome" />
+      <option name="PARAMETERS" value="http://127.0.0.1:8069/web?debug=assets#" />
+      <option name="WORKING_DIRECTORY" value="/opt/odoo/odoo-10" />
+    </exec>
+  </tool>
+  <tool name="xsd-diagram" showInMainMenu="true" showInEditor="true" showInProject="true" showInSearchPopup="true" disabled="false" useConsole="false" showConsoleOnStdOut="false" showConsoleOnStdErr="false" synchronizeAfterRun="true">
+    <exec>
+      <option name="COMMAND" value="xsddiagram" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$ProjectFileDir$" />
+    </exec>
+  </tool>
+</toolSet>

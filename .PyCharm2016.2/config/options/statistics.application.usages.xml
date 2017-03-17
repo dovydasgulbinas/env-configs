@@ -1,0 +1,35 @@
+<application>
+  <component name="UsageTrigger">
+    <counts>
+      <entry feature="CreateFile.CreateFileAction" count="27" />
+      <entry feature="StripeButton[Favorites].hidden" count="1" />
+      <entry feature="StripeButton[Structure].hidden" count="1" />
+      <entry feature="diff.DiffSettings.Tool.Side-by-side viewer" count="1" />
+      <entry feature="diff.DiffSettings.Tool.Unified viewer" count="1" />
+      <entry feature="diff.DirDiffTableModel" count="6" />
+      <entry feature="diff.DirDiffViewer" count="6" />
+      <entry feature="execute.PythonConfigurationType.Debug" count="16" />
+      <entry feature="execute.PythonConfigurationType.Run" count="278" />
+      <entry feature="ide.help.ideaInterface.editor" count="6" />
+      <entry feature="ide.settings.Appearance" count="6" />
+      <entry feature="ide.settings.Code_Completion" count="1" />
+      <entry feature="ide.settings.Code_Folding" count="1" />
+      <entry feature="ide.settings.Code_Style" count="1" />
+      <entry feature="ide.settings.Colors_&amp;_Fonts" count="2" />
+      <entry feature="ide.settings.Font" count="6" />
+      <entry feature="ide.settings.General" count="1" />
+      <entry feature="ide.settings.Keymap" count="5" />
+      <entry feature="ide.settings.Live_Templates" count="9" />
+      <entry feature="ide.settings.Plugins" count="7" />
+      <entry feature="ide.settings.Project_Interpreter" count="8" />
+      <entry feature="ide.settings.Python_Console" count="2" />
+      <entry feature="ide.settings.Vim_Emulation" count="2" />
+      <entry feature="idea.caches.invalidated" count="1" />
+      <entry feature="ideaapp.started" count="78" />
+      <entry feature="python.console.local" count="10" />
+      <entry feature="terminal.linux" count="124" />
+      <entry feature="tips.of.the.day.next" count="2" />
+      <entry feature="welcome.screen.WelcomeScreen.OpenDirectoryProject" count="3" />
+    </counts>
+  </component>
+</application>

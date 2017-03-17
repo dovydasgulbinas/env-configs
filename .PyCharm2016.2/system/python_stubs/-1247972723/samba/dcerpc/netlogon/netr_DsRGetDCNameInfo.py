@@ -1,0 +1,63 @@
+# encoding: utf-8
+# module samba.dcerpc.netlogon
+# from /usr/lib/python2.7/dist-packages/samba/dcerpc/netlogon.so
+# by generator 1.143
+""" netlogon DCE/RPC """
+
+# imports
+import dcerpc as __dcerpc
+import misc as __misc
+import talloc as __talloc
+
+
+class netr_DsRGetDCNameInfo(__talloc.Object):
+    # no doc
+    def __init__(self, *args, **kwargs): # real signature unknown
+        pass
+
+    def __ndr_pack__(self, *args, **kwargs): # real signature unknown
+        """
+        S.ndr_pack(object) -> blob
+        NDR pack
+        """
+        pass
+
+    def __ndr_print__(self, *args, **kwargs): # real signature unknown
+        """
+        S.ndr_print(object) -> None
+        NDR print
+        """
+        pass
+
+    def __ndr_unpack__(self, *args, **kwargs): # real signature unknown
+        """
+        S.ndr_unpack(class, blob, allow_remaining=False) -> None
+        NDR unpack
+        """
+        pass
+
+    @staticmethod # known case of __new__
+    def __new__(S, *more): # real signature unknown; restored from __doc__
+        """ T.__new__(S, ...) -> a new object with type S, a subtype of T """
+        pass
+
+    client_site_name = property(lambda self: object(), lambda self, v: None, lambda self: None)  # default
+
+    dc_address = property(lambda self: object(), lambda self, v: None, lambda self: None)  # default
+
+    dc_address_type = property(lambda self: object(), lambda self, v: None, lambda self: None)  # default
+
+    dc_flags = property(lambda self: object(), lambda self, v: None, lambda self: None)  # default
+
+    dc_site_name = property(lambda self: object(), lambda self, v: None, lambda self: None)  # default
+
+    dc_unc = property(lambda self: object(), lambda self, v: None, lambda self: None)  # default
+
+    domain_guid = property(lambda self: object(), lambda self, v: None, lambda self: None)  # default
+
+    domain_name = property(lambda self: object(), lambda self, v: None, lambda self: None)  # default
+
+    forest_name = property(lambda self: object(), lambda self, v: None, lambda self: None)  # default
+
+
+

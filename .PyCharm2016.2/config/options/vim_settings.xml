@@ -1,0 +1,408 @@
+<application>
+  <component name="VimSettings">
+    <state version="4" enabled="true" />
+    <globalmarks />
+    <filemarks>
+      <file name="/start_script.py" timestamp="1489667914172">
+        <mark key="[" line="0" column="0" />
+      </file>
+      <file name="/opt/odoo/clients/general-erp/digi_addons/utilities/controllers/attachment_downloader.py" timestamp="1488885380800">
+        <mark key="[" line="22" column="37" />
+        <mark key="]" line="22" column="37" />
+        <mark key="^" line="8" column="35" />
+        <mark key="." line="22" column="37" />
+      </file>
+      <file name="/Python Console" timestamp="1489578554522">
+        <mark key="[" line="0" column="0" />
+      </file>
+      <file name="/a.dummy" timestamp="1489415893557">
+        <mark key="[" line="0" column="0" />
+      </file>
+      <file name="/opt/odoo/clients/general-erp/digi_addons/l10n_lt_isaf/views/view.xml" timestamp="1489058064157">
+        <mark key="]" line="50" column="0" />
+        <mark key="." line="50" column="0" />
+        <mark key="^" line="50" column="0" />
+      </file>
+      <file name="/opt/odoo/clients/general-erp/digi_addons/l10n_lt_isaf/__openerp__.py" timestamp="1488891235679">
+        <mark key="[" line="27" column="36" />
+        <mark key="]" line="31" column="15" />
+        <mark key="^" line="31" column="15" />
+        <mark key="." line="31" column="15" />
+      </file>
+      <file name="/opt/odoo/clients/general-erp/digi_addons/l10n_lt_ivaz/__openerp__.py" timestamp="1489411848374">
+        <mark key="[" line="3" column="0" />
+        <mark key="]" line="3" column="0" />
+        <mark key="^" line="8" column="21" />
+        <mark key="." line="3" column="0" />
+      </file>
+      <file name="/opt/odoo/clients/general-erp/digi_addons/l10n_lt_ivaz/README.md" timestamp="1489047091690">
+        <mark key="[" line="4" column="3" />
+        <mark key="]" line="10" column="0" />
+        <mark key="." line="10" column="0" />
+      </file>
+      <file name="$USER_HOME$/Desktop/isaf 2017-01-08  2017-01-08 (1).xml" timestamp="1488982759440">
+        <mark key="[" line="0" column="8" />
+      </file>
+      <file name="/opt/odoo/clients/general-erp/digi_addons/l10n_lt_ivaz/models/__init__.py" timestamp="1489411518039">
+        <mark key="[" line="2" column="0" />
+        <mark key="]" line="2" column="0" />
+        <mark key="." line="2" column="0" />
+      </file>
+      <file name="$USER_HOME$/Desktop/ivaz-dirt/docs/wsdl.xsd" timestamp="1488294082260">
+        <mark key="[" line="0" column="0" />
+      </file>
+      <file name="/opt/odoo/_venv/local/lib/python2.7/site-packages/pyxb/__init__.py" timestamp="1489499878411">
+        <mark key="[" line="105" column="41" />
+      </file>
+      <file name="/opt/odoo/clients/general-erp/digi_addons/utilities/controllers/__init__.py" timestamp="1488883638710">
+        <mark key="[" line="0" column="0" />
+      </file>
+      <file name="/opt/odoo/clients/general-erp/digi_addons/l10n_lt_isaf/models/isaf_manager.py" timestamp="1489504304438">
+        <mark key="e" line="120" column="40" />
+        <mark key="'" line="7" column="12" />
+        <mark key="[" line="397" column="26" />
+        <mark key="]" line="397" column="25" />
+        <mark key="." line="397" column="25" />
+        <mark key="^" line="397" column="25" />
+      </file>
+      <file name="$USER_HOME$/Tools/ivaz 2017-03-16T15-41-34.860727 01-00.xml" timestamp="1489675339199">
+        <mark key="[" line="10" column="0" />
+      </file>
+      <file name="/opt/odoo/clients/general-erp/digi_addons/l10n_lt_ivaz/views/stock_picking_tree.xml" timestamp="1489063385170">
+        <mark key="'" line="5" column="12" />
+        <mark key="[" line="8" column="8" />
+        <mark key="]" line="3" column="59" />
+        <mark key="." line="3" column="59" />
+        <mark key="^" line="3" column="59" />
+      </file>
+      <file name="/opt/odoo/clients/general-erp/digi_addons/l10n_lt_ivaz/controllers/main.py" timestamp="1488883115846">
+        <mark key="[" line="8" column="28" />
+        <mark key="]" line="8" column="35" />
+        <mark key="." line="8" column="35" />
+        <mark key="^" line="8" column="35" />
+      </file>
+      <file name="/opt/odoo/clients/general-erp/digi_addons/l10n_lt_ivaz/controllers/__init__.py" timestamp="1488883675295">
+        <mark key="[" line="0" column="0" />
+        <mark key="]" line="1" column="10" />
+        <mark key="^" line="1" column="10" />
+        <mark key="." line="1" column="10" />
+      </file>
+      <file name="/opt/odoo/clients/general-erp/digi_addons/l10n_lt_ivaz/models/manual_generator.py" timestamp="1489681455127">
+        <mark key="q" line="81" column="31" />
+        <mark key="[" line="96" column="0" />
+        <mark key="]" line="96" column="0" />
+        <mark key="." line="96" column="0" />
+        <mark key="^" line="111" column="71" />
+      </file>
+      <file name="/opt/odoo/clients/general-erp/digi_addons/l10n_lt_ivaz/.gitignore" timestamp="1489412500513">
+        <mark key="[" line="0" column="0" />
+        <mark key="]" line="0" column="0" />
+        <mark key="." line="0" column="0" />
+      </file>
+      <file name="/opt/odoo/clients/general-erp/digi_addons/l10n_lt_ivaz/docs/ivaz_xsd_1_3_2.xsd" timestamp="1489580464277">
+        <mark key="a" line="1439" column="17" />
+        <mark key="q" line="1447" column="34" />
+        <mark key="[" line="15" column="47" />
+        <mark key="]" line="15" column="5" />
+        <mark key="." line="15" column="5" />
+        <mark key="^" line="15" column="5" />
+      </file>
+      <file name="$USER_HOME$/Desktop/testing-lxml/lxml_tests.py" timestamp="1489673884154">
+        <mark key="[" line="9" column="0" />
+        <mark key="]" line="9" column="0" />
+        <mark key="." line="9" column="0" />
+      </file>
+      <file name="/opt/odoo/odoo-10/digitouch/general-erp/digi_addons/l10n_lt_isaf/models/isaf_manager.py" timestamp="1488981450308">
+        <mark key="[" line="275" column="40" />
+        <mark key="]" line="279" column="20" />
+        <mark key="." line="279" column="20" />
+        <mark key="^" line="279" column="20" />
+      </file>
+      <file name="/opt/odoo/clients/general-erp/digi_addons/l10n_lt_ivaz/views/ivaz_wizz.xml" timestamp="1488875946959">
+        <mark key="[" line="26" column="38" />
+        <mark key="]" line="26" column="38" />
+        <mark key="." line="26" column="38" />
+        <mark key="^" line="26" column="44" />
+      </file>
+      <file name="/opt/odoo/clients/general-erp/digi_addons/utilities/__init__.py" timestamp="1488883785623">
+        <mark key="[" line="6" column="26" />
+        <mark key="]" line="7" column="24" />
+        <mark key="^" line="7" column="24" />
+        <mark key="." line="7" column="24" />
+      </file>
+      <file name="/opt/odoo/clients/general-erp/digi_addons/l10n_lt_ivaz/views/stock_picking_action.xml" timestamp="1489071822522">
+        <mark key="]" line="11" column="9" />
+        <mark key="." line="11" column="9" />
+        <mark key="^" line="11" column="9" />
+      </file>
+      <file name="/opt/odoo/clients/general-erp/digi_addons/l10n_lt_ivaz/views/view.xml" timestamp="1489048545013">
+        <mark key="[" line="0" column="0" />
+        <mark key="]" line="0" column="0" />
+        <mark key="^" line="2" column="8" />
+        <mark key="." line="0" column="0" />
+      </file>
+      <file name="/opt/odoo/clients/general-erp/digi_addons/utilities/README.md" timestamp="1488884170447">
+        <mark key="[" line="10" column="24" />
+        <mark key="]" line="12" column="28" />
+        <mark key="." line="12" column="28" />
+        <mark key="^" line="12" column="28" />
+      </file>
+      <file name="/opt/odoo/clients/general-erp/digi_addons/l10n_lt_ivaz/__init__.py" timestamp="1489411497449">
+        <mark key="[" line="2" column="0" />
+        <mark key="]" line="2" column="0" />
+        <mark key="." line="2" column="0" />
+      </file>
+      <file name="/opt/odoo/clients/general-erp/digi_addons/l10n_lt_ivaz/models/ivaz_1_3_2.py" timestamp="1489578557806">
+        <mark key="q" line="1016" column="6" />
+        <mark key="e" line="2904" column="6" />
+        <mark key="'" line="1016" column="6" />
+        <mark key="w" line="2276" column="6" />
+        <mark key="[" line="2907" column="62" />
+        <mark key="l" line="2904" column="6" />
+        <mark key="]" line="2907" column="62" />
+        <mark key="." line="2907" column="62" />
+        <mark key="^" line="2907" column="62" />
+      </file>
+      <file name="/opt/odoo/clients/general-erp/digi_addons/l10n_lt_ivaz/models/stupid_file.py" timestamp="1488988141573">
+        <mark key="[" line="40" column="55" />
+        <mark key="]" line="40" column="55" />
+        <mark key="." line="40" column="55" />
+        <mark key="^" line="40" column="62" />
+      </file>
+    </filemarks>
+    <jumps>
+      <jump line="32" column="31" filename="$USER_HOME$/Desktop/mazv/digi_addons/api_integration/wizard/api_wizard.py" />
+      <jump line="97" column="8" filename="$USER_HOME$/Desktop/mazv/digi_addons/api_integration/wizard/api_wizard.py" />
+      <jump line="69" column="19" filename="$USER_HOME$/Desktop/mazv/digi_addons/api_integration/wizard/api_wizard.py" />
+      <jump line="113" column="8" filename="$USER_HOME$/Desktop/mazv/digi_addons/api_integration/wizard/api_wizard.py" />
+      <jump line="30" column="31" filename="$USER_HOME$/Desktop/mazv/digi_addons/api_integration/wizard/api_wizard.py" />
+      <jump line="127" column="41" filename="$USER_HOME$/Desktop/mazv/digi_addons/api_integration/wizard/api_wizard.py" />
+      <jump line="123" column="17" filename="$USER_HOME$/Desktop/mazv/digi_addons/api_integration/wizard/api_wizard.py" />
+      <jump line="83" column="30" filename="$USER_HOME$/Desktop/mazv/digi_addons/api_integration/wizard/api_wizard.py" />
+      <jump line="76" column="44" filename="$USER_HOME$/Desktop/mazv/digi_addons/api_integration/wizard/api_wizard.py" />
+      <jump line="19" column="27" filename="$USER_HOME$/Desktop/mazv/digi_addons/api_integration/wizard/api_wizard.py" />
+      <jump line="17" column="13" filename="$USER_HOME$/Desktop/mazv/digi_addons/api_integration/wizard/api_wizard.py" />
+      <jump line="11" column="17" filename="$USER_HOME$/Desktop/mazv/digi_addons/api_integration/wizard/api_wizard.py" />
+      <jump line="26" column="26" filename="$USER_HOME$/Desktop/mazv/digi_addons/api_integration/wizard/api_wizard.py" />
+      <jump line="58" column="8" filename="$USER_HOME$/Desktop/mazv/digi_addons/api_integration/wizard/api_wizard.py" />
+      <jump line="23" column="32" filename="/opt/odoo/clients/general-erp/digi_addons/iSAF/iSAF.py" />
+      <jump line="565" column="20" filename="/opt/odoo/clients/general-erp/digi_addons/l10n_lt_isaf/models/isaf_manager.py" />
+      <jump line="125" column="56" filename="/opt/odoo/clients/general-erp/digi_addons/l10n_lt_isaf/models/isaf_manager.py" />
+      <jump line="123" column="16" filename="/opt/odoo/clients/general-erp/digi_addons/l10n_lt_isaf/models/isaf_manager.py" />
+      <jump line="100" column="27" filename="/opt/odoo/clients/general-erp/digi_addons/l10n_lt_isaf/models/isaf_manager.py" />
+      <jump line="68" column="4" filename="/opt/odoo/clients/general-erp/digi_addons/l10n_lt_isaf/models/isaf_manager.py" />
+      <jump line="663" column="56" filename="/opt/odoo/clients/general-erp/digi_addons/l10n_lt_isaf/models/isaf_manager.py" />
+      <jump line="594" column="52" filename="/opt/odoo/clients/general-erp/digi_addons/l10n_lt_isaf/models/isaf_manager.py" />
+      <jump line="285" column="46" filename="/opt/odoo/clients/general-erp/digi_addons/l10n_lt_isaf/models/isaf_manager.py" />
+      <jump line="254" column="60" filename="/opt/odoo/clients/general-erp/digi_addons/l10n_lt_isaf/models/isaf_manager.py" />
+      <jump line="241" column="44" filename="/opt/odoo/clients/general-erp/digi_addons/l10n_lt_isaf/models/isaf_manager.py" />
+      <jump line="238" column="34" filename="/opt/odoo/clients/general-erp/digi_addons/l10n_lt_isaf/models/isaf_manager.py" />
+      <jump line="213" column="44" filename="/opt/odoo/clients/general-erp/digi_addons/l10n_lt_isaf/models/isaf_manager.py" />
+      <jump line="210" column="36" filename="/opt/odoo/clients/general-erp/digi_addons/l10n_lt_isaf/models/isaf_manager.py" />
+      <jump line="207" column="77" filename="/opt/odoo/clients/general-erp/digi_addons/l10n_lt_isaf/models/isaf_manager.py" />
+      <jump line="49" column="0" filename="/opt/odoo/clients/general-erp/digi_addons/utilities/invoice_atoms.py" />
+      <jump line="58" column="37" filename="/opt/odoo/clients/general-erp/digi_addons/utilities/invoice_atoms.py" />
+      <jump line="155" column="46" filename="/opt/odoo/clients/general-erp/digi_addons/l10n_lt_isaf/models/isaf_manager.py" />
+      <jump line="358" column="0" filename="/opt/odoo/clients/general-erp/digi_addons/l10n_lt_isaf/models/isaf_manager.py" />
+      <jump line="479" column="0" filename="/opt/odoo/clients/general-erp/digi_addons/l10n_lt_isaf/models/isaf_manager.py" />
+      <jump line="522" column="35" filename="/opt/odoo/clients/general-erp/digi_addons/l10n_lt_isaf/models/isaf_manager.py" />
+      <jump line="521" column="48" filename="/opt/odoo/clients/general-erp/digi_addons/l10n_lt_isaf/models/isaf_manager.py" />
+      <jump line="496" column="8" filename="/opt/odoo/clients/general-erp/digi_addons/l10n_lt_isaf/models/isaf_manager.py" />
+      <jump line="544" column="28" filename="/opt/odoo/clients/general-erp/digi_addons/l10n_lt_isaf/models/isaf_manager.py" />
+      <jump line="473" column="27" filename="/opt/odoo/clients/general-erp/digi_addons/l10n_lt_isaf/models/isaf_manager.py" />
+      <jump line="470" column="36" filename="/opt/odoo/clients/general-erp/digi_addons/l10n_lt_isaf/models/isaf_manager.py" />
+      <jump line="514" column="53" filename="/opt/odoo/clients/general-erp/digi_addons/l10n_lt_isaf/models/isaf_manager.py" />
+      <jump line="554" column="8" filename="/opt/odoo/clients/general-erp/digi_addons/l10n_lt_isaf/models/isaf_manager.py" />
+      <jump line="513" column="16" filename="/opt/odoo/clients/general-erp/digi_addons/l10n_lt_isaf/models/isaf_manager.py" />
+      <jump line="512" column="16" filename="/opt/odoo/clients/general-erp/digi_addons/l10n_lt_isaf/models/isaf_manager.py" />
+      <jump line="472" column="27" filename="/opt/odoo/clients/general-erp/digi_addons/l10n_lt_isaf/models/isaf_manager.py" />
+      <jump line="469" column="36" filename="/opt/odoo/clients/general-erp/digi_addons/l10n_lt_isaf/models/isaf_manager.py" />
+      <jump line="468" column="39" filename="/opt/odoo/clients/general-erp/digi_addons/l10n_lt_isaf/models/isaf_manager.py" />
+      <jump line="416" column="8" filename="/opt/odoo/clients/general-erp/digi_addons/l10n_lt_isaf/models/isaf_manager.py" />
+      <jump line="453" column="35" filename="/opt/odoo/clients/general-erp/digi_addons/l10n_lt_isaf/models/isaf_manager.py" />
+      <jump line="436" column="19" filename="/opt/odoo/clients/general-erp/digi_addons/l10n_lt_isaf/models/isaf_manager.py" />
+      <jump line="458" column="12" filename="/opt/odoo/clients/general-erp/digi_addons/l10n_lt_isaf/models/isaf_manager.py" />
+      <jump line="719" column="69" filename="/opt/odoo/clients/general-erp/digi_addons/l10n_lt_isaf/models/isaf_manager.py" />
+      <jump line="8" column="25" filename="/opt/odoo/clients/general-erp/digi_addons/l10n_lt_isaf/models/isaf_manager.py" />
+      <jump line="604" column="10" filename="/opt/odoo/clients/general-erp/digi_addons/l10n_lt_isaf/models/isaf_manager.py" />
+      <jump line="765" column="8" filename="/opt/odoo/clients/general-erp/digi_addons/l10n_lt_isaf/models/isaf_manager.py" />
+      <jump line="11" column="20" filename="/opt/odoo/clients/general-erp/digi_addons/l10n_lt_isaf/models/isaf_manager.py" />
+      <jump line="13" column="43" filename="/opt/odoo/clients/general-erp/digi_addons/l10n_lt_isaf/models/isaf_manager.py" />
+      <jump line="137" column="28" filename="/opt/odoo/clients/general-erp/digi_addons/l10n_lt_isaf/models/isaf_manager.py" />
+      <jump line="442" column="37" filename="/opt/odoo/clients/general-erp/digi_addons/l10n_lt_isaf/models/isaf_manager.py" />
+      <jump line="607" column="55" filename="/opt/odoo/clients/general-erp/digi_addons/l10n_lt_isaf/models/isaf_manager.py" />
+      <jump line="435" column="8" filename="/opt/odoo/clients/general-erp/digi_addons/l10n_lt_isaf/models/isaf_manager.py" />
+      <jump line="684" column="21" filename="/opt/odoo/clients/general-erp/digi_addons/l10n_lt_isaf/models/isaf_manager.py" />
+      <jump line="495" column="28" filename="$USER_HOME$/Desktop/isaf 2017-01-04  2017-02-25.xml" />
+      <jump line="46" column="58" filename="$USER_HOME$/Desktop/isaf 2017-01-04  2017-02-25.xml" />
+      <jump line="498" column="49" filename="/opt/odoo/clients/general-erp/digi_addons/l10n_lt_isaf/models/isaf_manager.py" />
+      <jump line="221" column="22" filename="/opt/odoo/clients/general-erp/digi_addons/l10n_lt_isaf/models/isaf_manager.py" />
+      <jump line="252" column="0" filename="/opt/odoo/clients/general-erp/digi_addons/l10n_lt_isaf/models/isaf_manager.py" />
+      <jump line="7" column="12" filename="/opt/odoo/clients/general-erp/digi_addons/l10n_lt_isaf/models/isaf_manager.py" />
+      <jump line="110" column="56" filename="$USER_HOME$/Tools/isaf 2017-01-01  2017-01-31 (8).xml" />
+      <jump line="29" column="52" filename="/opt/odoo/addons/account/models/account_invoice.py" />
+      <jump line="30" column="23" filename="/opt/odoo/addons/account/models/account_invoice.py" />
+      <jump line="31" column="21" filename="/opt/odoo/addons/account/models/account_invoice.py" />
+      <jump line="38" column="21" filename="/opt/odoo/addons/account/models/account_invoice.py" />
+      <jump line="41" column="19" filename="/opt/odoo/addons/account/models/account_invoice.py" />
+      <jump line="44" column="110" filename="/opt/odoo/addons/account/models/account_invoice.py" />
+      <jump line="46" column="71" filename="/opt/odoo/addons/account/models/account_invoice.py" />
+      <jump line="52" column="71" filename="/opt/odoo/addons/account/models/account_invoice.py" />
+      <jump line="64" column="50" filename="/opt/odoo/addons/account/models/account_invoice.py" />
+      <jump line="84" column="33" filename="/opt/odoo/addons/account/models/account_invoice.py" />
+      <jump line="30" column="23" filename="$USER_HOME$/miniconda3/envs/zeep_env/lib/python2.7/site-packages/zeep/wsse/signature.py" />
+      <jump line="38" column="37" filename="$USER_HOME$/miniconda3/envs/zeep_env/lib/python2.7/site-packages/zeep/wsse/signature.py" />
+      <jump line="33" column="24" filename="$USER_HOME$/miniconda3/envs/zeep_env/lib/python2.7/site-packages/zeep/wsse/signature.py" />
+      <jump line="89" column="49" filename="/opt/odoo/clients/general-erp/digi_addons/l10n_lt_ivaz/models/manual_generator.py" />
+      <jump line="42" column="63" filename="/opt/odoo/clients/general-erp/digi_addons/l10n_lt_ivaz/views/stock_picking_tree.xml" />
+      <jump line="40" column="12" filename="/opt/odoo/clients/general-erp/digi_addons/l10n_lt_ivaz/views/stock_picking_tree.xml" />
+      <jump line="136" column="26" filename="/opt/odoo/clients/general-erp/digi_addons/l10n_lt_ivaz/models/manual_generator.py" />
+      <jump line="18" column="28" filename="/opt/odoo/clients/general-erp/digi_addons/l10n_lt_ivaz/views/stock_picking_action.xml" />
+      <jump line="20" column="47" filename="/opt/odoo/clients/general-erp/digi_addons/l10n_lt_ivaz/views/stock_picking_action.xml" />
+      <jump line="23" column="8" filename="/opt/odoo/clients/general-erp/digi_addons/l10n_lt_ivaz/views/stock_picking_action.xml" />
+      <jump line="15" column="0" filename="/opt/odoo/clients/general-erp/digi_addons/l10n_lt_ivaz/views/stock_picking_action.xml" />
+      <jump line="147" column="31" filename="/opt/odoo/clients/general-erp/digi_addons/l10n_lt_ivaz/models/manual_generator.py" />
+      <jump line="150" column="35" filename="/opt/odoo/clients/general-erp/digi_addons/l10n_lt_ivaz/models/manual_generator.py" />
+      <jump line="1043" column="6" filename="/opt/odoo/clients/general-erp/digi_addons/l10n_lt_ivaz/models/ivaz_1_3_2.py" />
+      <jump line="1040" column="6" filename="/opt/odoo/clients/general-erp/digi_addons/l10n_lt_ivaz/models/ivaz_1_3_2.py" />
+      <jump line="1095" column="6" filename="/opt/odoo/clients/general-erp/digi_addons/l10n_lt_ivaz/models/ivaz_1_3_2.py" />
+      <jump line="2311" column="2" filename="/opt/odoo/clients/general-erp/digi_addons/l10n_lt_ivaz/models/ivaz_1_3_2.py" />
+      <jump line="2904" column="6" filename="/opt/odoo/clients/general-erp/digi_addons/l10n_lt_ivaz/models/ivaz_1_3_2.py" />
+      <jump line="2276" column="6" filename="/opt/odoo/clients/general-erp/digi_addons/l10n_lt_ivaz/models/ivaz_1_3_2.py" />
+      <jump line="2899" column="27" filename="/opt/odoo/clients/general-erp/digi_addons/l10n_lt_ivaz/models/ivaz_1_3_2.py" />
+      <jump line="1016" column="6" filename="/opt/odoo/clients/general-erp/digi_addons/l10n_lt_ivaz/models/ivaz_1_3_2.py" />
+    </jumps>
+    <registers>
+      <register name="&quot;" type="2">
+        <text encoding="base64">ICAgICAgICAgICAgYWRkcmVzc1swXSA9ICJ0aGlzIGlzIGEgbmFtZSIgICMgU3RyZWVOYW1lIAogICAgICAgICAgICBhZGRyZXNzWzBdID0gInRoaXMgaXMgYSBuYW1lIgogICAgICAgICAgICBhZGRyZXNzWzBdID0gInRoaXMgaXMgYSBuYW1lIgogICAgICAgICAgICBhZGRyZXNzWzBdID0gInRoaXMgaXMgYSBuYW1lIgo=</text>
+      </register>
+      <register name="c" type="4">
+        <text>ir.ui.view</text>
+      </register>
+      <register name="-" type="4">
+        <text>country</text>
+      </register>
+      <register name="/" type="4">
+        <text encoding="base64">XDxwYXltZW50XD4=</text>
+      </register>
+      <register name="0" type="2">
+        <text encoding="base64">ICAgICAgICAgICAgYWRkcmVzc1swXSA9ICJ0aGlzIGlzIGEgbmFtZSIK</text>
+      </register>
+      <register name="1" type="2">
+        <text encoding="base64">ICAgICAgICAgICAgYWRkcmVzc1swXSA9ICJ0aGlzIGlzIGEgbmFtZSIgICMgU3RyZWVOYW1lIAogICAgICAgICAgICBhZGRyZXNzWzBdID0gInRoaXMgaXMgYSBuYW1lIgogICAgICAgICAgICBhZGRyZXNzWzBdID0gInRoaXMgaXMgYSBuYW1lIgogICAgICAgICAgICBhZGRyZXNzWzBdID0gInRoaXMgaXMgYSBuYW1lIgo=</text>
+      </register>
+      <register name="2" type="2">
+        <text encoding="base64">ICAgICAgICBldHJlZS4K</text>
+      </register>
+      <register name="3" type="2">
+        <text encoding="base64">ICAgICAgICBldHJlZS5TdWJFbGVtZW50KHN0cnVjdHVyZWRfYWRkcmVzcywgIlN0cmVldE5hbWUiKQo=</text>
+      </register>
+      <register name="4" type="2">
+        <text encoding="base64">ICAgICAgICAK</text>
+      </register>
+      <register name="5" type="2">
+        <text encoding="base64">Cg==</text>
+      </register>
+      <register name="6" type="2">
+        <text encoding="base64">ICAgICAgICBzdHJlZXRfbmFtZSA9IGV0cmVlLlN1YkVsZW1lbnQoc3RydWN0dXJlZF9hZGRyZXNzLCAiU3RyZWVOYW1lIikK</text>
+      </register>
+      <register name="7" type="2">
+        <text encoding="base64">ICAgICAgICAgICAgCg==</text>
+      </register>
+      <register name="8" type="2">
+        <text encoding="base64">Cg==</text>
+      </register>
+      <register name="9" type="2">
+        <text encoding="base64">Cg==</text>
+      </register>
+      <register name=":" type="4">
+        <text>set hlsearch</text>
+      </register>
+    </registers>
+    <search>
+      <last-search encoding="base64">XDxwYXltZW50XD4=</last-search>
+      <last-offset />
+      <last-pattern encoding="base64">XDxwYXltZW50XD4=</last-pattern>
+      <last-dir>-1</last-dir>
+      <show-last>false</show-last>
+    </search>
+    <history>
+      <history-search>
+        <entry>date</entry>
+        <entry>day</entry>
+        <entry>_logger.debug(</entry>
+        <entry encoding="base64">XDx0YXhfbGlzdFw+</entry>
+        <entry encoding="base64">XDxzdW1fbGluZV9zdWJ0b3RhbFw+</entry>
+        <entry encoding="base64">XDx0YXhfaWRcPg==</entry>
+        <entry encoding="base64">XDxyZWZ1bmRfaW52b2ljZXNcPg==</entry>
+        <entry>type(</entry>
+        <entry>int(sum</entry>
+        <entry>Decimal(</entry>
+        <entry>Deci</entry>
+        <entry encoding="base64">XDxnZXRfcmVmdW5kX2ludm9pY2VzXD4=</entry>
+        <entry encoding="base64">XDxsaW5lX2RhdGFcPg==</entry>
+        <entry encoding="base64">XDxtYWtlX3ZlbmRvcl9SZWZlcmVuY2VzX2Zvcl9JbnZvaWNlX1w+</entry>
+        <entry>LT100003954117</entry>
+        <entry>invoice</entry>
+        <entry>refund_invoice_id</entry>
+        <entry encoding="base64">XDxrZXlfZmlsZVw+</entry>
+        <entry encoding="base64">XDxhY2NvdW50XD4=</entry>
+        <entry encoding="base64">XDxwYXltZW50XD4=</entry>
+      </history-search>
+      <history-cmd>
+        <entry>cr</entry>
+        <entry>reg</entry>
+        <entry>set hlsearch</entry>
+      </history-cmd>
+      <history-expr />
+      <history-input />
+    </history>
+    <shortcut-conflicts>
+      <shortcut-conflict owner="ide">
+        <text>ctrl pressed D</text>
+      </shortcut-conflict>
+      <shortcut-conflict owner="ide">
+        <text>ctrl pressed C</text>
+      </shortcut-conflict>
+      <shortcut-conflict owner="ide">
+        <text>ctrl pressed V</text>
+      </shortcut-conflict>
+      <shortcut-conflict owner="ide">
+        <text>ctrl pressed A</text>
+      </shortcut-conflict>
+      <shortcut-conflict owner="ide">
+        <text>ctrl pressed S</text>
+      </shortcut-conflict>
+      <shortcut-conflict owner="ide">
+        <text>ctrl pressed X</text>
+      </shortcut-conflict>
+      <shortcut-conflict owner="ide">
+        <text>ctrl pressed W</text>
+      </shortcut-conflict>
+      <shortcut-conflict owner="ide">
+        <text>ctrl pressed 2</text>
+      </shortcut-conflict>
+      <shortcut-conflict owner="ide">
+        <text>ctrl pressed F</text>
+      </shortcut-conflict>
+      <shortcut-conflict owner="ide">
+        <text>ctrl pressed P</text>
+      </shortcut-conflict>
+      <shortcut-conflict owner="ide">
+        <text>ctrl pressed U</text>
+      </shortcut-conflict>
+      <shortcut-conflict owner="ide">
+        <text>ctrl pressed Q</text>
+      </shortcut-conflict>
+      <shortcut-conflict owner="vim">
+        <text>ctrl pressed Y</text>
+      </shortcut-conflict>
+      <shortcut-conflict owner="vim">
+        <text>ctrl pressed B</text>
+      </shortcut-conflict>
+      <shortcut-conflict owner="vim">
+        <text>ctrl pressed O</text>
+      </shortcut-conflict>
+    </shortcut-conflicts>
+  </component>
+</application>

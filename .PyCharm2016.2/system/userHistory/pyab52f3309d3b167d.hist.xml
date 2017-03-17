@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?><console-history version="1" id="/opt/odoo/clients/general-erp">
+  <history-entry><![CDATA[for a in range(1,9):]]></history-entry>
+  <history-entry><![CDATA[    print a]]></history-entry>
+  <history-entry><![CDATA[from zeep import Client]]></history-entry>
+  <history-entry><![CDATA[import logger]]></history-entry>
+  <history-entry><![CDATA[import logging]]></history-entry>
+  <history-entry><![CDATA[import zeep]]></history-entry>
+  <history-entry><![CDATA[a = '']]></history-entry>
+  <history-entry><![CDATA[a.append('\n labas')]]></history-entry>
+  <history-entry><![CDATA[a + ('\n labas')]]></history-entry>
+  <history-entry><![CDATA[a += ('\n labas')]]></history-entry>
+  <history-entry><![CDATA[a += '\nlabas']]></history-entry>
+  <history-entry><![CDATA[b = '']]></history-entry>
+  <history-entry><![CDATA[b += '\nlabas']]></history-entry>
+  <history-entry><![CDATA[xxx = 'sveikas']]></history-entry>
+  <history-entry><![CDATA[b += '\nlabas' + xxx]]></history-entry>
+  <history-entry><![CDATA[b]]></history-entry>
+  <history-entry><![CDATA[is_neg = True if -0.8 > 0 else False]]></history-entry>
+  <history-entry><![CDATA[is_neg = True if -0.8 < 0 else False]]></history-entry>
+  <history-entry><![CDATA[is_neg]]></history-entry>
+  <history-entry><![CDATA[from openerp import fields]]></history-entry>
+  <history-entry><![CDATA[from openerp import models, fields, release, api, _]]></history-entry>
+  <history-entry><![CDATA[assert False == True]]></history-entry>
+  <history-entry><![CDATA[assert False == True, "False is not true"]]></history-entry>
+  <history-entry><![CDATA[assert False != True, "False is not true"]]></history-entry>
+  <history-entry><![CDATA[atrue = True]]></history-entry>
+  <history-entry><![CDATA[atrue = 'xxx-123']]></history-entry>
+  <history-entry><![CDATA[bfalse = False]]></history-entry>
+  <history-entry><![CDATA[xxx = bfalse or atrue]]></history-entry>
+  <history-entry><![CDATA[xxx = bfalse or atrue or True]]></history-entry>
+  <history-entry><![CDATA[xxx]]></history-entry>
+  <history-entry><![CDATA[u = u'']]></history-entry>
+  <history-entry><![CDATA[n = None]]></history-entry>
+  <history-entry><![CDATA[u == n]]></history-entry>
+  <history-entry><![CDATA[u == False]]></history-entry>
+  <history-entry><![CDATA[u == u'']]></history-entry>
+  <history-entry><![CDATA[a = []]]></history-entry>
+  <history-entry><![CDATA[a+= 99]]></history-entry>
+  <history-entry><![CDATA[a.append(99)]]></history-entry>
+  <history-entry><![CDATA[a]]></history-entry>
+</console-history>

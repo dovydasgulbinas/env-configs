@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<conversion>
+  <applied-converters>
+    <converter id="PythonTestConverterProvider" />
+  </applied-converters>
+  <project-files>
+    <file path="/home/hermes/Dropbox/notes_digi/isaf/.idea/isaf.iml" timestamp="1483624677000" />
+    <file path="/home/hermes/Dropbox/notes_digi/isaf/.idea/misc.xml" timestamp="1483624557000" />
+    <file path="/home/hermes/Dropbox/notes_digi/isaf/.idea/modules.xml" timestamp="1483624677000" />
+    <file path="/home/hermes/Dropbox/notes_digi/isaf/.idea/vcs.xml" timestamp="1483624677000" />
+    <file path="/home/hermes/Dropbox/notes_digi/isaf/.idea/workspace.xml" timestamp="1484047212000" />
+  </project-files>
+</conversion>
+

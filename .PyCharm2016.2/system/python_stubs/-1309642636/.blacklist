@@ -1,0 +1,4 @@
+# PyCharm failed to generate skeletons for these modules.
+# These skeletons will be re-generated automatically
+# when a newer module version or an updated generator becomes available.
+/opt/odoo/odoo-10/_odoo-10/local/lib/python2.7/site-packages/PIL/_imagingtk.so = 1.143 1486374578000

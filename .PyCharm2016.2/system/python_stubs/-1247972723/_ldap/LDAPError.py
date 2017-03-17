@@ -1,0 +1,22 @@
+# encoding: utf-8
+# module _ldap
+# from /usr/local/lib/python2.7/dist-packages/_ldap.so
+# by generator 1.143
+# no doc
+
+# imports
+import ldap as __ldap
+
+
+from Exception import Exception
+
+class LDAPError(Exception):
+    # no doc
+    def __init__(self, *args, **kwargs): # real signature unknown
+        pass
+
+    __weakref__ = property(lambda self: object(), lambda self, v: None, lambda self: None)  # default
+    """list of weak references to the object (if defined)"""
+
+
+

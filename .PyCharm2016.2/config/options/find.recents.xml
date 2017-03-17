@@ -1,0 +1,43 @@
+<application>
+  <component name="FindRecents">
+    <findStrings>
+      <find>account</find>
+      <find>customer</find>
+      <find>vendor.ref</find>
+      <find>customers</find>
+      <find>co</find>
+      <find>_Customer</find>
+      <find>sale_license_more_item_action</find>
+      <find>action_render_ivaz_xml_</find>
+      <find>self.company</find>
+      <find>export_xml_as_doc</find>
+      <find>FILE</find>
+      <find>LocalTranp</find>
+      <find>p</find>
+      <find>TransportDoc</find>
+      <find>sequence</find>
+      <find>choic3e</find>
+      <find>iVAZ</find>
+      <find>c</find>
+      <find>LocalTransportDocument</find>
+      <find>(TransportDocument)\w</find>
+      <find>for</find>
+      <find>Transport</find>
+      <find>FileDec</find>
+      <find>TransportDocument</find>
+      <find>TransportDocumentUID</find>
+      <find>choice</find>
+      <find>value</find>
+      <find>date</find>
+      <find>dateutil</find>
+      <find>validate</find>
+    </findStrings>
+    <replaceStrings>
+      <replace />
+    </replaceStrings>
+    <dirStrings>
+      <dir>/opt/odoo/clients/general-erp/digi_addons/l10n_lt_isaf</dir>
+      <dir>/opt/odoo/addons/mail/views</dir>
+    </dirStrings>
+  </component>
+</application>

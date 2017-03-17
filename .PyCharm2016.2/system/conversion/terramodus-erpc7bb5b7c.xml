@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<conversion>
+  <applied-converters>
+    <converter id="PythonTestConverterProvider" />
+  </applied-converters>
+  <project-files>
+    <file path="/opt/odoo/clients/terramodus-erp/../general-erp-terra/.idea/general-erp-terra.iml" timestamp="1486462356000" />
+    <file path="/opt/odoo/clients/terramodus-erp/.idea/markdown-navigator.xml" timestamp="1486462389000" />
+    <file path="/opt/odoo/clients/terramodus-erp/.idea/markdown-navigator/profiles_settings.xml" timestamp="1486461926000" />
+    <file path="/opt/odoo/clients/terramodus-erp/.idea/misc.xml" timestamp="1486462389000" />
+    <file path="/opt/odoo/clients/terramodus-erp/.idea/modules.xml" timestamp="1486462389000" />
+    <file path="/opt/odoo/clients/terramodus-erp/.idea/terramodus-erp.iml" timestamp="1486463201000" />
+    <file path="/opt/odoo/clients/terramodus-erp/.idea/vcs.xml" timestamp="1486463201000" />
+    <file path="/opt/odoo/clients/terramodus-erp/.idea/workspace.xml" timestamp="1486473962000" />
+  </project-files>
+</conversion>
+

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<conversion>
+  <applied-converters>
+    <converter id="PythonTestConverterProvider" />
+  </applied-converters>
+  <project-files>
+    <file path="/opt/odoo/clients/general-erp/digi_addons/.idea/dictionaries/hermes.xml" timestamp="1484294788000" />
+    <file path="/opt/odoo/clients/general-erp/digi_addons/.idea/digi_addons.iml" timestamp="1484236398000" />
+    <file path="/opt/odoo/clients/general-erp/digi_addons/.idea/inspectionProfiles/Project_Default.xml" timestamp="1486476452000" />
+    <file path="/opt/odoo/clients/general-erp/digi_addons/.idea/inspectionProfiles/profiles_settings.xml" timestamp="1484294788000" />
+    <file path="/opt/odoo/clients/general-erp/digi_addons/.idea/markdown-navigator.xml" timestamp="1486127756000" />
+    <file path="/opt/odoo/clients/general-erp/digi_addons/.idea/markdown-navigator/profiles_settings.xml" timestamp="1486127756000" />
+    <file path="/opt/odoo/clients/general-erp/digi_addons/.idea/misc.xml" timestamp="1484236398000" />
+    <file path="/opt/odoo/clients/general-erp/digi_addons/.idea/modules.xml" timestamp="1484233936000" />
+    <file path="/opt/odoo/clients/general-erp/digi_addons/.idea/workspace.xml" timestamp="1486633134000" />
+  </project-files>
+</conversion>
+

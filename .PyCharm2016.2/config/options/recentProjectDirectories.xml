@@ -1,0 +1,379 @@
+<application>
+  <component name="RecentDirectoryProjectsManager">
+    <option name="recentPaths">
+      <list>
+        <option value="/tmp/ivaz 2017-03-16T16-12-18.208928 01-00.xml" />
+        <option value="/tmp/ivaz 2017-03-16T15-41-34.860727 01-00.xml" />
+        <option value="/tmp/ivaz 2017-03-16T15-23-15.729600 01-00.xml" />
+        <option value="/tmp/ivaz_xsd_1_3_2.xsd1" />
+        <option value="/opt/odoo/clients/general-erp" />
+        <option value="$USER_HOME$/Desktop/ivaz-dirt" />
+        <option value="/tmp/isaf 2017-01-06  2017-01-06.xml" />
+        <option value="/tmp/isaf 2017-03-01  2017-03-04.xml" />
+        <option value="/tmp/isaf 2017-01-01  2017-01-04.xml" />
+        <option value="/tmp/sync.xsd" />
+        <option value="/tmp/isaf 2017-02-14  2017-02-22.xml" />
+        <option value="/opt/odoo/odoo-10/digitouch" />
+        <option value="/opt/odoo/clients/general-erp/digi_addons" />
+        <option value="/opt/odoo/clients/terramodus-erp" />
+        <option value="/opt/odoo/odoo-10/digitouch/general-erp" />
+      </list>
+    </option>
+    <option name="openPaths">
+      <list>
+        <option value="/tmp/ivaz 2017-03-16T16-12-18.208928 01-00.xml" />
+      </list>
+    </option>
+    <option name="names">
+      <map>
+        <entry key="/opt/odoo/clients/terramodus-erp" value="terramodus-erp, general-erp-terra" />
+        <entry key="/tmp/ivaz_xsd_1_3_2.xsd1" value="ivaz_xsd_1_3_2.xsd1, testing-lxml" />
+      </map>
+    </option>
+    <option name="additionalInfo">
+      <map>
+        <entry key="$USER_HOME$/Desktop/general-erp">
+          <value>
+            <RecentProjectMetaInfo>
+              <option name="build" value="PC-162.1967.10" />
+              <option name="productionCode" value="PC" />
+              <option name="binFolder" value="$APPLICATION_HOME_DIR$/bin" />
+              <option name="projectOpenTimestamp" value="1483709731453" />
+              <option name="buildTimestamp" value="1473195600000" />
+            </RecentProjectMetaInfo>
+          </value>
+        </entry>
+        <entry key="$USER_HOME$/Desktop/ivaz-dirt">
+          <value>
+            <RecentProjectMetaInfo>
+              <option name="build" value="PC-162.1967.10" />
+              <option name="productionCode" value="PC" />
+              <option name="binFolder" value="$APPLICATION_HOME_DIR$/bin" />
+              <option name="projectOpenTimestamp" value="1489409698270" />
+              <option name="buildTimestamp" value="1473195600000" />
+            </RecentProjectMetaInfo>
+          </value>
+        </entry>
+        <entry key="$USER_HOME$/Desktop/mazv/digi_addons">
+          <value>
+            <RecentProjectMetaInfo>
+              <option name="build" value="PC-162.1967.10" />
+              <option name="productionCode" value="PC" />
+              <option name="binFolder" value="$APPLICATION_HOME_DIR$/bin" />
+              <option name="projectOpenTimestamp" value="1484645264839" />
+              <option name="buildTimestamp" value="1473195600000" />
+            </RecentProjectMetaInfo>
+          </value>
+        </entry>
+        <entry key="$USER_HOME$/Dropbox/notes_digi/isaf">
+          <value>
+            <RecentProjectMetaInfo>
+              <option name="build" value="PC-162.1967.10" />
+              <option name="productionCode" value="PC" />
+              <option name="binFolder" value="$APPLICATION_HOME_DIR$/bin" />
+              <option name="projectOpenTimestamp" value="1484047604315" />
+              <option name="buildTimestamp" value="1473195600000" />
+            </RecentProjectMetaInfo>
+          </value>
+        </entry>
+        <entry key="$USER_HOME$/Projects/odoo-vagrant/odoo_service/general-erp/digi_addons/property_valuation">
+          <value>
+            <RecentProjectMetaInfo>
+              <option name="build" value="PC-162.1967.10" />
+              <option name="productionCode" value="PC" />
+              <option name="binFolder" value="$APPLICATION_HOME_DIR$/bin" />
+              <option name="projectOpenTimestamp" value="1477898695641" />
+              <option name="buildTimestamp" value="1473195600000" />
+            </RecentProjectMetaInfo>
+          </value>
+        </entry>
+        <entry key="$USER_HOME$/Projects/vagrant-altas/odoo_service/altas-erp/addons/profile_altas">
+          <value>
+            <RecentProjectMetaInfo>
+              <option name="build" value="PC-162.1967.10" />
+              <option name="productionCode" value="PC" />
+              <option name="binFolder" value="$APPLICATION_HOME_DIR$/bin" />
+              <option name="projectOpenTimestamp" value="1478505762379" />
+              <option name="buildTimestamp" value="1473195600000" />
+            </RecentProjectMetaInfo>
+          </value>
+        </entry>
+        <entry key="$USER_HOME$/Projects/vagrant-heksimus/odoo_service">
+          <value>
+            <RecentProjectMetaInfo>
+              <option name="build" value="PC-162.1967.10" />
+              <option name="productionCode" value="PC" />
+              <option name="binFolder" value="$APPLICATION_HOME_DIR$/bin" />
+              <option name="projectOpenTimestamp" value="1481214718944" />
+              <option name="buildTimestamp" value="1473195600000" />
+            </RecentProjectMetaInfo>
+          </value>
+        </entry>
+        <entry key="$USER_HOME$/Projects/vagrant-heksimus/odoo_service/general-erp">
+          <value>
+            <RecentProjectMetaInfo>
+              <option name="build" value="PC-162.1967.10" />
+              <option name="productionCode" value="PC" />
+              <option name="binFolder" value="$APPLICATION_HOME_DIR$/bin" />
+              <option name="projectOpenTimestamp" value="1486643247736" />
+              <option name="buildTimestamp" value="1473195600000" />
+            </RecentProjectMetaInfo>
+          </value>
+        </entry>
+        <entry key="$USER_HOME$/Projects/vagrant-other/odoo_service/altas-erp/addons/profile_altas">
+          <value>
+            <RecentProjectMetaInfo>
+              <option name="build" value="PC-162.1967.10" />
+              <option name="productionCode" value="PC" />
+              <option name="binFolder" value="$APPLICATION_HOME_DIR$/bin" />
+              <option name="projectOpenTimestamp" value="1478165818639" />
+              <option name="buildTimestamp" value="1473195600000" />
+            </RecentProjectMetaInfo>
+          </value>
+        </entry>
+        <entry key="$USER_HOME$/Projects/vagrant-terra/odoo_service">
+          <value>
+            <RecentProjectMetaInfo>
+              <option name="build" value="PC-162.1967.10" />
+              <option name="productionCode" value="PC" />
+              <option name="binFolder" value="$APPLICATION_HOME_DIR$/bin" />
+              <option name="projectOpenTimestamp" value="1486643494767" />
+              <option name="buildTimestamp" value="1473195600000" />
+            </RecentProjectMetaInfo>
+          </value>
+        </entry>
+        <entry key="$USER_HOME$/Projects/vagrant-terra/odoo_service/general-erp">
+          <value>
+            <RecentProjectMetaInfo>
+              <option name="build" value="PC-162.1967.10" />
+              <option name="productionCode" value="PC" />
+              <option name="binFolder" value="$APPLICATION_HOME_DIR$/bin" />
+              <option name="projectOpenTimestamp" value="1486643477001" />
+              <option name="buildTimestamp" value="1473195600000" />
+            </RecentProjectMetaInfo>
+          </value>
+        </entry>
+        <entry key="$USER_HOME$/Projects/vagrant-terra/odoo_service/general-erp/digi_addons">
+          <value>
+            <RecentProjectMetaInfo>
+              <option name="build" value="PC-162.1967.10" />
+              <option name="productionCode" value="PC" />
+              <option name="binFolder" value="$APPLICATION_HOME_DIR$/bin" />
+              <option name="projectOpenTimestamp" value="1479226290539" />
+              <option name="buildTimestamp" value="1473195600000" />
+            </RecentProjectMetaInfo>
+          </value>
+        </entry>
+        <entry key="$USER_HOME$/Projects/vagrant-terra/odoo_service/terramodus-erp">
+          <value>
+            <RecentProjectMetaInfo>
+              <option name="build" value="PC-162.1967.10" />
+              <option name="productionCode" value="PC" />
+              <option name="binFolder" value="$APPLICATION_HOME_DIR$/bin" />
+              <option name="projectOpenTimestamp" value="1478176203669" />
+              <option name="buildTimestamp" value="1473195600000" />
+            </RecentProjectMetaInfo>
+          </value>
+        </entry>
+        <entry key="/opt/odoo">
+          <value>
+            <RecentProjectMetaInfo>
+              <option name="build" value="PC-162.1967.10" />
+              <option name="productionCode" value="PC" />
+              <option name="binFolder" value="$APPLICATION_HOME_DIR$/bin" />
+              <option name="projectOpenTimestamp" value="1481216515544" />
+              <option name="buildTimestamp" value="1473195600000" />
+            </RecentProjectMetaInfo>
+          </value>
+        </entry>
+        <entry key="/opt/odoo/addons">
+          <value>
+            <RecentProjectMetaInfo>
+              <option name="build" value="PC-162.1967.10" />
+              <option name="productionCode" value="PC" />
+              <option name="binFolder" value="$APPLICATION_HOME_DIR$/bin" />
+              <option name="projectOpenTimestamp" value="1481215999013" />
+              <option name="buildTimestamp" value="1473195600000" />
+            </RecentProjectMetaInfo>
+          </value>
+        </entry>
+        <entry key="/opt/odoo/clients/general-erp">
+          <value>
+            <RecentProjectMetaInfo>
+              <option name="build" value="PC-162.1967.10" />
+              <option name="productionCode" value="PC" />
+              <option name="binFolder" value="$APPLICATION_HOME_DIR$/bin" />
+              <option name="projectOpenTimestamp" value="1489565856848" />
+              <option name="buildTimestamp" value="1473195600000" />
+            </RecentProjectMetaInfo>
+          </value>
+        </entry>
+        <entry key="/opt/odoo/clients/general-erp/digi_addons">
+          <value>
+            <RecentProjectMetaInfo>
+              <option name="build" value="PC-162.1967.10" />
+              <option name="productionCode" value="PC" />
+              <option name="binFolder" value="$APPLICATION_HOME_DIR$/bin" />
+              <option name="projectOpenTimestamp" value="1486643637043" />
+              <option name="buildTimestamp" value="1473195600000" />
+            </RecentProjectMetaInfo>
+          </value>
+        </entry>
+        <entry key="/opt/odoo/clients/terramodus-erp">
+          <value>
+            <RecentProjectMetaInfo>
+              <option name="build" value="PC-162.1967.10" />
+              <option name="productionCode" value="PC" />
+              <option name="binFolder" value="$APPLICATION_HOME_DIR$/bin" />
+              <option name="projectOpenTimestamp" value="1486643524758" />
+              <option name="buildTimestamp" value="1473195600000" />
+            </RecentProjectMetaInfo>
+          </value>
+        </entry>
+        <entry key="/opt/odoo/odoo-10/digitouch">
+          <value>
+            <RecentProjectMetaInfo>
+              <option name="build" value="PC-162.1967.10" />
+              <option name="productionCode" value="PC" />
+              <option name="binFolder" value="$APPLICATION_HOME_DIR$/bin" />
+              <option name="projectOpenTimestamp" value="1487167446438" />
+              <option name="buildTimestamp" value="1473195600000" />
+            </RecentProjectMetaInfo>
+          </value>
+        </entry>
+        <entry key="/opt/odoo/odoo-10/digitouch/general-erp">
+          <value>
+            <RecentProjectMetaInfo>
+              <option name="build" value="PC-162.1967.10" />
+              <option name="productionCode" value="PC" />
+              <option name="binFolder" value="$APPLICATION_HOME_DIR$/bin" />
+              <option name="projectOpenTimestamp" value="1486633134699" />
+              <option name="buildTimestamp" value="1473195600000" />
+            </RecentProjectMetaInfo>
+          </value>
+        </entry>
+        <entry key="/tmp/isaf 2017-01-01  2017-01-04.xml">
+          <value>
+            <RecentProjectMetaInfo>
+              <option name="build" value="PC-162.1967.10" />
+              <option name="productionCode" value="PC" />
+              <option name="binFolder" value="$APPLICATION_HOME_DIR$/bin" />
+              <option name="projectOpenTimestamp" value="1488460321266" />
+              <option name="buildTimestamp" value="1473195600000" />
+            </RecentProjectMetaInfo>
+          </value>
+        </entry>
+        <entry key="/tmp/isaf 2017-01-04  2017-02-25.xml">
+          <value>
+            <RecentProjectMetaInfo>
+              <option name="build" value="PC-162.1967.10" />
+              <option name="productionCode" value="PC" />
+              <option name="binFolder" value="$APPLICATION_HOME_DIR$/bin" />
+              <option name="projectOpenTimestamp" value="1486452234480" />
+              <option name="buildTimestamp" value="1473195600000" />
+            </RecentProjectMetaInfo>
+          </value>
+        </entry>
+        <entry key="/tmp/isaf 2017-01-06  2017-01-06.xml">
+          <value>
+            <RecentProjectMetaInfo>
+              <option name="build" value="PC-162.1967.10" />
+              <option name="productionCode" value="PC" />
+              <option name="binFolder" value="$APPLICATION_HOME_DIR$/bin" />
+              <option name="projectOpenTimestamp" value="1488786040431" />
+              <option name="buildTimestamp" value="1473195600000" />
+            </RecentProjectMetaInfo>
+          </value>
+        </entry>
+        <entry key="/tmp/isaf 2017-01-10  2017-02-09.xml">
+          <value>
+            <RecentProjectMetaInfo>
+              <option name="build" value="PC-162.1967.10" />
+              <option name="productionCode" value="PC" />
+              <option name="binFolder" value="$APPLICATION_HOME_DIR$/bin" />
+              <option name="projectOpenTimestamp" value="1486628167683" />
+              <option name="buildTimestamp" value="1473195600000" />
+            </RecentProjectMetaInfo>
+          </value>
+        </entry>
+        <entry key="/tmp/isaf 2017-02-14  2017-02-22.xml">
+          <value>
+            <RecentProjectMetaInfo>
+              <option name="build" value="PC-162.1967.10" />
+              <option name="productionCode" value="PC" />
+              <option name="binFolder" value="$APPLICATION_HOME_DIR$/bin" />
+              <option name="projectOpenTimestamp" value="1487753133549" />
+              <option name="buildTimestamp" value="1473195600000" />
+            </RecentProjectMetaInfo>
+          </value>
+        </entry>
+        <entry key="/tmp/isaf 2017-03-01  2017-03-04.xml">
+          <value>
+            <RecentProjectMetaInfo>
+              <option name="build" value="PC-162.1967.10" />
+              <option name="productionCode" value="PC" />
+              <option name="binFolder" value="$APPLICATION_HOME_DIR$/bin" />
+              <option name="projectOpenTimestamp" value="1488784729509" />
+              <option name="buildTimestamp" value="1473195600000" />
+            </RecentProjectMetaInfo>
+          </value>
+        </entry>
+        <entry key="/tmp/ivaz 2017-03-16T15-23-15.729600 01-00.xml">
+          <value>
+            <RecentProjectMetaInfo>
+              <option name="build" value="PC-162.1967.10" />
+              <option name="productionCode" value="PC" />
+              <option name="binFolder" value="$APPLICATION_HOME_DIR$/bin" />
+              <option name="projectOpenTimestamp" value="1489674211966" />
+              <option name="buildTimestamp" value="1473195600000" />
+            </RecentProjectMetaInfo>
+          </value>
+        </entry>
+        <entry key="/tmp/ivaz 2017-03-16T15-41-34.860727 01-00.xml">
+          <value>
+            <RecentProjectMetaInfo>
+              <option name="build" value="PC-162.1967.10" />
+              <option name="productionCode" value="PC" />
+              <option name="binFolder" value="$APPLICATION_HOME_DIR$/bin" />
+              <option name="projectOpenTimestamp" value="1489675305661" />
+              <option name="buildTimestamp" value="1473195600000" />
+            </RecentProjectMetaInfo>
+          </value>
+        </entry>
+        <entry key="/tmp/ivaz 2017-03-16T16-12-18.208928 01-00.xml">
+          <value>
+            <RecentProjectMetaInfo>
+              <option name="build" value="PC-162.1967.10" />
+              <option name="productionCode" value="PC" />
+              <option name="binFolder" value="$APPLICATION_HOME_DIR$/bin" />
+              <option name="projectOpenTimestamp" value="1489677157516" />
+              <option name="buildTimestamp" value="1473195600000" />
+            </RecentProjectMetaInfo>
+          </value>
+        </entry>
+        <entry key="/tmp/ivaz_xsd_1_3_2.xsd1">
+          <value>
+            <RecentProjectMetaInfo>
+              <option name="build" value="PC-162.1967.10" />
+              <option name="productionCode" value="PC" />
+              <option name="binFolder" value="$APPLICATION_HOME_DIR$/bin" />
+              <option name="projectOpenTimestamp" value="1489663849613" />
+              <option name="buildTimestamp" value="1473195600000" />
+            </RecentProjectMetaInfo>
+          </value>
+        </entry>
+        <entry key="/tmp/sync.xsd">
+          <value>
+            <RecentProjectMetaInfo>
+              <option name="build" value="PC-162.1967.10" />
+              <option name="productionCode" value="PC" />
+              <option name="binFolder" value="$APPLICATION_HOME_DIR$/bin" />
+              <option name="projectOpenTimestamp" value="1488382583720" />
+              <option name="buildTimestamp" value="1473195600000" />
+            </RecentProjectMetaInfo>
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+</application>

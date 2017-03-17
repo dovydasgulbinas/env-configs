@@ -1,0 +1,8 @@
+<templateSet group="Python">
+  <template name="dbug" value="_logger.debug(u&quot;$var$: {}&quot;.format($END$$var$))" description="debug fast" toReformat="true" toShortenFQNames="true">
+    <variable name="var" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="Python" value="true" />
+    </context>
+  </template>
+</templateSet>

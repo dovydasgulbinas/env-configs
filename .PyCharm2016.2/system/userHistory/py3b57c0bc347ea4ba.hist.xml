@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?><console-history version="1" id="/home/hermes/Projects/vagrant-heksimus/odoo_service">
+  <history-entry><![CDATA[sdate = '2016-12-13']]></history-entry>
+  <history-entry><![CDATA[import datetime]]></history-entry>
+  <history-entry><![CDATA[today = datetime.date.today()]]></history-entry>
+  <history-entry><![CDATA[date = datetime.strptime(date, '%Y-%m-%d')]]></history-entry>
+  <history-entry><![CDATA[date = datetime.datetime.strptime(date, '%Y-%m-%d')]]></history-entry>
+  <history-entry><![CDATA[date = datetime.datetime.strptime(today, '%Y-%m-%d')]]></history-entry>
+  <history-entry><![CDATA[future = '2016-12-19']]></history-entry>
+  <history-entry><![CDATA[date = datetime.datetime.strptime(future, '%Y-%m-%d')]]></history-entry>
+  <history-entry><![CDATA[date = datetime.date.strptime(future, '%Y-%m-%d')]]></history-entry>
+  <history-entry><![CDATA[date = datetime.date.strptime(future, '%Y-%m-%d').date()]]></history-entry>
+  <history-entry><![CDATA[date = datetime.datetime.strptime(future, '%Y-%m-%d').date()]]></history-entry>
+  <history-entry><![CDATA[date = datetime.datetime.strptime('2016-12-29', '%Y-%m-%d').date()]]></history-entry>
+  <history-entry><![CDATA[today > date]]></history-entry>
+  <history-entry><![CDATA[date = datetime.datetime.strptime('2016-12-28', '%Y-%m-%d').date()]]></history-entry>
+  <history-entry><![CDATA[today <= date]]></history-entry>
+  <history-entry><![CDATA[future]]></history-entry>
+  <history-entry><![CDATA[(today < date) and (today not date)]]></history-entry>
+  <history-entry><![CDATA[(today < date) and (today != date)]]></history-entry>
+  <history-entry><![CDATA[clear]]></history-entry>
+  <history-entry><![CDATA[is_future = (today < date) and (today != date)]]></history-entry>
+  <history-entry><![CDATA[is_future = (today < date) and (today == date)]]></history-entry>
+  <history-entry><![CDATA[is_future]]></history-entry>
+  <history-entry><![CDATA[today == date]]></history-entry>
+  <history-entry><![CDATA[today]]></history-entry>
+  <history-entry><![CDATA[date]]></history-entry>
+  <history-entry><![CDATA[date = datetime.datetime.strptime('2016-11-28', '%Y-%m-%d').date()]]></history-entry>
+  <history-entry><![CDATA[date = datetime.datetime.strptime('2016-11-29', '%Y-%m-%d').date()]]></history-entry>
+  <history-entry><![CDATA[today < date]]></history-entry>
+</console-history>

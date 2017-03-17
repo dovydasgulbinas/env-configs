@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<conversion>
+  <applied-converters>
+    <converter id="PythonTestConverterProvider" />
+  </applied-converters>
+  <project-files>
+    <file path="/home/hermes/Projects/vagrant-heksimus/odoo_service/general-erp/.idea/dictionaries/hermes.xml" timestamp="1481882753000" />
+    <file path="/home/hermes/Projects/vagrant-heksimus/odoo_service/general-erp/.idea/general-erp.iml" timestamp="1484231898000" />
+    <file path="/home/hermes/Projects/vagrant-heksimus/odoo_service/general-erp/.idea/inspectionProfiles/Project_Default.xml" timestamp="1484062044000" />
+    <file path="/home/hermes/Projects/vagrant-heksimus/odoo_service/general-erp/.idea/inspectionProfiles/profiles_settings.xml" timestamp="1484062044000" />
+    <file path="/home/hermes/Projects/vagrant-heksimus/odoo_service/general-erp/.idea/markdown-navigator.xml" timestamp="1486628705000" />
+    <file path="/home/hermes/Projects/vagrant-heksimus/odoo_service/general-erp/.idea/markdown-navigator/profiles_settings.xml" timestamp="1486628704000" />
+    <file path="/home/hermes/Projects/vagrant-heksimus/odoo_service/general-erp/.idea/misc.xml" timestamp="1484231899000" />
+    <file path="/home/hermes/Projects/vagrant-heksimus/odoo_service/general-erp/.idea/modules.xml" timestamp="1481797029000" />
+    <file path="/home/hermes/Projects/vagrant-heksimus/odoo_service/general-erp/.idea/vcs.xml" timestamp="1481797044000" />
+    <file path="/home/hermes/Projects/vagrant-heksimus/odoo_service/general-erp/.idea/workspace.xml" timestamp="1486630790000" />
+  </project-files>
+</conversion>
+

@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?><console-history version="1" id="/home/hermes/Projects/vagrant-terra/odoo_service/general-erp/digi_addons">
+  <history-entry><![CDATA[precision = 3]]></history-entry>
+  <history-entry><![CDATA[precision_formater = '%.{}f'.format(precision)]]></history-entry>
+  <history-entry><![CDATA[decimal_part = precision_formater.float(99.654321)]]></history-entry>
+  <history-entry><![CDATA[precision_formater = '{}.{}f'.format(4.6789, 2)]]></history-entry>
+  <history-entry><![CDATA[precision_formater = '%.{}f'.format(2)]]></history-entry>
+  <history-entry><![CDATA[precision_formater]]></history-entry>
+  <history-entry><![CDATA[precision_formater % 5.96789]]></history-entry>
+  <history-entry><![CDATA[a = '%.{}f'.format(1) % 9.456789]]></history-entry>
+  <history-entry><![CDATA[amount = 7]]></history-entry>
+  <history-entry><![CDATA[amount = 7.6543210]]></history-entry>
+  <history-entry><![CDATA[decimal_part = ('%.{}f'.format(precision) % amount).split('.')[-1]]]></history-entry>
+  <history-entry><![CDATA[float(0)]]></history-entry>
+  <history-entry><![CDATA[precision = 2]]></history-entry>
+  <history-entry><![CDATA[amount = 35.67891]]></history-entry>
+  <history-entry><![CDATA[whole_part , decimal_part = ('%.{}f'.format(precision) % amount).split('.')]]></history-entry>
+  <history-entry><![CDATA[whole_part]]></history-entry>
+  <history-entry><![CDATA[decimal_part]]></history-entry>
+  <history-entry><![CDATA[l = lambda x: x**2]]></history-entry>
+  <history-entry><![CDATA[map(l, )]]></history-entry>
+  <history-entry><![CDATA[a = u'{0}--{0}'.format(u'5ųąč„ūėųą„č')]]></history-entry>
+  <history-entry><![CDATA[a = 'ą']]></history-entry>
+  <history-entry><![CDATA[a]]></history-entry>
+  <history-entry><![CDATA[flaot(None)]]></history-entry>
+  <history-entry><![CDATA[float]]></history-entry>
+  <history-entry><![CDATA[float(None)]]></history-entry>
+  <history-entry><![CDATA[-6.989898 > 0]]></history-entry>
+  <history-entry><![CDATA[-6.989898 < 0]]></history-entry>
+  <console-content><![CDATA[-6.989898 < 0]]></console-content>
+</console-history>
