@@ -1,6 +1,0 @@
-# PyCharm failed to generate skeletons for these modules.
-# These skeletons will be re-generated automatically
-# when a newer module version or an updated generator becomes available.
-/usr/lib/python2.7/dist-packages/wx-3.0-gtk2/wx/_html2.x86_64-linux-gnu.so = 1.143 1439203962000
-/usr/local/lib/python2.7/dist-packages/PIL/_imagingtk.so = 1.143 1486373989000
-/usr/lib/python2.7/dist-packages/Levenshtein/_levenshtein.x86_64-linux-gnu.so = 1.143 1453159393000
