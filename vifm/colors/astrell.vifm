@@ -1,4 +1,5 @@
-" vim: filetype=vifm :
+" by astrell
+" with builtin regular/root user differentiation
 
 highlight clear
 
@@ -24,3 +25,9 @@ highlight  Executable  cterm=bold     ctermfg=23       ctermbg=default
 highlight  Selected    cterm=bold     ctermfg=default  ctermbg=182
 highlight  CurrLine    cterm=bold     ctermfg=238      ctermbg=153
 highlight  OtherLine   cterm=default  ctermfg=default  ctermbg=default
+
+" overwrite some colors for root user
+if $USER == 'root'
+    highlight  Win         cterm=none     ctermfg=0        ctermbg=182
+    highlight  Selected    cterm=bold     ctermfg=default  ctermbg=217
+endif
