@@ -3,15 +3,24 @@
 ## In general 
 
 ```
+# Add color support for terminal (bash)
+echo "export TERM=xterm-256color" >> "$HOME/.bashrc"
 
-`echo "export TERM=xterm-256color" >> "$HOME/.bashrc"`
+# For zsh
+echo "export TERM=xterm-256color" >> "$HOME/.zshrc"
 
+# create vifm directories (OS X)
 mkdir -p $HOME/.config/vifm/
 mkdir -p $HOME/.config/vifm/colors/
 mkdir -p $HOME/.config/vifm/scripts/
 
+# create vifm directories (Ubuntu)
+mkdir -p $HOME/.vifm/colors/
+mkdir -p $HOME/.vifm/scripts/
+
 # copy config on local machine
 cp ./vifm-homebrew/vifmrc "$HOME/.config/vifm/" 
+
 
 # if you want to do it on remote machine (copies file to clipboard MacOS only) 
 cat ./vifm-homebrew/vifmrc | pbcopy
