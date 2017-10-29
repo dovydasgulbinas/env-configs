@@ -110,9 +110,6 @@ alias tv-jack="ssh osmc@namas.duckdns.org -p 55522 -L 9117:127.0.0.1:9117"
 alias tv-router="echo 'http://localhost:8080' && ssh osmc@namas.duckdns.org -p 55522 -L 8080:192.168.0.1:80"
 alias devops="source activate deploy" # created using conda create -n deploy python=2.7 fabric
 
-alias gs="/Users/hermes/Shells/gs.sh"
-alias ds="/Users/hermes/Shells/ds.sh"
-
 blogdir="$HOME/Desktop/blog"
 alias blog-serve="cd $blogdir && bundle exec jekyll serve --drafts"
 alias blog-serve-no-drafts="cd $HOME/Desktop/blog && bundle exec jekyll serve"
@@ -138,6 +135,7 @@ export EDITOR=vim
 alias ubuntu="ssh parallels@ubuntu.local"
 alias ll="exa -la"
 export PATH=$HOME/anaconda/bin:$PATH
+export PATH=$HOME/diy/env-configs/scripts:$PATH
 alias ldap-adm="ssh ud_dovydas_gulbinas@momentcredit.lt -L 8081:192.168.2.76:80 -f -N"
 alias ldap-server-tls="ssh ud_dovydas_gulbinas@momentcredit.lt -L 8389:192.168.2.76:389 -f -N"
 alias ldap-server-ssl="ssh ud_dovydas_gulbinas@momentcredit.lt -L 8636:192.168.2.76:636 -f -N"
