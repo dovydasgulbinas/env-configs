@@ -1,1 +1,0 @@
-/Users/hermes/diy/env-configs/vim/vimrc-mac /Users/hermes/.vimrc

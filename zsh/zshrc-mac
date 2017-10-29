@@ -1,0 +1,157 @@
+# export PATH=$HOME/bin:/usr/local/bin:$PATH
+
+# Path to your oh-my-zsh installation.
+export ZSH=/Users/hermes/.oh-my-zsh
+
+# Set name of the theme to load. Optionally, if you set this to "random"
+# it'll load a random theme each time that oh-my-zsh is loaded.
+# See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
+ZSH_THEME="robbyrussell"
+export TERM=xterm-256color
+# Uncomment the following line to use case-sensitive completion.
+# CASE_SENSITIVE="true"
+
+# Uncomment the following line to use hyphen-insensitive completion. Case
+# sensitive completion must be off. _ and - will be interchangeable.
+# HYPHEN_INSENSITIVE="true"
+
+# Uncomment the following line to disable bi-weekly auto-update checks.
+# DISABLE_AUTO_UPDATE="true"
+
+# Uncomment the following line to change how often to auto-update (in days).
+# export UPDATE_ZSH_DAYS=13
+
+# Uncomment the following line to disable colors in ls.
+# DISABLE_LS_COLORS="true"
+
+# Uncomment the following line to disable auto-setting terminal title.
+# DISABLE_AUTO_TITLE="true"
+
+# Uncomment the following line to enable command auto-correction.
+# ENABLE_CORRECTION="true"
+
+# Uncomment the following line to display red dots whilst waiting for completion.
+# COMPLETION_WAITING_DOTS="true"
+
+# Uncomment the following line if you want to disable marking untracked files
+# under VCS as dirty. This makes repository status check for large repositories
+# much, much faster.
+# DISABLE_UNTRACKED_FILES_DIRTY="true"
+
+# Uncomment the following line if you want to change the command execution time
+# stamp shown in the history command output.
+# The optional three formats: "mm/dd/yyyy"|"dd.mm.yyyy"|"yyyy-mm-dd"
+# HIST_STAMPS="mm/dd/yyyy"
+
+# Would you like to use another custom folder than $ZSH/custom?
+# ZSH_CUSTOM=/path/to/new-custom-folder
+
+# Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
+# Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
+# Example format: plugins=(rails git textmate ruby lighthouse)
+# Add wisely, as too many plugins slow down shell startup.
+plugins=(git mercurial)
+
+source $ZSH/oh-my-zsh.sh
+
+# User configuration
+
+# export MANPATH="/usr/local/man:$MANPATH"
+
+# You may need to manually set your language environment
+# export LANG=en_US.UTF-8
+
+# Preferred editor for local and remote sessions
+if [[ -n $SSH_CONNECTION ]]; then
+  export EDITOR='vim'
+else
+  export EDITOR='mvim'
+fi
+
+# Compilation flags
+# export ARCHFLAGS="-arch x86_64"
+
+# ssh
+# export SSH_KEY_PATH="~/.ssh/rsa_id"
+
+# Set personal aliases, overriding those provided by oh-my-zsh libs,
+# plugins, and themes. Aliases can be placed here, though oh-my-zsh
+# users are encouraged to define aliases within the ZSH_CUSTOM folder.
+# For a full list of active aliases, run `alias`.
+#
+# Example aliases
+# alias zshconfig="mate ~/.zshrc"
+# alias ohmyzsh="mate ~/.oh-my-zsh"
+fortune | cowsay 
+PROMPT='${ret_status}%{$fg_bold[green]%}%p %{$fg[cyan]%}%c %{$fg_bold[blue]%}$(git_prompt_info)$(hg_prompt_info)%{$fg_bold[blue]%} % %{$reset_color%}'
+
+ZSH_THEME_HG_PROMPT_PREFIX="%{$fg_bold[magenta]%}hg:(%{$fg[red]%}"
+ZSH_THEME_HG_PROMPT_SUFFIX="%{$reset_color%}"
+ZSH_THEME_HG_PROMPT_DIRTY="%{$fg[magenta]%}) %{$fg[yellow]%}✗%{$reset_color%}"
+ZSH_THEME_HG_PROMPT_CLEAN="%{$fg[magenta]%})"
+
+export LC_ALL=en_US.UTF-8
+export LANG=en_US.UTF-8
+export LC_TYPE=en_US.UTF-8
+export LANGUAGE=en_US.UTF-8
+
+alias belly="ssh pi@berry.local"
+alias berry="ssh pi@namas.duckdns.org"
+alias warsaw="ssh pi@213.159.56.188"
+alias tv="ssh osmc@namas.duckdns.org -p 55522"
+alias tv-tr="ssh osmc@namas.duckdns.org -p 55522 -L 9091:127.0.0.1:9091"
+alias tv-prop="ssh osmc@namas.duckdns.org -p 55522 -L 8989:127.0.0.1:8989"
+#alias hass="ssh homeassistant@namas.duckdns.org"
+alias kali="ssh root@namas.duckdns.org -p 55521"
+alias momf="ssh ud_dovydas_gulbinas@momentcredit.lt -L 1521:moment:1521"
+alias mom="ssh ud_dovydas_gulbinas@momentcredit.lt"
+alias tv-rad="ssh osmc@namas.duckdns.org -p 55522 -L 7878:127.0.0.1:7878"
+alias tv-jack="ssh osmc@namas.duckdns.org -p 55522 -L 9117:127.0.0.1:9117"
+alias tv-router="echo 'http://localhost:8080' && ssh osmc@namas.duckdns.org -p 55522 -L 8080:192.168.0.1:80"
+alias devops="source activate deploy" # created using conda create -n deploy python=2.7 fabric
+
+alias gs="/Users/hermes/Shells/gs.sh"
+alias ds="/Users/hermes/Shells/ds.sh"
+
+blogdir="$HOME/Desktop/blog"
+alias blog-serve="cd $blogdir && bundle exec jekyll serve --drafts"
+alias blog-serve-no-drafts="cd $HOME/Desktop/blog && bundle exec jekyll serve"
+alias blog-go="cd $blogdir"
+alias blog-edit="cd $blogdir && vifm ."
+
+alias moz-ro=" ssh ud_dovydas_gulbinas@194.0.160.12"
+alias moz-deploy-ro="/Users/hermes/Desktop/mc-notes/deploy/romania-test.sh"
+alias shell-conf="vim $HOME/.zshrc"
+eval 
+            fuck () {
+                TF_PREVIOUS=$(fc -ln -1 | tail -n 1);
+                TF_CMD=$(
+                    TF_ALIAS=fuck
+                    TF_SHELL_ALIASES=$(alias)
+                    PYTHONIOENCODING=utf-8
+                    thefuck $TF_PREVIOUS THEFUCK_ARGUMENT_PLACEHOLDER $*
+                ) && eval $TF_CMD;
+                test -n "$TF_CMD" && print -s $TF_CMD
+            }
+        
+export EDITOR=vim
+alias ubuntu="ssh parallels@ubuntu.local"
+alias ll="exa -la"
+export PATH=$HOME/anaconda/bin:$PATH
+alias ldap-adm="ssh ud_dovydas_gulbinas@momentcredit.lt -L 8081:192.168.2.76:80 -f -N"
+alias ldap-server-tls="ssh ud_dovydas_gulbinas@momentcredit.lt -L 8389:192.168.2.76:389 -f -N"
+alias ldap-server-ssl="ssh ud_dovydas_gulbinas@momentcredit.lt -L 8636:192.168.2.76:636 -f -N"
+alias portal-ssl="ssh ud_dovydas_gulbinas@momentcredit.lt -L 8443:192.168.2.81:443 -f -N"
+alias portal-plain="ssh ud_dovydas_gulbinas@momentcredit.lt -L 8080:192.168.2.81:80 -f -N"
+alias portal-django="ssh ud_dovydas_gulbinas@momentcredit.lt -L 8100:192.168.2.81:8000 -f -N"
+alias poland-tls="ssh ud_dovydas_gulbinas@momentcredit.lt -L 8443:192.168.2.77:443 -f -N"
+alias poland-tomcat="ssh ud_dovydas_gulbinas@momentcredit.lt -L 8080:192.168.2.77:8080 -f -N"
+alias poland="ssh ud_dovydas_gulbinas@momentcredit.lt -L 8080:192.168.2.77:80 -f -N"
+alias cenv="source /Users/hermes/Projects/ldap-project/ldapsite/certenv/bin/activate && cd /Users/hermes/Projects/ldap-project/ldapsite"
+
+alias mc="LC_ALL=en_US.UTF-8 LANG=en_US.UTF-8 mc"
+#alias dash='function _blah(){open dash:// $1;};_blah'
+export PYTHONDONTWRITEBYTECODE=1
+
+export PATH="/usr/local/opt/sqlite/bin:$PATH"
+
