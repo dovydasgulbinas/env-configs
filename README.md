@@ -28,6 +28,7 @@ git clone git@github.com:megamorphf/env-configs.git $HOME/diy/env-configs
 
 ```
 # vim
+cd $HOME && ln -s ./diy/env-configs/vim/hidden.vim .vim
 cd $HOME && ln -s ./diy/env-configs/vim/basic.vimrc .vimrc
 
 # vifm, OS X
