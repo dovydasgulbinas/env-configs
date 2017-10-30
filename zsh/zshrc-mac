@@ -118,7 +118,7 @@ alias blog-edit="cd $blogdir && vifm ."
 
 alias moz-ro=" ssh ud_dovydas_gulbinas@194.0.160.12"
 alias moz-deploy-ro="/Users/hermes/Desktop/mc-notes/deploy/romania-test.sh"
-alias shell-conf="vim $HOME/.zshrc"
+alias shellconf="vim $HOME/.zshrc"
 eval 
             fuck () {
                 TF_PREVIOUS=$(fc -ln -1 | tail -n 1);

@@ -32,7 +32,7 @@ cd $HOME && ln -s ./diy/env-configs/vim/hidden.vim .vim
 cd $HOME && ln -s ./diy/env-configs/vim/basic.vimrc .vimrc
 
 # vifm, OS X
-cd $HOME/.config && ln -s ./diy/env-configs/vifm/ vifm
+cd $HOME/.config && ln -s ../diy/env-configs/vifm/ vifm
 
 # vifm, Debian
 cd $HOME && ln -s ./diy/env-configs/vifm/ vifm
