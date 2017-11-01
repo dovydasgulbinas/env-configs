@@ -1,4 +1,3 @@
-# export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 # Path to your oh-my-zsh installation.
 export ZSH=/Users/hermes/.oh-my-zsh
@@ -31,7 +30,7 @@ export TERM=xterm-256color
 # ENABLE_CORRECTION="true"
 
 # Uncomment the following line to display red dots whilst waiting for completion.
-# COMPLETION_WAITING_DOTS="true"
+COMPLETION_WAITING_DOTS="true"
 
 # Uncomment the following line if you want to disable marking untracked files
 # under VCS as dirty. This makes repository status check for large repositories
@@ -98,19 +97,25 @@ export LANGUAGE=en_US.UTF-8
 alias belly="ssh pi@berry.local"
 alias berry="ssh pi@namas.duckdns.org"
 alias warsaw="ssh pi@213.159.56.188"
-alias tv="ssh osmc@namas.duckdns.org -p 55522"
-alias tv-tr="ssh osmc@namas.duckdns.org -p 55522 -L 9091:127.0.0.1:9091"
-alias tv-prop="ssh osmc@namas.duckdns.org -p 55522 -L 8989:127.0.0.1:8989"
 #alias hass="ssh homeassistant@namas.duckdns.org"
 alias kali="ssh root@namas.duckdns.org -p 55521"
 alias momf="ssh ud_dovydas_gulbinas@momentcredit.lt -L 1521:moment:1521"
 alias mom="ssh ud_dovydas_gulbinas@momentcredit.lt"
-alias tv-rad="ssh osmc@namas.duckdns.org -p 55522 -L 7878:127.0.0.1:7878"
-alias tv-jack="ssh osmc@namas.duckdns.org -p 55522 -L 9117:127.0.0.1:9117"
-alias tv-router="echo 'http://localhost:8080' && ssh osmc@namas.duckdns.org -p 55522 -L 8080:192.168.0.1:80"
+
+alias tv="ssh osmc@namas.duckdns.org -p 55522"
+alias tv-tr="open http://localhost:9091 && ssh osmc@namas.duckdns.org -p 55522 -L 9091:127.0.0.1:9091"
+alias tv-son="open http://localhost:8989 && ssh osmc@namas.duckdns.org -p 55522 -L 8989:127.0.0.1:8989"
+alias tv-rad="open http://localhost:7878 && ssh osmc@namas.duckdns.org -p 55522 -L 7878:127.0.0.1:7878"
+alias tv-jack="open http://localhost:9117 && ssh osmc@namas.duckdns.org -p 55522 -L 9117:127.0.0.1:9117"
+alias tv-router="open http://localhost:8080 && ssh osmc@namas.duckdns.org -p 55522 -L 8080:192.168.0.1:80"
+alias tv-ebot="open http://localhost:8081 && ssh osmc@namas.duckdns.org -p 55522 -L 8081:192.168.0.7:8081"
 alias devops="source activate deploy" # created using conda create -n deploy python=2.7 fabric
 
 blogdir="$HOME/Desktop/blog"
+
+export BLOG_DIR="$blogdir"
+export SCRIPTS_DIR="$HOME/diy/env-configs/scripts"
+
 alias blog-serve="cd $blogdir && bundle exec jekyll serve --drafts"
 alias blog-serve-no-drafts="cd $HOME/Desktop/blog && bundle exec jekyll serve"
 alias blog-go="cd $blogdir"
@@ -134,8 +139,10 @@ eval
 export EDITOR=vim
 alias ubuntu="ssh parallels@ubuntu.local"
 alias ll="exa -la"
-export PATH=$HOME/anaconda/bin:$PATH
+# export PATH=$HOME/anaconda/bin:$PATH
+export PATH=$HOME/anaconda/envs/deploy/bin:$PATH
 export PATH=$HOME/diy/env-configs/scripts:$PATH
+
 alias ldap-adm="ssh ud_dovydas_gulbinas@momentcredit.lt -L 8081:192.168.2.76:80 -f -N"
 alias ldap-server-tls="ssh ud_dovydas_gulbinas@momentcredit.lt -L 8389:192.168.2.76:389 -f -N"
 alias ldap-server-ssl="ssh ud_dovydas_gulbinas@momentcredit.lt -L 8636:192.168.2.76:636 -f -N"
@@ -150,6 +157,7 @@ alias cenv="source /Users/hermes/Projects/ldap-project/ldapsite/certenv/bin/acti
 alias mc="LC_ALL=en_US.UTF-8 LANG=en_US.UTF-8 mc"
 #alias dash='function _blah(){open dash:// $1;};_blah'
 export PYTHONDONTWRITEBYTECODE=1
-
 export PATH="/usr/local/opt/sqlite/bin:$PATH"
 
+# use vi keybindings
+set -o vi

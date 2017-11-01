@@ -43,6 +43,10 @@ cd $HOME && ln -s ./diy/env-configs/zsh/.zshrc .zshrc
 # git
 cd $HOME && ln -s ./diy/env-configs/git/.gitignore_global .gitignore_global
 
+# tmux
+cd $HOME && ln -s ./diy/env-configs/tmux/hidden.tmux.conf .tmux.conf
+# Optional inputrc
+ln -s ./diy/env-configs/zsh/hidden.inputrc .inputrc
 ```
 
 

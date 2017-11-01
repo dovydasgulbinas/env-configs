@@ -15,7 +15,7 @@ powerline
 ```
 1. Download and install the fonts for powerline
 2. In your terminal choose one of the fonts containing name powerline
-3. Install powerline bindings for other programs 
+3. [Install powerline][poweline-install] bindings for other programs 
 
 ```
 binddir="$HOME/diy/env-configs/powerline"
@@ -27,3 +27,5 @@ if [[ -r $powerline_zsh ]]; then
 fi
 
 ```
+
+[powerline-install]: "https://askubuntu.com/questions/283908/how-can-i-install-and-use-powerline-plugin#540730"
