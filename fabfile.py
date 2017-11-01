@@ -14,7 +14,7 @@ env.conf_folder = 'env-configs'
 # looks like /home/hermes/diy/env-configs
 env.conf_dir = os.path.join(env.parent_dir, env.conf_folder)
 env.branch = 'master'
-env.alias = 'default'
+env.alias = 'default'  # do not change this
 
 def satellite():
     env.user = 'hermes'
