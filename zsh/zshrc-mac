@@ -124,6 +124,7 @@ alias blog-edit="cd $blogdir && vifm ."
 alias moz-ro=" ssh ud_dovydas_gulbinas@194.0.160.12"
 alias moz-deploy-ro="/Users/hermes/Desktop/mc-notes/deploy/romania-test.sh"
 alias shellconf="vim $HOME/.zshrc"
+alias vimconf="vim $HOME/.vimrc"
 eval 
             fuck () {
                 TF_PREVIOUS=$(fc -ln -1 | tail -n 1);
@@ -143,7 +144,7 @@ alias ll="exa -la"
 export PATH=$HOME/anaconda/envs/deploy/bin:$PATH
 export PATH=$HOME/diy/env-configs/scripts:$PATH
 
-alias ldap-adm="ssh ud_dovydas_gulbinas@momentcredit.lt -L 8081:192.168.2.76:80 -f -N"
+alias ldap-adm="open http://localhost:8081/ldapadmin/ && ssh ud_dovydas_gulbinas@momentcredit.lt -L 8081:192.168.2.76:80 -f -N"
 alias ldap-server-tls="ssh ud_dovydas_gulbinas@momentcredit.lt -L 8389:192.168.2.76:389 -f -N"
 alias ldap-server-ssl="ssh ud_dovydas_gulbinas@momentcredit.lt -L 8636:192.168.2.76:636 -f -N"
 alias portal-ssl="ssh ud_dovydas_gulbinas@momentcredit.lt -L 8443:192.168.2.81:443 -f -N"

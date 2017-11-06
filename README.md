@@ -27,9 +27,15 @@ git clone git@github.com:megamorphf/env-configs.git $HOME/diy/env-configs
 ## 2. create symlinks to your conf files
 
 ```
+confpath="$HOME/diy/env-configs"
+
 # vim
 cd $HOME && ln -s ./diy/env-configs/vim/hidden.vim .vim
 cd $HOME && ln -s ./diy/env-configs/vim/basic.vimrc .vimrc
+
+# gvim
+cd $confpath/vim/ && ln -s ./vimrc-mac ./gvimrc
+cd $HOME ln -s $confpath/vim/.gvimrc .gvimrc
 
 # vifm, OS X
 cd $HOME/.config && ln -s ../diy/env-configs/vifm/ vifm
@@ -42,6 +48,7 @@ cd $HOME && ln -s ./diy/env-configs/zsh/.zshrc .zshrc
 
 # git
 cd $HOME && ln -s ./diy/env-configs/git/.gitignore_global .gitignore_global
+cd $HOME && ln -s ./diy/env-configs/git/.gitconfig .gitconfig
 
 # tmux
 cd $HOME && ln -s ./diy/env-configs/tmux/hidden.tmux.conf .tmux.conf

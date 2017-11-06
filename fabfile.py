@@ -9,7 +9,7 @@ env.user = 'hermes'
 env.hosts = ['192.168.0.7']
 env.conf_repo = 'https://github.com/megamorphf/env-configs.git'
 env.parent_dir = '$HOME/diy'  # directory under which you store your confs and personal items
-env.parent_rel = '.diy'  # directory under which you store your confs and personal items
+env.parent_rel = './diy'  # directory under which you store your confs and personal items
 env.conf_folder = 'env-configs'
 # looks like /home/hermes/diy/env-configs
 env.conf_dir = os.path.join(env.parent_dir, env.conf_folder)
@@ -20,6 +20,13 @@ def satellite():
     env.user = 'hermes'
     env.hosts = ['192.168.0.7']
     env.alias = 'satellite'
+
+
+def hassio():
+    env.user = 'root'
+    env.hosts = ['192.168.0.105']
+    env.alias = 'hassio'
+
 
 
 def pull_confs(first_time=True):
@@ -51,17 +58,30 @@ def setup_tmux(confname='.tmux.conf', confdir='$HOME', conffile='tmux/hidden.tmu
         run('ls -alt | grep {}'.format(confname))
 
 
+def install_vundle():
+    run("git clone https://github.com/VundleVim/Vundle.vim.git {}".format())
+
+
 def get_bashrc():
     remote = '.bashrc'
     local = './bash/{}.bashrc'.format(env.alias)
     get(remote_path=remote, local_path=local)
 
+
+def get_secrets():
+    # remote = '/config/secrets.yaml'
+    # local = './downloads/secrets.yaml'
+    # get(remote_path=remote, local_path=local)
+
+    secret_list = ['secrets.yaml', 'known_devices.yaml']
+
+    for secret in secret_list:
+        remote = os.path.join('/config', secret)
+        localf = os.path.join('./downloads', secret)
+        get(remote_path=remote, local_path=localf)
+
 def setup_bash():
     pass
-
-
-def setup_all():
-    setup_tmux()
 
 
 def test():

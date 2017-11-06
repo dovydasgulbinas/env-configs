@@ -24,6 +24,13 @@ Plugin 'rstacruz/sparkup', {'rtp': 'vim/'}
 " different version somewhere else.
 " Plugin 'ascenator/L9', {'name': 'newL9'}
 
+Plugin 'vim-airline/vim-airline'
+Plugin 'vim-airline/vim-airline-themes'
+"Plugin 'dbext.vim'
+
+Plugin 'neocomplcache'
+
+
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
 filetype plugin indent on    " required
@@ -72,6 +79,19 @@ let python_highlight_all = 1
 nnoremap ,s :setlocal spell spelllang=en_us
 nnoremap ,S :set nospell
 nnoremap ,c :edit $HOME/.vimrc 
+nnoremap T :tabnew
+set hlsearch
+set ignorecase
+" FIXME: Remove for gvim 
+let g:neocomplcache_enable_at_startup = 1
+"set background=dark
+"colorscheme hemisu
+
 
 " https://stackoverflow.com/questions/5169638/autocompletion-in-vim
 " https://docs.oseems.com/general/application/vim/auto-complete-php
+"
+
+" vim airline setup https://github.com/vim-airline/vim-airline
+let g:airline#extensions#tabline#enabled = 1
+

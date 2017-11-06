@@ -14,7 +14,7 @@ set ts=2
 set expandtab
 
 " when using the >> or << commands, shift lines by 4 spaces
-set shiftwidth=4
+set shiftwidth=2
 
 " show a visual line under the cursor's current line
 set cursorline
@@ -26,14 +26,8 @@ set cursorline
 let python_highlight_all = 1
 
 " enbles spell check https://www.linux.com/learn/using-spell-checking-vim
-setlocal spell spelllang=en_us
+" setlocal spell spelllang=en_us
 
 
 " https://stackoverflow.com/questions/5169638/autocompletion-in-vim
 filetype plugin on
-au FileType php setl ofu=phpcomplete#CompletePHP
-au FileType ruby,eruby setl ofu=rubycomplete#Complete
-au FileType python setl ofu=pythoncomplete#Complete
-au FileType html,xhtml setl ofu=htmlcomplete#CompleteTags
-au FileType c setl ofu=ccomplete#CompleteCpp
-au FileType css setl ofu=csscomplete#CompleteCSS
