@@ -4,7 +4,6 @@ from fabric.state import env
 import os
 
 
-
 env.user = 'hermes'
 env.hosts = ['192.168.0.7']
 env.conf_repo = 'https://github.com/megamorphf/env-configs.git'
@@ -13,6 +12,7 @@ env.parent_rel = './diy'  # directory under which you store your confs and perso
 env.conf_folder = 'env-configs'
 # looks like /home/hermes/diy/env-configs
 env.conf_dir = os.path.join(env.parent_dir, env.conf_folder)
+env.vundle_dir =  os.path.join(env.conf_dir, 'vim/hidden.vim/bundle')
 env.branch = 'master'
 env.alias = 'default'  # do not change this
 
@@ -20,16 +20,17 @@ def satellite():
     env.user = 'hermes'
     env.hosts = ['192.168.0.7']
     env.alias = 'satellite'
+    env.install_manager = "apt install"
 
 
 def hassio():
     env.user = 'root'
     env.hosts = ['192.168.0.105']
     env.alias = 'hassio'
+    env.package_manager = ""
 
 
-
-def pull_confs(first_time=True):
+def pull_confs(first_time=False):
 
     if first_time:
         run('mkdir -p {}'.format(env.parent_dir))
@@ -48,6 +49,12 @@ def make_backup(filename, filedir='$HOME', ending='.bak'):
     run('(mv {file} {file}{ending}; exit 0)'.format(file=full_path, ending=ending))
 
 
+def install_package(package_name):
+    sudo("{install_manager} -y {package_name}".format(
+        install_manager=env.install_manager,
+        package_name=package_name))
+
+
 def setup_tmux(confname='.tmux.conf', confdir='$HOME', conffile='tmux/hidden.tmux.conf'):
     make_backup(confname, confdir)
 
@@ -58,8 +65,19 @@ def setup_tmux(confname='.tmux.conf', confdir='$HOME', conffile='tmux/hidden.tmu
         run('ls -alt | grep {}'.format(confname))
 
 
+def setup_vim():
+    with cd('$HOME'):
+        run("ln -s ./diy/env-configs/vim/vimrc-mac .vimrc")
+
+
 def install_vundle():
-    run("git clone https://github.com/VundleVim/Vundle.vim.git {}".format())
+    try:
+        run("git clone https://github.com/VundleVim/Vundle.vim.git {}".format(env.vundle_dir))
+    except Exception as e:
+        print("Clonning failed vundle already probably installed: {}".format(e))
+
+    finally:
+        run("vim +PluginInstall +qall")
 
 
 def get_bashrc():
@@ -80,9 +98,18 @@ def get_secrets():
         localf = os.path.join('./downloads', secret)
         get(remote_path=remote, local_path=localf)
 
+
 def setup_bash():
     pass
 
+
+def first_full_install():
+    pull_confs(True)
+    install_package('vim')
+    setup_vim()
+    install_vundle()
+    install_package('tmux')
+    setup_tmux()
 
 def test():
     pass

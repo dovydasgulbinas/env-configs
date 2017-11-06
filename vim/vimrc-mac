@@ -23,13 +23,10 @@ Plugin 'rstacruz/sparkup', {'rtp': 'vim/'}
 " Install L9 and avoid a Naming conflict if you've already installed a
 " different version somewhere else.
 " Plugin 'ascenator/L9', {'name': 'newL9'}
-
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
 "Plugin 'dbext.vim'
-
 Plugin 'neocomplcache'
-
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -64,7 +61,7 @@ set ts=2
 set expandtab
 
 " when using the >> or << commands, shift lines by 4 spaces
-set shiftwidth=4
+set shiftwidth=2
 
 " show a visual line under the cursor's current line
 set cursorline
@@ -78,6 +75,7 @@ let python_highlight_all = 1
 " enbles spell check https://www.linux.com/learn/using-spell-checking-vim
 nnoremap ,s :setlocal spell spelllang=en_us
 nnoremap ,S :set nospell
+nnoremap ,w :w
 nnoremap ,c :edit $HOME/.vimrc 
 nnoremap T :tabnew
 set hlsearch
@@ -90,8 +88,5 @@ let g:neocomplcache_enable_at_startup = 1
 
 " https://stackoverflow.com/questions/5169638/autocompletion-in-vim
 " https://docs.oseems.com/general/application/vim/auto-complete-php
-"
-
 " vim airline setup https://github.com/vim-airline/vim-airline
 let g:airline#extensions#tabline#enabled = 1
-
