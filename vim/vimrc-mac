@@ -25,7 +25,7 @@ Plugin 'rstacruz/sparkup', {'rtp': 'vim/'}
 " Plugin 'ascenator/L9', {'name': 'newL9'}
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
-"Plugin 'dbext.vim'
+Plugin 'dbext.vim'
 Plugin 'neocomplcache'
 
 " All of your Plugins must be added before the following line
@@ -90,3 +90,4 @@ let g:neocomplcache_enable_at_startup = 1
 " https://docs.oseems.com/general/application/vim/auto-complete-php
 " vim airline setup https://github.com/vim-airline/vim-airline
 let g:airline#extensions#tabline#enabled = 1
+let g:dbext_default_profile_mySQL_DBI = 'type=DBI:user=root:passwd=whatever:driver=mysql:conn_parms=database=mysql;host=localhost'

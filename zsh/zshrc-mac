@@ -143,6 +143,9 @@ alias ll="exa -la"
 # export PATH=$HOME/anaconda/bin:$PATH
 export PATH=$HOME/anaconda/envs/deploy/bin:$PATH
 export PATH=$HOME/diy/env-configs/scripts:$PATH
+# Add MacVim.app binaries
+export PATH=/Applications/MacVim.app/Contents/bin:$PATH
+alias scripts="cd && $HOME/diy/env-configs/scripts"
 
 alias ldap-adm="open http://localhost:8081/ldapadmin/ && ssh ud_dovydas_gulbinas@momentcredit.lt -L 8081:192.168.2.76:80 -f -N"
 alias ldap-server-tls="ssh ud_dovydas_gulbinas@momentcredit.lt -L 8389:192.168.2.76:389 -f -N"
@@ -154,6 +157,7 @@ alias poland-tls="ssh ud_dovydas_gulbinas@momentcredit.lt -L 8443:192.168.2.77:4
 alias poland-tomcat="ssh ud_dovydas_gulbinas@momentcredit.lt -L 8080:192.168.2.77:8080 -f -N"
 alias poland="ssh ud_dovydas_gulbinas@momentcredit.lt -L 8080:192.168.2.77:80 -f -N"
 alias cenv="source /Users/hermes/Projects/ldap-project/ldapsite/certenv/bin/activate && cd /Users/hermes/Projects/ldap-project/ldapsite"
+
 
 alias mc="LC_ALL=en_US.UTF-8 LANG=en_US.UTF-8 mc"
 #alias dash='function _blah(){open dash:// $1;};_blah'
