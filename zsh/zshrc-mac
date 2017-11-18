@@ -1,4 +1,3 @@
-
 # Path to your oh-my-zsh installation.
 export ZSH=/Users/hermes/.oh-my-zsh
 
@@ -98,6 +97,9 @@ alias belly="ssh pi@berry.local"
 alias berry="ssh pi@namas.duckdns.org"
 alias warsaw="ssh pi@213.159.56.188"
 #alias hass="ssh homeassistant@namas.duckdns.org"
+alias hass="ssh root@hassio.local"
+alias hass-host="ssh root@hassio.local -p 22222"
+
 alias kali="ssh root@namas.duckdns.org -p 55521"
 alias momf="ssh ud_dovydas_gulbinas@momentcredit.lt -L 1521:moment:1521"
 alias mom="ssh ud_dovydas_gulbinas@momentcredit.lt"
@@ -149,6 +151,7 @@ alias scripts="cd && $HOME/diy/env-configs/scripts"
 
 alias ldap-adm="open http://localhost:8081/ldapadmin/ && ssh ud_dovydas_gulbinas@momentcredit.lt -L 8081:192.168.2.76:80 -f -N"
 alias ldap-server-tls="ssh ud_dovydas_gulbinas@momentcredit.lt -L 8389:192.168.2.76:389 -f -N"
+alias ldapf="ssh ud_dovydas_gulbinas@momentcredit.lt -L 8389:192.168.2.76:389"
 alias ldap-server-ssl="ssh ud_dovydas_gulbinas@momentcredit.lt -L 8636:192.168.2.76:636 -f -N"
 alias portal-ssl="ssh ud_dovydas_gulbinas@momentcredit.lt -L 8443:192.168.2.81:443 -f -N"
 alias portal-plain="ssh ud_dovydas_gulbinas@momentcredit.lt -L 8080:192.168.2.81:80 -f -N"
@@ -166,3 +169,5 @@ export PATH="/usr/local/opt/sqlite/bin:$PATH"
 
 # use vi keybindings
 set -o vi
+# eval "$(perl -I$HOME/perl5/lib/perl5 -Mlocal::lib)"
+eval "$(perl -I$HOME/perl5/lib/perl5 -Mlocal::lib)"

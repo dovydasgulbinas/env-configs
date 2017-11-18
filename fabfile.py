@@ -34,6 +34,13 @@ def hassio():
     env.secret_list = ['secrets.yaml', 'known_devices.yaml, plex.conf']
 
 
+def kali():
+    env.user = 'root'
+    env.hosts = ['192.168.0.106']
+    env.alias = 'kali'
+    env.install_manager = "apt install -y"
+
+
 def mc():
     env.user = 'ud_dovydas_gulbinas'
     env.hosts = ['momentcredit.lt']
@@ -144,14 +151,15 @@ def get_secrets():
         get(remote_path=remote, local_path=localf)
 
 
-def init_hassio():
-    pass
+def setup_hassio():
+    first_full_install()
+    setup_any('.profile', '$HOME', 'ash/hidden.profile')
 
 
 
 def first_full_install():
     install_package('git')
-    pull_confs(True)
+    pull_confs()
     install_package('vim')
     setup_vim()
     install_vundle()
