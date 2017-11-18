@@ -4,7 +4,6 @@ from fabric.operations import get, sudo, put
 from fabric.state import env
 import os
 
-
 env.user = 'hermes'
 env.hosts = ['192.168.0.7']
 env.conf_repo = 'https://github.com/megamorphf/env-configs.git'
@@ -49,7 +48,6 @@ def mc():
 
 
 def dir_exists(directory, remote=True):
-
     cmd = '[ -d "{}" ]'.format(directory)
     with settings(warn_only=True):
 
@@ -66,26 +64,26 @@ def dir_exists(directory, remote=True):
             return False
 
 
-
 def pull_confs():
-
     first_time = not dir_exists(env.conf_dir)
     # create or pull all conf files
     if first_time:
         run('mkdir -p {}'.format(env.parent_dir))
         with cd(env.parent_dir):
-                run("git clone {} --depth 1 --branch {} {}".format(env.conf_repo, env.branch, env.conf_folder))
+            run("git clone {} --depth 1 --branch {} {}".format(env.conf_repo,
+                                                               env.branch,
+                                                               env.conf_folder))
     else:
         with cd(env.conf_dir):
             run("git pull origin {}".format(env.branch))
-
 
 
 def make_backup(filename, filedir='$HOME', ending='.bak'):
     """renames file to a backup file  script.sh --> script.sh.bak"""
     full_path = os.path.join(filedir, filename)
 
-    run('(mv {file} {file}-{timestamp}-{ending}; exit 0)'.format(file=full_path, timestamp=get_timestamp(), ending=ending))
+    run('(mv {file} {file}-{timestamp}-{ending}; exit 0)'.format(
+        file=full_path, timestamp=get_timestamp(), ending=ending))
 
 
 def install_package(package_name):
@@ -97,6 +95,7 @@ def install_package(package_name):
         run("{install_manager} {package_name}".format(
             install_manager=env.install_manager,
             package_name=package_name))
+
 
 def get_timestamp():
     return int(time.time())
@@ -130,9 +129,11 @@ def setup_vim(vimrc='vim/vimrc-mac', vim='vim/hidden.vim'):
 def install_vundle():
     try:
         run('mkdir -p {}'.format(env.vundle_dir))
-        run("git clone https://github.com/VundleVim/Vundle.vim.git {}".format(env.vundle_package_dir))
+        run("git clone https://github.com/VundleVim/Vundle.vim.git {}".format(
+            env.vundle_package_dir))
     except Exception as e:
-        print("Clonning failed vundle already probably installed: {}".format(e))
+        print(
+        "Clonning failed vundle already probably installed: {}".format(e))
 
     finally:
         run("vim +PluginInstall +qall")
@@ -151,10 +152,21 @@ def get_secrets():
         get(remote_path=remote, local_path=localf)
 
 
+def install_pub_key():
+    pub_key = local('cat $HOME/.ssh/id_rsa.pub', capture=True)
+
+    if dir_exists("$HOME/.ssh"):
+        with cd("$HOME/.ssh"):
+            run('echo "{}" >> authorized_keys'.format(pub_key))
+    else:
+        run('ssh-keygen -t rsa -f "$HOME/.ssh/id_rsa" -q -P ""')
+        run('echo "{}" >> $HOME/.ssh/authorized_keys'.format(pub_key))
+        run('chmod 600 $HOME/.ssh/authorized_keys')
+
+
 def setup_hassio():
     first_full_install()
     setup_any('.profile', '$HOME', 'ash/hidden.profile')
-
 
 
 def first_full_install():
@@ -169,4 +181,3 @@ def first_full_install():
 
 def test():
     pass
-
