@@ -19,7 +19,7 @@ env.alias = 'default'  # do not change this
 
 
 def satellite():
-    env.user = 'hermes'
+    env.user = 'root'
     env.hosts = ['192.168.0.7']
     env.alias = 'satellite'
     env.install_manager = "apt install -y"
@@ -30,7 +30,10 @@ def hassio():
     env.hosts = ['192.168.0.105']
     env.alias = 'hassio'
     env.install_manager = "apk add"
-    env.secret_list = ['secrets.yaml', 'known_devices.yaml, plex.conf']
+    env.secrets_dict = {
+        "/config": ['secrets.yaml', 'known_devices.yaml', 'plex.conf'],
+    }
+
 
 
 def kali():
@@ -106,7 +109,7 @@ def setup_any(confname, confdir, conffile):
 
     :param confname: file name that will be installed eg. .bash_rc
     :param confdir: the directory in which we want to install eg. /home/jimmy
-    :param conffile: absolute path to the conf file on the host machine
+    :param conffile: relative path to the conf file on the host machine
     :return:
     """
     make_backup(confname, confdir)
@@ -124,6 +127,15 @@ def setup_tmux(conffile='tmux/hidden.tmux.conf'):
 def setup_vim(vimrc='vim/vimrc-mac', vim='vim/hidden.vim'):
     setup_any('.vimrc', '$HOME', vimrc)
     setup_any('.vim', '$HOME', vim)
+
+
+def setup_git(gitconfig='git/.gitconfig', gitignore_global='git/.gitignore_global'):
+    """
+    cd $HOME && ln -s ./diy/env-configs/git/.gitignore_global .gitignore_global
+    cd $HOME && ln -s ./diy/env-configs/git/.gitconfig .gitconfig
+    """
+    setup_any(".gitignore_global", '$HOME', 'git/.gitconfig')
+    setup_any(".gitignore_global", '$HOME', 'git/.gitignore_global')
 
 
 def install_vundle():
@@ -145,11 +157,29 @@ def get_bashrc():
     get(remote_path=remote, local_path=local)
 
 
-def get_secrets():
-    for secret in env.secret_list:
-        remote = os.path.join('/config', secret)
-        localf = os.path.join('./downloads', secret)
-        get(remote_path=remote, local_path=localf)
+def get_pubkey():
+    remote = "~/.ssh/id_rsa.pub"
+    local = './downloads/{}.id_rsa.pub'.format(env.alias)
+    get(remote_path=remote, local_path=local)
+
+
+def get_privkey():
+    remote = "~/.ssh/id_rsa"
+    local = './downloads/{}.id_rsa'.format(env.alias)
+    get(remote_path=remote, local_path=local)
+
+
+def get_secrets(use_alias=False):
+
+    for sdir in env.secrets_dict.iterkeys():
+        fnames = env.secrets_dict[sdir]
+        for fname in fnames:
+            remote = os.path.join(sdir, fname)
+            if use_alias:
+                localf = os.path.join('./downloads', "-{}-{}".format(env.alias, fname))
+            else:
+                localf = os.path.join('./downloads', fname)
+            get(remote_path=remote, local_path=localf)
 
 
 def install_pub_key():
@@ -161,7 +191,26 @@ def install_pub_key():
     else:
         run('ssh-keygen -t rsa -f "$HOME/.ssh/id_rsa" -q -P ""')
         run('echo "{}" >> $HOME/.ssh/authorized_keys'.format(pub_key))
+        run('chmod 700 $HOME/.ssh')
         run('chmod 600 $HOME/.ssh/authorized_keys')
+        run('chmod 400 $HOME/.ssh/id_rsa.pub')
+        run('chmod 400 $HOME/.ssh/id_rsa')
+
+
+def grant_sudo(username):
+
+    cmd = 'usermod -aG sudo {}'.format(username)
+
+    if username == env.user:
+        print("You cant give `sudo` rights for the same user")
+        return False
+
+    if env.user == 'root':
+        run(cmd)
+    else:
+        sudo(cmd)
+
+    return True
 
 
 def setup_hassio():
@@ -170,7 +219,9 @@ def setup_hassio():
 
 
 def first_full_install():
+    install_pub_key()
     install_package('git')
+    setup_git()
     pull_confs()
     install_package('vim')
     setup_vim()
