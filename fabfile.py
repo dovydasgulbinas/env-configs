@@ -19,7 +19,7 @@ env.alias = 'default'  # do not change this
 
 
 def satellite():
-    env.user = 'root'
+    env.user = 'hermes'
     env.hosts = ['192.168.0.7']
     env.alias = 'satellite'
     env.install_manager = "apt install -y"
