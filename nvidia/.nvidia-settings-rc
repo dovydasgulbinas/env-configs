@@ -1,0 +1,90 @@
+#
+# /root/diy/env-configs/nvidia/.nvidia-settings-rc
+#
+# Configuration file for nvidia-settings - the NVIDIA X Server Settings utility
+# Generated on Fri Jan 12 20:46:19 2018
+#
+
+# ConfigProperties:
+
+RcFileLocale = C
+DisplayStatusBar = Yes
+SliderTextEntries = Yes
+IncludeDisplayNameInConfigFile = Yes
+ShowQuitDialog = Yes
+UpdateRulesOnProfileNameChange = Yes
+Timer = PowerMizer_Monitor_(GPU_1),Yes,1000
+Timer = Thermal_Monitor_(GPU_1),Yes,1000
+Timer = Memory_Used_(GPU_1),Yes,3000
+Timer = PowerMizer_Monitor_(GPU_0),Yes,1000
+Timer = Thermal_Monitor_(GPU_0),Yes,1000
+Timer = Memory_Used_(GPU_0),Yes,3000
+
+# Attributes:
+
+hermes-pc:1.0/SyncToVBlank=1
+hermes-pc:1.0/LogAniso=0
+hermes-pc:1.0/FSAA=0
+hermes-pc:1.0/TextureClamping=1
+hermes-pc:1.0/FXAA=0
+hermes-pc:1.0/AllowFlipping=1
+hermes-pc:1.0/FSAAAppControlled=1
+hermes-pc:1.0/LogAnisoAppControlled=1
+hermes-pc:1.0/OpenGLImageSettings=3
+hermes-pc:1.0/FSAAAppEnhanced=0
+hermes-pc:1[DPY:VGA-0]/RedBrightness=0.000000
+hermes-pc:1[DPY:VGA-0]/GreenBrightness=0.000000
+hermes-pc:1[DPY:VGA-0]/BlueBrightness=0.000000
+hermes-pc:1[DPY:VGA-0]/RedContrast=0.000000
+hermes-pc:1[DPY:VGA-0]/GreenContrast=0.000000
+hermes-pc:1[DPY:VGA-0]/BlueContrast=0.000000
+hermes-pc:1[DPY:VGA-0]/RedGamma=1.000000
+hermes-pc:1[DPY:VGA-0]/GreenGamma=1.000000
+hermes-pc:1[DPY:VGA-0]/BlueGamma=1.000000
+hermes-pc:1[DPY:VGA-0]/Dithering=0
+hermes-pc:1[DPY:VGA-0]/DitheringMode=0
+hermes-pc:1[DPY:VGA-0]/DitheringDepth=0
+hermes-pc:1[DPY:VGA-0]/DigitalVibrance=0
+hermes-pc:1[DPY:VGA-0]/SynchronousPaletteUpdates=0
+hermes-pc:1[DPY:HDMI-0]/RedBrightness=0.000000
+hermes-pc:1[DPY:HDMI-0]/GreenBrightness=0.000000
+hermes-pc:1[DPY:HDMI-0]/BlueBrightness=0.000000
+hermes-pc:1[DPY:HDMI-0]/RedContrast=0.000000
+hermes-pc:1[DPY:HDMI-0]/GreenContrast=0.000000
+hermes-pc:1[DPY:HDMI-0]/BlueContrast=0.000000
+hermes-pc:1[DPY:HDMI-0]/RedGamma=1.000000
+hermes-pc:1[DPY:HDMI-0]/GreenGamma=1.000000
+hermes-pc:1[DPY:HDMI-0]/BlueGamma=1.000000
+hermes-pc:1[DPY:HDMI-0]/Dithering=0
+hermes-pc:1[DPY:HDMI-0]/DitheringMode=0
+hermes-pc:1[DPY:HDMI-0]/DitheringDepth=0
+hermes-pc:1[DPY:HDMI-0]/DigitalVibrance=0
+hermes-pc:1[DPY:HDMI-0]/ColorSpace=0
+hermes-pc:1[DPY:HDMI-0]/ColorRange=0
+hermes-pc:1[DPY:HDMI-0]/SynchronousPaletteUpdates=0
+hermes-pc:1[DPY:DP-0]/RedBrightness=0.000000
+hermes-pc:1[DPY:DP-0]/GreenBrightness=0.000000
+hermes-pc:1[DPY:DP-0]/BlueBrightness=0.000000
+hermes-pc:1[DPY:DP-0]/RedContrast=0.000000
+hermes-pc:1[DPY:DP-0]/GreenContrast=0.000000
+hermes-pc:1[DPY:DP-0]/BlueContrast=0.000000
+hermes-pc:1[DPY:DP-0]/RedGamma=1.000000
+hermes-pc:1[DPY:DP-0]/GreenGamma=1.000000
+hermes-pc:1[DPY:DP-0]/BlueGamma=1.000000
+hermes-pc:1[DPY:DP-0]/Dithering=0
+hermes-pc:1[DPY:DP-0]/DitheringMode=0
+hermes-pc:1[DPY:DP-0]/DitheringDepth=0
+hermes-pc:1[DPY:DP-0]/DigitalVibrance=0
+hermes-pc:1[DPY:DP-0]/ColorSpace=0
+hermes-pc:1[DPY:DP-0]/ColorRange=0
+hermes-pc:1[DPY:DP-0]/SynchronousPaletteUpdates=0
+hermes-pc:1[DPY:VGA-0]/Dithering=0
+hermes-pc:1[DPY:VGA-0]/DitheringMode=0
+hermes-pc:1[DPY:VGA-0]/DitheringDepth=0
+hermes-pc:1[DPY:VGA-0]/SynchronousPaletteUpdates=0
+hermes-pc:1[DPY:HDMI-0]/Dithering=0
+hermes-pc:1[DPY:HDMI-0]/DitheringMode=0
+hermes-pc:1[DPY:HDMI-0]/DitheringDepth=0
+hermes-pc:1[DPY:HDMI-0]/ColorSpace=0
+hermes-pc:1[DPY:HDMI-0]/ColorRange=0
+hermes-pc:1[DPY:HDMI-0]/SynchronousPaletteUpdates=0
