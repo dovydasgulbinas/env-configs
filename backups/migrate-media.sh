@@ -1,3 +1,8 @@
+#sudo blkid
+#mkfs.ext4 /dev/sdc5
+#e2label /dev/sdc5 kodi-media
+#[1]: https://serverfault.com/questions/796330/how-do-i-set-destination-permissions-with-rsync-chown-chmod#796341
+
 
 echo "Doing music sync"
 src='/media/root/kodi/music'
