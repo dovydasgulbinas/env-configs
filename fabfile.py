@@ -2,6 +2,7 @@ import time
 from fabric.api import local, settings, abort, run, cd
 from fabric.operations import get, sudo, put
 from fabric.state import env
+from fabric.decorators import task, with_settings
 import os
 
 env.user = 'hermes'
@@ -35,10 +36,9 @@ def hassio():
     }
 
 
-
 def kali():
     env.user = 'hermes'
-    env.hosts = ['192.168.0.106']
+    env.hosts = ['192.168.0.9']
     env.alias = 'kali'
     env.install_manager = "apt install -y"
 
@@ -218,6 +218,7 @@ def setup_hassio():
     setup_any('.profile', '$HOME', 'ash/hidden.profile')
 
 
+@with_settings(output_prefix=False)
 def first_full_install():
     install_pub_key()
     install_package('git')
