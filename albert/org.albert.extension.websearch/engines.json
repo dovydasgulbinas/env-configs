@@ -1,0 +1,55 @@
+[
+    {
+        "iconPath": ":duckduckgo",
+        "name": "DuckDuckGo",
+        "trigger": "dd ",
+        "url": "https://duckduckgo.com/?q=%s"
+    },
+    {
+        "iconPath": ":google",
+        "name": "Google",
+        "trigger": "gg ",
+        "url": "https://www.google.com/search?q=%s"
+    },
+    {
+        "iconPath": ":wolfram",
+        "name": "Wolfram Alpha",
+        "trigger": "=",
+        "url": "https://www.wolframalpha.com/input/?i=%s"
+    },
+    {
+        "iconPath": ":youtube",
+        "name": "Youtube",
+        "trigger": "yt ",
+        "url": "https://www.youtube.com/results?search_query=%s"
+    },
+    
+    {
+        "iconPath": ":github",
+        "name": "GitHub",
+        "trigger": "gh ",
+        "url": "https://github.com/search?utf8=✓&q=%s"
+    },
+    {
+        "iconPath": ":wikipedia",
+        "name": "Wikipedia",
+        "trigger": "wiki ",
+        "url": "https://en.wikipedia.org/w/index.php?search=%s"
+    },
+
+      {
+        "enabled": true,
+        "iconPath": ":default",
+        "name": "Rastija",
+        "trigger": "rr",
+        "url": "https://www.xn--ratija-ckb.lt/?act=search&f%5Bq%5D=%s"
+      },
+      {
+        "enabled": true,
+        "iconPath": ":default",
+        "name": "Emojipedia",
+        "trigger": "ep",
+        "url": "https://emojipedia.org/search/?q=%s"
+      }
+
+]
