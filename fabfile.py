@@ -37,7 +37,7 @@ def hassio():
 
 
 def kali():
-    env.user = 'root'
+    env.user = 'hermes'
     env.hosts = ['192.168.0.106']
     env.alias = 'kali'
     env.install_manager = "apt install -y"

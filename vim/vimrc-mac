@@ -78,6 +78,12 @@ nnoremap ,S :set nospell
 nnoremap ,w :w
 nnoremap ,c :edit $HOME/.vimrc 
 nnoremap T :tabnew
+nnoremap ,f :%s/search/replace/gc
+
+:set listchars=eol:$,tab:>-,trail:~,extends:>,precedes:<
+nnoremap ,l :set list
+nnoremap ,L :set nolist
+
 set hlsearch
 set ignorecase
 " FIXME: Remove for gvim 
@@ -85,6 +91,9 @@ let g:neocomplcache_enable_at_startup = 1
 "set background=dark
 "colorscheme hemisu
 
+:set textwidth=80
+":set colorcolumn=+1
+":set fileencoding='utf8' 
 
 " https://stackoverflow.com/questions/5169638/autocompletion-in-vim
 " https://docs.oseems.com/general/application/vim/auto-complete-php

@@ -44,3 +44,8 @@ mod text
 \"upper(X1:Y1)
 \"upper("some feeeee")
 
+
+# open csv with another delimiter
+
+
+scim  EMP_LDAP_LT_NEW.csv --txtdelim=";"
