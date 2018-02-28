@@ -54,6 +54,11 @@ cd $HOME && ln -s ./diy/env-configs/git/.gitconfig .gitconfig
 cd $HOME && ln -s ./diy/env-configs/tmux/hidden.tmux.conf .tmux.conf
 # Optional inputrc
 ln -s ./diy/env-configs/zsh/hidden.inputrc .inputrc
+
+# ncmpcpp
+mv ~/.ncmpcpp ~/.ncmpcpp.bak
+ln -s $HOME/diy/env-configs/ncmpcpp/.ncmpcpp $HOME/.ncmpcpp
+
 ```
 
 
