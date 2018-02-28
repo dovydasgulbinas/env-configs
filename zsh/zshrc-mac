@@ -196,6 +196,11 @@ alias docsm="ssh docsmanager@194.0.160.3"
 alias sfind="cat ~/.zshrc | grep"
 alias py36="source activate py36"
 
+# create favourite path
+alias mkfav="echo $PWD > $HOME/.favdir"
+alias fav="cd $(cat $HOME/.favdir)"
+alias fsong="mpc | head -n 1 >> $HOME/Desktop/to-listen.txt"
+
 #alias dash='function _blah(){open dash:// $1;};_blah'
 export PYTHONDONTWRITEBYTECODE=1
 export PATH="/usr/local/opt/sqlite/bin:$PATH"
