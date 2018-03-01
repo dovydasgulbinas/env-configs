@@ -2,3 +2,4 @@
 vim/hidden.vim/bundle/*
 downloads/*
 ncmpcpp/.ncmpcpp/error.log
+mopidy/mopidy/mopidy.conf

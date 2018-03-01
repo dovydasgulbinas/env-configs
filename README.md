@@ -59,6 +59,12 @@ ln -s ./diy/env-configs/zsh/hidden.inputrc .inputrc
 mv ~/.ncmpcpp ~/.ncmpcpp.bak
 ln -s $HOME/diy/env-configs/ncmpcpp/.ncmpcpp $HOME/.ncmpcpp
 
+# mopidy
+mkdir  $HOME/diy/env-configs/mopidy
+cp -r $HOME/.config/mopidy $HOME/diy/env-configs/mopidy
+mv $HOME/.config/mopidy $HOME/.config/mopidy.bak
+ln -s $HOME/diy/env-configs/mopidy/mopidy $HOME/.config/mopidy
+
 ```
 
 
