@@ -168,6 +168,8 @@ alias ldap-server-ssl="ssh ud_dovydas_gulbinas@momentcredit.lt -L 8636:192.168.2
 alias portal-ssl="ssh ud_dovydas_gulbinas@momentcredit.lt -L 8443:192.168.2.81:443 -f -N"
 alias portal-plain="ssh ud_dovydas_gulbinas@momentcredit.lt -L 8080:192.168.2.81:80 -f -N"
 alias portal-django="ssh ud_dovydas_gulbinas@momentcredit.lt -L 8100:192.168.2.81:8000 -f -N"
+alias portal-zep="open http://zep.mozipo.com:8082 && ssh fabric@194.0.160.3 -p 1081 -L 8082:127.0.0.1:82 -f -N"
+alias portal-zeps="open https://zep.mozipo.com:8445 && ssh fabric@194.0.160.3 -p 1081 -L 8445:127.0.0.1:445 -f -N"
 alias poland-tls="ssh ud_dovydas_gulbinas@momentcredit.lt -L 8443:192.168.2.77:443 -f -N"
 alias poland-tomcat="ssh ud_dovydas_gulbinas@momentcredit.lt -L 8080:192.168.2.77:8080 -f -N"
 alias poland="ssh ud_dovydas_gulbinas@momentcredit.lt -L 8080:192.168.2.77:80 -f -N"
@@ -178,6 +180,8 @@ alias mc="LC_ALL=en_US.UTF-8 LANG=en_US.UTF-8 mc"
 
 alias portal="ssh fabric@194.0.160.3 -p 1081"
 alias hadoop="ssh fabric@194.0.160.3 -p 1052"
+alias hadoop-ambari= "open http://localhost:8080 && ssh fabric@194.0.160.3 -p 1052 -L 8080:127.0.0.1:8080 -f -N"
+alias hadoop-hue= "open http://localhost:8888 && ssh fabric@194.0.160.3 -p 1052 -L 8888:127.0.0.1:8888 -f -N"
 alias hadoop2="ssh fabric@194.0.160.3 -p 1078"
 alias hadoop3="ssh fabric@194.0.160.3 -p 1079"
 alias hadoop4="ssh fabric@194.0.160.3 -p 1087"
@@ -199,7 +203,9 @@ alias py36="source activate py36"
 # create favourite path
 alias mkfav="echo $PWD > $HOME/.favdir"
 alias fav="cd $(cat $HOME/.favdir)"
-alias fsong="mpc | head -n 1 >> $HOME/Desktop/to-listen.txt"
+alias fsong="mpc | head -n 1 >> $HOME/Desktop/to-listen.txt && tail -n 5 $HOME/Desktop/to-listen.txt"
+alias discline="/Users/hermes/anaconda/envs/py36/bin/python /Users/hermes/diy/Discline/Discline.py"
+
 
 #alias dash='function _blah(){open dash:// $1;};_blah'
 export PYTHONDONTWRITEBYTECODE=1
