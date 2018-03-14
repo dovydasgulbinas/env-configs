@@ -20,6 +20,7 @@ display_bitrate = "yes"
 ignore_leading_the = "yes"
 enable_window_title = "yes"
 progressbar_look = "─⊙┄"
+#progressbar_look = "-#="
 #progressbar_look = "> >"
 discard_colors_if_item_is_selected = "yes"
 
@@ -46,15 +47,13 @@ active_column_color = "red"
 window_border_color = "green"
 active_window_border = "green"
 
-# Visualizer
-#visualizer_fifo_path = "/home/pascal/.mpd/mpd.fifo"
-#visualizer_output_name = "my_fifo"
-#visualizer_sync_interval = "10"
-#visualizer_type = "wave" (spectrum/wave)
-#visualizer_type = "spectrum" (spectrum/wave)
-#visualizer_color = "red"
-#visualizer_look = "│|"
-
 visualizer_look = "◈░"
 mouse_support = "no"
 display_remaining_time = "yes"
+
+mpd_host = 127.0.0.1
+mpd_port = 6600                                                                                
+mpd_connection_timeout = 60
+mpd_crossfade_time = 5
+
+
