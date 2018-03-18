@@ -65,6 +65,13 @@ cp -r $HOME/.config/mopidy $HOME/diy/env-configs/mopidy
 mv $HOME/.config/mopidy $HOME/.config/mopidy.bak
 ln -s $HOME/diy/env-configs/mopidy/mopidy $HOME/.config/mopidy
 
+
+# i3
+mkdir  $HOME/diy/env-configs/i3
+cp -r $HOME/.config/i3/* $HOME/diy/env-configs/i3
+mv $HOME/.config/i3 $HOME/.config/i3.bak
+ln -s $HOME/diy/env-configs/i3 $HOME/.config/i3
+
 ```
 
 
