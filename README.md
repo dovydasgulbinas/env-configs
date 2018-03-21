@@ -65,18 +65,40 @@ cp -r $HOME/.config/mopidy $HOME/diy/env-configs/mopidy
 mv $HOME/.config/mopidy $HOME/.config/mopidy.bak
 ln -s $HOME/diy/env-configs/mopidy/mopidy $HOME/.config/mopidy
 
+
+# i3
+mkdir  $HOME/diy/env-configs/i3
+cp -r $HOME/.config/i3/* $HOME/diy/env-configs/i3
+mv $HOME/.config/i3 $HOME/.config/i3.bak
+ln -s $HOME/diy/env-configs/i3 $HOME/.config/i3
+
 ```
 
 
 ## x. (optional) export $PATH variable for the scripts folder
 
-```
 # for bash
-echo "export PATH=$HOME/diy/env-configs/scripts:$PATH" >> $HOME/.bashrc
+
+    echo "export PATH=$HOME/diy/env-configs/scripts:$PATH" >> $HOME/.bashrc
+
+
+# first time backup
+
+    cp $HOME/.bashrc $HOME/diy/env-configs/bash/main.bashrc
+    mv $HOME/.bashrc $HOME/.bashrc.bak
+    ln -s $HOME/diy/env-configs/bash/main.bashrc $HOME/.bashrc
+
+
+# create alias file
+
+    cp $HOME/.bash_aliases $HOME/diy/env-configs/bash/main.bash_aliases
+    mv $HOME/.bash_aliases $HOME/.bash_aliases.bak
+    ln -s $HOME/diy/env-configs/bash/main.bash_aliases $HOME/.bash_aliases
+    ls -alh .bash_aliases
+
 
 # for zsh
-echo "export PATH=$HOME/diy/env-configs/scripts:$PATH" >> $HOME/.bashrc
-```
+    echo "export PATH=$HOME/diy/env-configs/scripts:$PATH" >> $HOME/.bashrc
 
 
 
