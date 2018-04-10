@@ -29,12 +29,13 @@ Plugin 'rstacruz/sparkup', {'rtp': 'vim/'}
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
 "Plugin 'dbext.vim'
-Plugin 'neocomplcache'
+Plugin 'neocomplcache.vim'
+Plugin 'ctrlp.vim'
 
 " All of your Plugins must be added before the following line
 "https://stackoverflow.com/questions/8070892/enclosing-in-parentheses-with-vim
 " go on word: ysiw + operator
-Plugin 'surround'
+Plugin 'surround.vim'
 
 call vundle#end()            " required
 filetype plugin indent on    " required
@@ -106,6 +107,8 @@ let g:neocomplcache_enable_at_startup = 1
 " https://docs.oseems.com/general/application/vim/auto-complete-php
 " vim airline setup https://github.com/vim-airline/vim-airline
 let g:airline#extensions#tabline#enabled = 1
+" explicit markdown
+au BufRead,BufNewFile /private/tmp/*,/private/var/*,/tmp/*,~/.calcurse/notes/* set filetype=markdown
 
 " Example of dbext configuration need vim with per support
 "let g:dbext_default_profile_cancer = 'type=DBI:user=test:passwd=test:driver=mysql:conn_parms=database=cancer:host=192.168.0.1'

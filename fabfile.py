@@ -19,6 +19,13 @@ env.branch = 'master'
 env.alias = 'default'  # do not change this
 
 
+def host_distro(os_name):
+    if os_name == "debian":
+        env.install_manager = "apt install -y"
+    elif os_name == "centos":
+        env.install_manager = "yum install -y"
+
+
 def satellite():
     env.user = 'hermes'
     env.hosts = ['192.168.0.7']
@@ -48,6 +55,20 @@ def mc():
     env.hosts = ['momentcredit.lt']
     env.alias = 'mc'
     env.install_manager = "yum install -y"
+
+
+def mcgit():
+    env.user = 'ud_dovydas_gulbinas'
+    env.hosts = ['194.0.160.3:1093']
+    env.alias = 'mc'
+    host_distro('debian')
+
+
+def plfab():
+    env.user = 'fabric'
+    env.hosts = ['pl-signature.local']
+    env.alias = 'pl-signature'
+    host_distro('debian')
 
 
 def dir_exists(directory, remote=True):
