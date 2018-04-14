@@ -158,7 +158,7 @@ export PATH=$HOME/diy/env-configs/scripts:$PATH
 export PATH=~/bin:$PATH
 # Add MacVim.app binaries
 export PATH=/Applications/MacVim.app/Contents/bin:$PATH
-alias scripts="cd && $HOME/diy/env-configs/scripts"
+alias scripts="cd $HOME/diy/env-configs/scripts"
 
 alias ldap-adm="open http://localhost:8081/ldapadmin/ && ssh ud_dovydas_gulbinas@momentcredit.lt -L 8081:192.168.2.76:80 -f -N"
 #alias ldap-server-tls="ssh ud_dovydas_gulbinas@momentcredit.lt -L 8389:192.168.2.76:389 -f -N"

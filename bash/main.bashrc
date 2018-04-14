@@ -110,9 +110,18 @@ if ! shopt -oq posix; then
 fi
 
 
+# Preferred editor for local and remote sessions
+if [[ -n $SSH_CONNECTION ]]; then
+  export EDITOR='vim'
+else
+  export EDITOR='vim'
+fi
+
+
 shopt -s extglob
 set editing-mode vi
 set -o vi
+
 
 wttr()
 {
@@ -121,8 +130,5 @@ wttr()
 }    
 
 export -f wttr
-
-# https://wiki.archlinux.org/index.php/Sdcv
-#alias def="/usr/bin/sdcv"
-
 export PATH=~/.local/bin:$PATH
+
