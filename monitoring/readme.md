@@ -58,7 +58,8 @@
 
     /dev/md/herver:0	/media/raid 	ext4 	auto,nofail,rw,user,async,dev,suid	0	2 
     mount -va
-    
+
+
     
 # touble shooting
 
@@ -68,6 +69,7 @@
     wipefs -a /dev/sdX
     mkfs.ext4 /dev/sdX
 
+- [I want to find speed gains using a raid][7]
 
 
 # glossary
@@ -86,4 +88,4 @@ creating array on disks you dont mind loosing data with you dont need one
 [4]: https://marc.info/?l=linux-raid&m=112044009718483&w=2
 [5]: https://raid.wiki.kernel.org/index.php/RAID_setup#Options_for_mke2fs "archived: http://archive.is/P7sfg"
 [6]: https://ubuntuforums.org/showthread.php?t=884556 "archived: http://archive.is/wMBWw"
-
+[7]: http://www.raid-calculator.com/Default.aspx
