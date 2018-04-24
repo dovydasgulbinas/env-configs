@@ -1,4 +1,4 @@
-# https://wiki.archlinux.org/index.php/Sdcv
+#!/bin/bash
 
 confdir="$HOME/diy/env-configs"
 shellrc="$HOME/.bashrc"
@@ -27,3 +27,9 @@ alias cdir="cd $confdir"
 alias mkfav="echo $PWD > $HOME/.favdir"
 alias fav="cd $(cat $HOME/.favdir)"
 alias fsong="mpc | head -n 1 >> $HOME/Desktop/to-listen.txt && tail -n 5 $HOME/Desktop/to-listen.txt"
+
+# notes
+alias markr="flatpak run com.github.fabiocolacio.marker"
+
+
+# https://wiki.archlinux.org/index.php/Sdcv
