@@ -14,11 +14,13 @@
     sudo mkdir -p /mnt/nfs4/media/music
     sudo mkdir -p /mnt/nfs4/media/series
     sudo mkdir -p /mnt/nfs4/media/games
+    sudo mkdir -p /mnt/nfs4/media/downloads
 
 
 ### If you want to mount it manually
 
     sudo mount 192.168.0.8:/srv/nfs4/movies /mnt/nfs4/media/movies
+    sudo mount 192.168.0.8:/srv/nfs4/series /mnt/nfs4/media/music
     sudo mount 192.168.0.8:/srv/nfs4/series /mnt/nfs4/media/series
     sudo mount 192.168.0.8:/srv/nfs4/games /mnt/nfs4/media/games
     sudo mount 192.168.0.8:/srv/nfs4/downloads /mnt/nfs4/media/downloads
