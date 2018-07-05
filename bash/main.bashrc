@@ -94,9 +94,6 @@ alias l='ls -CF'
 # ~/.bash_aliases, instead of adding them here directly.
 # See /usr/share/doc/bash-doc/examples in the bash-doc package.
 
-if [ -f ~/.bash_aliases ]; then
-    . ~/.bash_aliases
-fi
 
 # enable programmable completion features (you don't need to enable
 # this, if it's already enabled in /etc/bash.bashrc and /etc/profile
@@ -110,9 +107,18 @@ if ! shopt -oq posix; then
 fi
 
 
+# Preferred editor for local and remote sessions
+if [[ -n $SSH_CONNECTION ]]; then
+  export EDITOR='vim'
+else
+  export EDITOR='vim'
+fi
+
+
 shopt -s extglob
 set editing-mode vi
 set -o vi
+
 
 wttr()
 {
@@ -121,8 +127,16 @@ wttr()
 }    
 
 export -f wttr
-
-# https://wiki.archlinux.org/index.php/Sdcv
-#alias def="/usr/bin/sdcv"
-
 export PATH=~/.local/bin:$PATH
+
+
+if [ -f $HOME/.bash_aliases ]
+then
+  . $HOME/.bash_aliases
+fi
+
+
+
+# Install Ruby Gems to ~/gems
+export GEM_HOME=$HOME/gems
+export PATH=$HOME/gems/bin:$PATH

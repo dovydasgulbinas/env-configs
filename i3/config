@@ -26,17 +26,27 @@ font pango:monospace 8
 # X core fonts rendering does not support right-to-left and this being a bitmap
 # font, it doesn’t scale on retina/hidpi displays.
 
-# Startup Programs
+# -----BEGIN Startup Programs-----
 
 #Music player daemon:
-exec --no-startup-id mpd
+exec --no-startup-id mopidy
+exec --no-startup-id shutter
+exec_always --no-startup-id feh --bg-scale --randomize ~/Pictures/desk-backs/wallpapers/*  
+# -----END Startup Programs-----
+
+bindsym $mod+F1   exec --no-startup-id eog -w ~/.config/i3/shortcuts.png
+bindsym $mod+F2   exec --no-startup-id shutter --section
+
+# transparency
+#exec_always --no-startup-id compton --xrender-sync-fence
 
 
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
 
 # start a terminal
-bindsym $mod+Return exec i3-sensible-terminal
+#bindsym $mod+Return exec i3-sensible-terminal
+bindsym $mod+Return exec gnome-terminal
 
 # kill focused window
 bindsym $mod+Shift+q kill
