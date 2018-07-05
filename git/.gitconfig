@@ -1,6 +1,6 @@
 [user]
     name = Dovydas Gulbinas
-    email = dovydas.gulbinas@gmal.com
+	email = dovydasgulbinas@gmail.com
 
 [core]
     excludesfile = ~/.gitignore_global

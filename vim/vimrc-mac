@@ -28,8 +28,10 @@ Plugin 'rstacruz/sparkup', {'rtp': 'vim/'}
 " Plugin 'ascenator/L9', {'name': 'newL9'}
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
+Plugin 'scrooloose/nerdcommenter'
+Plugin 'scrooloose/nerdtree'
 "Plugin 'dbext.vim'
-Plugin 'neocomplcache.vim'
+Plugin 'neocomplcache'
 Plugin 'ctrlp.vim'
 
 " All of your Plugins must be added before the following line
@@ -39,6 +41,7 @@ Plugin 'surround.vim'
 
 call vundle#end()            " required
 filetype plugin indent on    " required
+filetype plugin on
 " To ignore plugin indent changes, instead use:
 "filetype plugin on
 "
@@ -91,11 +94,13 @@ nnoremap ,f :%s/search/replace/gc
 :set listchars=eol:$,tab:>-,trail:~,extends:>,precedes:<
 nnoremap ,l :set list
 nnoremap ,L :set nolist
+map <C-n> :NERDTreeToggle<CR>
 
 set hlsearch
 set ignorecase
 " FIXME: Remove for gvim 
 let g:neocomplcache_enable_at_startup = 1
+"let maplocalleader = '-'
 "set background=dark
 "colorscheme hemisu
 
@@ -113,3 +118,86 @@ au BufRead,BufNewFile /private/tmp/*,/private/var/*,/tmp/*,~/.calcurse/notes/* s
 " Example of dbext configuration need vim with per support
 "let g:dbext_default_profile_cancer = 'type=DBI:user=test:passwd=test:driver=mysql:conn_parms=database=cancer:host=192.168.0.1'
 "let g:dbext_default_profile='cancer'
+
+" Add spaces after comment delimiters by default
+let g:NERDSpaceDelims = 1
+
+" Use compact syntax for prettified multi-line comments
+let g:NERDCompactSexyComs = 1
+
+" Align line-wise comment delimiters flush left instead of following code indentation
+let g:NERDDefaultAlign = 'left'
+
+" Set a language to use its alternate delimiters by default
+let g:NERDAltDelims_java = 1
+
+" Add your own custom formats or override the defaults
+let g:NERDCustomDelimiters = { 'c': { 'left': '/**','right': '*/' } }
+
+" Allow commenting and inverting empty lines (useful when commenting a region)
+let g:NERDCommentEmptyLines = 1
+
+" Enable trimming of trailing whitespace when uncommenting
+let g:NERDTrimTrailingWhitespace = 1
+
+" Make backspace great again!
+set backspace=indent,eol,start
+
+
+" Bind F5 to save file if modified and execute python script in a buffer.
+nnoremap <silent> <F5> :call SaveAndExecutePython()<CR>
+vnoremap <silent> <F5> :<C-u>call SaveAndExecutePython()<CR>
+
+function! SaveAndExecutePython()
+    " SOURCE [reusable window]: https://github.com/fatih/vim-go/blob/master/autoload/go/ui.vim
+
+    " save and reload current file
+    silent execute "update | edit"
+
+    " get file path of current file
+    let s:current_buffer_file_path = expand("%")
+
+    let s:output_buffer_name = "Python"
+    let s:output_buffer_filetype = "output"
+
+    " reuse existing buffer window if it exists otherwise create a new one
+    if !exists("s:buf_nr") || !bufexists(s:buf_nr)
+        silent execute 'botright new ' . s:output_buffer_name
+        let s:buf_nr = bufnr('%')
+    elseif bufwinnr(s:buf_nr) == -1
+        silent execute 'botright new'
+        silent execute s:buf_nr . 'buffer'
+    elseif bufwinnr(s:buf_nr) != bufwinnr('%')
+        silent execute bufwinnr(s:buf_nr) . 'wincmd w'
+    endif
+
+    silent execute "setlocal filetype=" . s:output_buffer_filetype
+    setlocal bufhidden=delete
+    setlocal buftype=nofile
+    setlocal noswapfile
+    setlocal nobuflisted
+    setlocal winfixheight
+    setlocal cursorline " make it easy to distinguish
+    setlocal nonumber
+    setlocal norelativenumber
+    setlocal showbreak=""
+
+    " clear the buffer
+    setlocal noreadonly
+    setlocal modifiable
+    %delete _
+
+    " add the console output
+    " silent execute ".!python " . shellescape(s:current_buffer_file_path, 1)
+    silent execute ".!/Users/hermes/anaconda/envs/py27/bin/python " . shellescape(s:current_buffer_file_path, 1)
+
+    " resize window to content length
+    " Note: This is annoying because if you print a lot of lines then your code buffer is forced to a height of one line every time you run this function.
+    "       However without this line the buffer starts off as a default size and if you resize the buffer then it keeps that custom size after repeated runs of this function.
+    "       But if you close the output buffer then it returns to using the default size when its recreated
+    "execute 'resize' . line('$')
+
+    " make the buffer non modifiable
+    setlocal readonly
+    setlocal nomodifiable
+endfunction

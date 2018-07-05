@@ -1,0 +1,158 @@
+wttr()
+{
+    # change Paris to your default location
+    curl -H "Accept-Language: ${LANG%_*}" wttr.in/"${1:-Vilnius}"
+}
+
+
+deunix()
+{
+date -r $1 '+DATE: %Y-%m-%d %nTIME: %H:%M:%S'
+echo "STMP: $1"
+}
+
+
+sto()
+{
+echo "== Starting store check =="
+echo "for dir: $1"
+du -h $1 | sort -h | less
+}
+
+
+transfer() { if [ $# -eq 0 ]; then echo -e "No arguments specified. Usage:\necho transfer /tmp/test.md\ncat /tmp/test.md | transfer test.md"; return 1; fi
+tmpfile=$( mktemp -t transferXXX ); if tty -s; then basefile=$(basename "$1" | sed -e 's/[^a-zA-Z0-9._-]/-/g'); curl --progress-bar --upload-file "$1" "https://transfer.sh/$basefile" >> $tmpfile; else curl --progress-bar --upload-file "-" "https://transfer.sh/$1" >> $tmpfile ; fi; cat $tmpfile; rm -f $tmpfile; } 
+
+
+ssfind()
+{
+grep -rn xD xD 
+}
+
+
+diffclip()
+{
+ pbpaste > tmp.yaml ; vimdiff $1 tmp.yaml; rm tmp.yaml
+}
+
+viruscheck()
+{
+whois -h hash.cymru.com $(openssl sha1 $1 | awk -F "= " '{print $2}')
+}
+
+virushash()
+{
+whois -h hash.cymru.com $1
+}
+
+f(){
+
+case "$1" in
+"dir")
+  echo "$PWD" > "$HOME/.favdir"
+  echo "updated your favourite dir to: $PWD"
+  ;;
+"go")
+  cd $(cat $HOME/.favdir)
+  ;;
+"song")
+  mpc | head -n 1 >> $FSONG_FPATH && tail -n 5 $FSONG_FPATH
+  ;;
+"list")
+  bak_list
+  ;;
+"rem8")
+  bak_rem8
+  ;;
+"cols")
+  bak_cols
+  ;;
+*)
+  echo 'Usage: f {song|dir|go|}'
+  ;;
+esac
+}
+
+# =================== BLOG FUNCS ==================== 
+
+__blog_serve(){
+cd $BLOG_DIR && bundle exec jekyll serve $1
+}
+
+__blog_edit(){
+cd $BLOG_DIR && atom $BLOG_DIR
+}
+
+
+blog(){
+
+case "$1" in
+"go")
+  cd $BLOG_DIR
+  ;;
+"serve")
+  # cd $BLOG_DIR && bundle exec jekyll serve --drafts
+  __blog_serve '--drafts'
+  ;;
+"serve-nd")
+  echo "serving blog with drafts disabled"
+  __blog_serve
+  ;;
+"edit")
+  __blog_edit
+  ;;
+"cols")
+  bak_cols
+  ;;
+*)
+  echo 'Usage: blog {go|serve|serve-ng|edit}'
+  ;;
+esac
+}
+
+
+# =================== NOTEBOOK FUNCS ==================== 
+
+__nb_go(){
+  cd $NB_DIR
+}
+
+__nb_edit(){
+  atom $NB_DIR
+}
+
+__nb_commit(){
+  cd $NB_DIR
+  git add .
+  git commit  
+}
+
+__nb_search(){
+  git grep $1
+
+}
+
+nb(){
+
+case "$1" in
+"go")
+  __nb_go
+  ;;
+"s")
+  __nb_go
+  __nb_search "$2"
+  ;;
+"edit")
+  __nb_edit
+  ;;
+"commit")
+  __nb_commit
+  ;;
+*)
+  echo 'Usage: nb {go|edit|s SEARCH-TERM|commit}'
+  ;;
+esac
+}
+
+
+
