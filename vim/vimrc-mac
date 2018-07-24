@@ -63,7 +63,7 @@ syntax enable
 " set number
 
 " set tabs to have 2 spaces
-set ts=2
+set ts=4
 
 " indent when moving to the next line while writing code
 " set autoindent
@@ -72,7 +72,7 @@ set ts=2
 set expandtab
 
 " when using the >> or << commands, shift lines by 4 spaces
-set shiftwidth=2
+set shiftwidth=4
 
 " show a visual line under the cursor's current line
 set cursorline
@@ -83,7 +83,6 @@ set cursorline
 " enable all Python syntax highlighting features
 let python_highlight_all = 1
 
-" enbles spell check https://www.linux.com/learn/using-spell-checking-vim
 nnoremap ,s :setlocal spell spelllang=en_us
 nnoremap ,S :set nospell
 nnoremap ,w :w
@@ -95,6 +94,9 @@ nnoremap ,f :%s/search/replace/gc
 nnoremap ,l :set list
 nnoremap ,L :set nolist
 map <C-n> :NERDTreeToggle<CR>
+noremap <C-l> :set number! relativenumber!<CR>
+" enbles spell check https://www.linux.com/learn/using-spell-checking-vim
+noremap <C-g> :setlocal spell! spelllang=en_us<CR>
 
 set hlsearch
 set ignorecase
@@ -103,6 +105,7 @@ let g:neocomplcache_enable_at_startup = 1
 "let maplocalleader = '-'
 "set background=dark
 "colorscheme hemisu
+"set spell spelllang=en_us
 
 :set textwidth=80
 ":set colorcolumn=+1

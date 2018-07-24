@@ -127,10 +127,46 @@ __nb_commit(){
   git commit  
 }
 
-__nb_search(){
-  git grep $1
 
+__nb_search(){
+  git grep -n --text $1 | nl
+  # tee the stream
+  # store result
+  # ask for a number
+  # grep inputed number
+  # awk filename 
+  # awk line
+  # vim filename + line
+  # https://stackoverflow.com/questions/10392424/how-can-i-open-vim-with-a-particular-line-number-at-the-top#10392451
+  # vim +248 Philos/exerpts-pale-horse.md -c 'normal zt'
 }
+
+function nbs_broken(){
+(
+IFS=$'\n';
+cd $NB_DIR;
+filelist="$(git grep -n --text $1 | xargs -0)";
+echo "$filelist";
+PS3='Select a file: ';
+select file in $filelist; do
+    if [[ -n $file ]]; then
+        FILE=$file
+        filename=$(echo $FILE | awk -F ":" '{print $1}')
+        grepline=$(echo $FILE | awk -F ":" '{print $2}')
+        echo "$filename $grepline"
+        # $EDITOR $filename
+        if [ "$EDITOR" = 'vim' ]; then
+            $EDITOR "+$grepline" $filename '-c normal z.'
+        else
+            $EDITOR $filename
+        fi
+        break
+    else
+        echo 'invalid selection'
+    fi
+done)
+}
+
 
 nb(){
 
@@ -154,5 +190,51 @@ case "$1" in
 esac
 }
 
+# Paste this function in your ".bashrc" to enable the "pomo" command in your terminal
+# POMODORO Terminal:
+function pomo() {
+    if [ "$1" = "-h" ] || [ "$1" = "--help" ]; then
+        echo -e "POMODORO Terminal\n"
+        echo "usage: pomo            25 minutes timeout"
+        echo -e "   or: pomo [options]  see options below\n"
+        echo "Options:"
+        echo "  short: 05 minutes timeout"
+        echo "  long:  15 minutes timeout"
+        return
+    fi
 
+    SLEEPTIME=1500 # 25 minutes in seconds
+    TITLE="POMODOR0"
+    SUBTITLE="Take a Break"
+    ICON="face-cool"
+    SOUND="beep -f 200 -d 1 -r 5 -n -f 300 -d 10 -r 4 -n -f  400 -d 100 -r 3"
+
+    if [ "$1" = "long" ]; then
+        SLEEPTIME=900 # 15 minutes in seconds
+        TITLE="LONG BREAK FINISHED"
+        SUBTITLE="Back to Work"
+        ICON="face-monkey"
+        SOUND="beep -f 1000 -r 2 -n -r 5 -l 10 --new"
+
+    elif [ "$1" = "short" ]; then
+        SLEEPTIME=300 # 5 minutes in seconds
+        TITLE="SHORT BREAK FINISHED"
+        SUBTITLE="Back to Work"
+        ICON="face-monkey"
+        SOUND="beep -f 1000 -r 2 -n -r 5 -l 10 --new"
+    fi
+
+    # LINUX users
+
+    if [ "$(uname)" = 'Linux' ]; then
+        echo "im in!"
+        eval "(sleep $SLEEPTIME && notify-send '$TITLE' '$SUBTITLE' --icon=$ICON && $SOUND &)"
+
+    # MAC users
+    elif [ "$(uname)" = 'Darwin' ]; then
+        eval "(sleep $SLEEPTIME && terminal-notifier -message '$SUBTITLE' -title 'Pomodoro' --subtitle '$TITLE' &)"
+    else
+        echo "Sorry! Unsupported operating system :(";
+    fi
+}
 
