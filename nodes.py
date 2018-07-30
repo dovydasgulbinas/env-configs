@@ -61,6 +61,16 @@ def herver():
     host_distro('debian')
 
 
+
+@task
+def pl():
+    env.user = 'fabric'
+    env.hosts = ['mozipo.pl']
+    env.internal_ip = '192.168.2.77'
+    env.alias = 'pl'
+    host_distro('centos')
+
+
 def host_distro(os_name):
     if os_name == "debian":
         env.install_manager = "apt install -y"
