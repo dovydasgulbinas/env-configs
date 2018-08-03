@@ -109,6 +109,8 @@ let g:neocomplcache_enable_at_startup = 1
 let g:airline#extensions#tabline#enabled = 1
 " explicit markdown
 au BufRead,BufNewFile /private/tmp/*,/private/var/*,/tmp/*,~/.calcurse/notes/* set filetype=markdown
+au BufRead,BufNewFile /opt/world/nginx-config/nginx/* set filetype=conf
+"autocmd BufRead,BufNewFile /etc/nginx/sites-*/* setfiletype conf
 
 " Example of dbext configuration need vim with per support
 "let g:dbext_default_profile_cancer = 'type=DBI:user=test:passwd=test:driver=mysql:conn_parms=database=cancer:host=192.168.0.1'
