@@ -1,3 +1,13 @@
+if [ "$(uname)" = 'Linux' ]; then
+    echo ""
+
+# MAC users
+elif [ "$(uname)" = 'Darwin' ]; then
+    export HOSTNAME="$HOST" 
+else
+    echo "Sorry! Unsupported operating system :(";
+fi
+
 export LC_ALL=en_US.UTF-8
 export LANG=en_US.UTF-8
 export LC_TYPE=en_US.UTF-8
@@ -21,7 +31,7 @@ export PATH="$ANACONDA_DIR/bin:$PATH"
 export PATH=$SCRIPTS_DIR:$PATH
 export PATH=~/bin:$PATH
 
-alias mac-home="cd /root/Desktop/Parallels\ Shared\ Folders/Home/whacking"
+# alias mac-home="cd /root/Desktop/Parallels\ Shared\ Folders/Home/whacking"
 
 # My Non Sys vars
 export SYNC_DIR="$HOME/Sync"
