@@ -1,9 +1,14 @@
 import time
+import os
+
 from fabric.api import local, settings, abort, run, cd
 from fabric.operations import get, sudo, put
 from fabric.state import env
 from fabric.decorators import task, with_settings
-import os
+
+import installers
+from installers import install_package
+import nodes
 
 env.user = 'hermes'
 env.hosts = ['192.168.0.7']
@@ -17,58 +22,6 @@ env.vundle_dir = os.path.join(env.conf_dir, 'vim/hidden.vim/bundle')
 env.vundle_package_dir = os.path.join(env.vundle_dir, 'Vundle.vim')
 env.branch = 'master'
 env.alias = 'default'  # do not change this
-
-
-def host_distro(os_name):
-    if os_name == "debian":
-        env.install_manager = "apt install -y"
-    elif os_name == "centos":
-        env.install_manager = "yum install -y"
-
-
-def satellite():
-    env.user = 'hermes'
-    env.hosts = ['192.168.0.7']
-    env.alias = 'satellite'
-    env.install_manager = "apt install -y"
-
-
-def hassio():
-    env.user = 'root'
-    env.hosts = ['192.168.0.105']
-    env.alias = 'hassio'
-    env.install_manager = "apk add"
-    env.secrets_dict = {
-        "/config": ['secrets.yaml', 'known_devices.yaml', 'plex.conf'],
-    }
-
-
-def kali():
-    env.user = 'hermes'
-    env.hosts = ['192.168.0.9']
-    env.alias = 'kali'
-    env.install_manager = "apt install -y"
-
-
-def mc():
-    env.user = 'ud_dovydas_gulbinas'
-    env.hosts = ['momentcredit.lt']
-    env.alias = 'mc'
-    env.install_manager = "yum install -y"
-
-
-def mcgit():
-    env.user = 'ud_dovydas_gulbinas'
-    env.hosts = ['194.0.160.3:1093']
-    env.alias = 'mc'
-    host_distro('debian')
-
-
-def plfab():
-    env.user = 'fabric'
-    env.hosts = ['pl-signature.local']
-    env.alias = 'pl-signature'
-    host_distro('debian')
 
 
 def dir_exists(directory, remote=True):
@@ -110,17 +63,6 @@ def make_backup(filename, filedir='$HOME', ending='.bak'):
         file=full_path, timestamp=get_timestamp(), ending=ending))
 
 
-def install_package(package_name):
-    if env.user != 'root':  # some systems have `sudo` installed
-        sudo("{install_manager} {package_name}".format(
-            install_manager=env.install_manager,
-            package_name=package_name))
-    else:
-        run("{install_manager} {package_name}".format(
-            install_manager=env.install_manager,
-            package_name=package_name))
-
-
 def get_timestamp():
     return int(time.time())
 
@@ -150,7 +92,8 @@ def setup_vim(vimrc='vim/vimrc-mac', vim='vim/hidden.vim'):
     setup_any('.vim', '$HOME', vim)
 
 
-def setup_git(gitconfig='git/.gitconfig', gitignore_global='git/.gitignore_global'):
+def setup_git(gitconfig='git/.gitconfig',
+              gitignore_global='git/.gitignore_global'):
     """
     cd $HOME && ln -s ./diy/env-configs/git/.gitignore_global .gitignore_global
     cd $HOME && ln -s ./diy/env-configs/git/.gitconfig .gitconfig
@@ -166,7 +109,7 @@ def install_vundle():
             env.vundle_package_dir))
     except Exception as e:
         print(
-        "Clonning failed vundle already probably installed: {}".format(e))
+            "Clonning failed vundle already probably installed: {}".format(e))
 
     finally:
         run("vim +PluginInstall +qall")
@@ -184,25 +127,28 @@ def get_pubkey():
     get(remote_path=remote, local_path=local)
 
 
+
 def get_privkey():
     remote = "~/.ssh/id_rsa"
     local = './downloads/{}.id_rsa'.format(env.alias)
     get(remote_path=remote, local_path=local)
 
 
-def get_secrets(use_alias=False):
 
+def get_secrets(use_alias=False):
     for sdir in env.secrets_dict.iterkeys():
         fnames = env.secrets_dict[sdir]
         for fname in fnames:
             remote = os.path.join(sdir, fname)
             if use_alias:
-                localf = os.path.join('./downloads', "-{}-{}".format(env.alias, fname))
+                localf = os.path.join('./downloads',
+                                      "-{}-{}".format(env.alias, fname))
             else:
                 localf = os.path.join('./downloads', fname)
             get(remote_path=remote, local_path=localf)
 
 
+@task
 def install_pub_key():
     pub_key = local('cat $HOME/.ssh/id_rsa.pub', capture=True)
 
@@ -219,7 +165,6 @@ def install_pub_key():
 
 
 def grant_sudo(username):
-
     cmd = 'usermod -aG sudo {}'.format(username)
 
     if username == env.user:
@@ -239,6 +184,7 @@ def setup_hassio():
     setup_any('.profile', '$HOME', 'ash/hidden.profile')
 
 
+@task
 @with_settings(output_prefix=False)
 def first_full_install():
     install_pub_key()

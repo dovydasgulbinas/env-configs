@@ -96,6 +96,10 @@ ln -s $HOME/diy/env-configs/i3 $HOME/.config/i3
     ln -s $HOME/diy/env-configs/bash/main.bash_aliases $HOME/.bash_aliases
     ls -alh .bash_aliases
 
+# create func file
+
+    ln -s ./diy/env-configs/bash/main.bash_funcs .bash_funcs  
+
 
 # for zsh
     echo "export PATH=$HOME/diy/env-configs/scripts:$PATH" >> $HOME/.bashrc

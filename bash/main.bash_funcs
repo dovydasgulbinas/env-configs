@@ -1,0 +1,254 @@
+wttr()
+{
+    # change Paris to your default location
+    curl -H "Accept-Language: ${LANG%_*}" wttr.in/"${1:-Vilnius}"
+}
+
+
+deunix()
+{
+date -r $1 '+DATE: %Y-%m-%d %nTIME: %H:%M:%S'
+echo "STMP: $1"
+}
+
+
+sto()
+{
+echo "== Starting store check =="
+echo "for dir: $1"
+du -h $1 | sort -h | less
+}
+
+
+base64_jpg()
+{
+pbpaste | base64 --decode > /tmp/img.jpg; open /tmp/img.jpg
+}
+
+
+transf() { if [ $# -eq 0 ]; then echo -e "No arguments specified. Usage:\necho transfer /tmp/test.md\ncat /tmp/test.md | transfer test.md"; return 1; fi
+tmpfile=$( mktemp -t transferXXX ); if tty -s; then basefile=$(basename "$1" | sed -e 's/[^a-zA-Z0-9._-]/-/g'); curl --progress-bar --upload-file "$1" "https://transfer.sh/$basefile" >> $tmpfile; else curl --progress-bar --upload-file "-" "https://transfer.sh/$1" >> $tmpfile ; fi; cat $tmpfile; rm -f $tmpfile; } 
+
+
+transfscreen(){
+    transf "$(ls -t | head -1)" 
+}
+
+
+transfenc(){
+
+fname=$(basename -- "$1").gpg
+gpg -ac -o- < $1 | curl -X PUT --upload-file "-" "https://transfer.sh/$fname"
+}
+
+
+
+
+diffclip()
+{
+ pbpaste > tmp.yaml ; vimdiff $1 tmp.yaml; rm tmp.yaml
+}
+
+viruscheck()
+{
+whois -h hash.cymru.com $(openssl sha1 $1 | awk -F "= " '{print $2}')
+}
+
+virushash()
+{
+whois -h hash.cymru.com $1
+}
+
+f(){
+
+case "$1" in
+"dir")
+  echo "$PWD" > "$HOME/.favdir"
+  echo "updated your favourite dir to: $PWD"
+  ;;
+"go")
+  cd $(cat $HOME/.favdir)
+  ;;
+"song")
+  mpc | head -n 1 >> $FSONG_FPATH && tail -n 5 $FSONG_FPATH
+  ;;
+"list")
+  bak_list
+  ;;
+"rem8")
+  bak_rem8
+  ;;
+"cols")
+  bak_cols
+  ;;
+*)
+  echo 'Usage: f {song|dir|go|}'
+  ;;
+esac
+}
+
+# =================== BLOG FUNCS ==================== 
+
+__blog_serve(){
+cd $BLOG_DIR && bundle exec jekyll serve $1
+}
+
+__blog_edit(){
+cd $BLOG_DIR && atom $BLOG_DIR
+}
+
+
+blog(){
+
+case "$1" in
+"go")
+  cd $BLOG_DIR
+  ;;
+"serve")
+  # cd $BLOG_DIR && bundle exec jekyll serve --drafts
+  __blog_serve '--drafts'
+  ;;
+"serve-nd")
+  echo "serving blog with drafts disabled"
+  __blog_serve
+  ;;
+"edit")
+  __blog_edit
+  ;;
+"cols")
+  bak_cols
+  ;;
+*)
+  echo 'Usage: blog {go|serve|serve-ng|edit}'
+  ;;
+esac
+}
+
+
+# =================== NOTEBOOK FUNCS ==================== 
+
+__nb_go(){
+  cd $NB_DIR
+}
+
+__nb_edit(){
+  atom $NB_DIR
+}
+
+__nb_commit(){
+  cd $NB_DIR
+  git add .
+  git commit  
+}
+
+
+__nb_search(){
+  git grep -n --text $1 | nl
+  # tee the stream
+  # store result
+  # ask for a number
+  # grep inputed number
+  # awk filename 
+  # awk line
+  # vim filename + line
+  # https://stackoverflow.com/questions/10392424/how-can-i-open-vim-with-a-particular-line-number-at-the-top#10392451
+  # vim +248 Philos/exerpts-pale-horse.md -c 'normal zt'
+}
+
+function nbs_broken(){
+(
+IFS=$'\n';
+cd $NB_DIR;
+filelist="$(git grep -n --text $1 | xargs -0)";
+echo "$filelist";
+PS3='Select a file: ';
+select file in $filelist; do
+    if [[ -n $file ]]; then
+        FILE=$file
+        filename=$(echo $FILE | awk -F ":" '{print $1}')
+        grepline=$(echo $FILE | awk -F ":" '{print $2}')
+        echo "$filename $grepline"
+        # $EDITOR $filename
+        if [ "$EDITOR" = 'vim' ]; then
+            $EDITOR "+$grepline" $filename '-c normal z.'
+        else
+            $EDITOR $filename
+        fi
+        break
+    else
+        echo 'invalid selection'
+    fi
+done)
+}
+
+
+nb(){
+
+case "$1" in
+"go")
+  __nb_go
+  ;;
+"s")
+  __nb_go
+  __nb_search "$2"
+  ;;
+"edit")
+  __nb_edit
+  ;;
+"commit")
+  __nb_commit
+  ;;
+*)
+  echo 'Usage: nb {go|edit|s SEARCH-TERM|commit}'
+  ;;
+esac
+}
+
+# Paste this function in your ".bashrc" to enable the "pomo" command in your terminal
+# POMODORO Terminal:
+function pomo() {
+    if [ "$1" = "-h" ] || [ "$1" = "--help" ]; then
+        echo -e "POMODORO Terminal\n"
+        echo "usage: pomo            25 minutes timeout"
+        echo -e "   or: pomo [options]  see options below\n"
+        echo "Options:"
+        echo "  short: 05 minutes timeout"
+        echo "  long:  15 minutes timeout"
+        return
+    fi
+
+    SLEEPTIME=1500 # 25 minutes in seconds
+    TITLE="POMODOR0"
+    SUBTITLE="Take a Break"
+    ICON="face-cool"
+    SOUND="beep -f 200 -d 1 -r 5 -n -f 300 -d 10 -r 4 -n -f  400 -d 100 -r 3"
+
+    if [ "$1" = "long" ]; then
+        SLEEPTIME=900 # 15 minutes in seconds
+        TITLE="LONG BREAK FINISHED"
+        SUBTITLE="Back to Work"
+        ICON="face-monkey"
+        SOUND="beep -f 1000 -r 2 -n -r 5 -l 10 --new"
+
+    elif [ "$1" = "short" ]; then
+        SLEEPTIME=300 # 5 minutes in seconds
+        TITLE="SHORT BREAK FINISHED"
+        SUBTITLE="Back to Work"
+        ICON="face-monkey"
+        SOUND="beep -f 1000 -r 2 -n -r 5 -l 10 --new"
+    fi
+
+    # LINUX users
+
+    if [ "$(uname)" = 'Linux' ]; then
+        echo "im in!"
+        eval "(sleep $SLEEPTIME && notify-send '$TITLE' '$SUBTITLE' --icon=$ICON && $SOUND &)"
+
+    # MAC users
+    elif [ "$(uname)" = 'Darwin' ]; then
+        eval "(sleep $SLEEPTIME && terminal-notifier -message '$SUBTITLE' -title 'Pomodoro' --subtitle '$TITLE' &)"
+    else
+        echo "Sorry! Unsupported operating system :(";
+    fi
+}
+
