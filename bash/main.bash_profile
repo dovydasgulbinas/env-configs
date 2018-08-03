@@ -1,9 +1,10 @@
 if [ "$(uname)" = 'Linux' ]; then
-    echo ""
+    export OS='Linux'
 
 # MAC users
 elif [ "$(uname)" = 'Darwin' ]; then
     export HOSTNAME="$HOST" 
+    export OS='Darwin'
 else
     echo "Sorry! Unsupported operating system :(";
 fi

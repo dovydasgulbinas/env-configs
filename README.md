@@ -100,6 +100,10 @@ ln -s $HOME/diy/env-configs/i3 $HOME/.config/i3
 
     ln -s $HOME/diy/env-configs/bash/main.bash_funcs $HOME/.bash_funcs  
 
+# create bash profile
+
+    mv $HOME/.bash_profile $HOME/.bash_profile.bak
+    ln -s $HOME/diy/env-configs/bash/main.bash_profile $HOME/.bash_profile
 
 
 # for zsh
