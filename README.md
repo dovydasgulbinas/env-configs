@@ -91,14 +91,15 @@ ln -s $HOME/diy/env-configs/i3 $HOME/.config/i3
 
 # create alias file
 
-    cp $HOME/.bash_aliases $HOME/diy/env-configs/bash/main.bash_aliases
+    cp $HOME/.bash_aliases $HOME/diy/env-configs/bash/$USER@$HOSTNAME.bash_aliases
     mv $HOME/.bash_aliases $HOME/.bash_aliases.bak
     ln -s $HOME/diy/env-configs/bash/main.bash_aliases $HOME/.bash_aliases
     ls -alh .bash_aliases
 
 # create func file
 
-    ln -s ./diy/env-configs/bash/main.bash_funcs .bash_funcs  
+    ln -s $HOME/diy/env-configs/bash/main.bash_funcs $HOME/.bash_funcs  
+
 
 
 # for zsh
