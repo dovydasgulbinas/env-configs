@@ -1,0 +1,103 @@
+https://news.ycombinator.com/rss
+https://8ch.net/tech/index.rss "~/tech/ - Technology (8ch)" "chans"
+https://boards.4chan.org/g/index.rss "~/tech/ - Technology (4chan)" "chans"
+https://8ch.net/pol/index.rss "~/pol/ - Politically Incorrect (8ch)" "chans"
+https://boards.4chan.org/pol/index.rss "~/pol/ - Politically Incorrect (4chan)" "chans" 
+http://370chan.lt/b/index.rss "~Random (370chan)" "chans" "lt"
+http://370chan.lt/int/index.rss "~International (370chan)" "chans" "lt"
+
+https://www.reddit.com/r/selfhosted/.rss "reddit" "sw"
+
+# patina
+http://lukesmith.xyz/rss.xml "~Luke Smith's [Blog]" "tuts" "blog"
+https://github.com/lukesmithxyz.atom "~Luke Smith's [Github]"
+https://notrelated.libsyn.com/rss "podcasts" "~Luke Smith's [podcast]"
+https://tryexceptpass.org/index.xml "dev" "blog"
+https://m.signalvnoise.com/feed "biz" "dev" "blog"
+https://www.xkcd.com/rss.xml "recreation"
+https://turnoff.us/feed.xml "recreation"
+https://drewdevault.com/feed.xml "dev" "blog"
+https://rachelbythebay.com/w/atom.xml  "~Rachel By The Bay's Blog" "blog" "dev"
+https://www.bitchute.com/feeds/rss/channel/theouterlinux/ "tuts" "bt"
+https://www.nico-maas.de/?feed=rss2
+
+# podcasts
+https://www.podcastinit.com/feed/mp3/ "podcasts"
+https://talkpython.fm/episodes/rss "podcasts"
+https://philosophizethis.libsyn.com/rss "podcasts"
+
+# Growth
+https://www.youtube.com/feeds/videos.xml?channel_id=UCfzlCWGWYyIQ0aLC5w48gBQ "~Sentdex (youtube)" "tuts"
+https://www.twitrss.me/twitter_user_to_rss/?user=Sentdex "~Sentdex (twitter)"
+
+https://www.youtube.com/feeds/videos.xml?channel_id=UCWN3xxRkmTPmbKwht9FuE5A "~Siraj Raval (youtube)" "tuts"
+https://www.twitrss.me/twitter_user_to_rss/?user=sirajraval "~Siraj Raval (twitter)"
+
+https://www.youtube.com/feeds/videos.xml?channel_id=UCrjKdwxaQMSV_NDywgKXVmw "~Nova Spirit Tech (youtube)" "tuts" "tech"
+
+https://www.troyhunt.com/rss/ "infosec"
+https://feeds.feedburner.com/IrongeeksSecuritySite "infosec"
+
+# opensource
+
+https://newsboat.org/news.atom "opensource-sw"
+https://freshrss.org/feeds/all.atom.xml "opensource-sw"
+
+# Lithuanian Bloggers
+http://pamirsta.lt/feed/ "lt"
+http://www.vabolis.lt/rss "lt" "hw"
+http://www.protoarchitektas.lt/feed/ "lt" "productivity"
+http://raumeningasprotas.lt/feed/ "lt" "productivity"
+http://www.tranzobusena.lt/feed/ "lt" "psiche"
+https://debesyla.lt/feed/ "lt"
+http://coachingblog.lt/feed/ "lt"
+http://www.bernardinai.lt/rss/feeds/all "lt" "media"
+https://psichika.eu/feed/ "lt" "media"
+http://www.tindirindi.lt/feed/ "blog" "lt"
+https://feeds.feedburner.com/uzdarbislt "forum" "lt"
+https://www.supergames.lt/discover/all.xml/ "forum" "lt"
+https://laikiux.lt/forums/-/index.rss "forum" "lt"
+http://forumas.tiputeorija.lt/index.php?PHPSESSID=fks8ns7dq5kosp484pukilk6r7&action=.xml;type=rss "forum" "lt"
+https://www.chatas.lt/feed/ "lt"
+http://www.topzone.lt/feed "lt" "forum"
+
+## feminine bullshit
+http://tutikraigali.lt/feed/ "lt"
+http://www.valtininkas.lt/feed/ "lt"
+https://feeds.feedburner.com/blogspot/gyARX "lt"
+https://dziaugiuosisavimi.lt/feed/ "lt"
+
+https://www.youtube.com/feeds/videos.xml?channel_id=UCqYPhGiB9tkShZorfgcL2lA
+https://www.youtube.com/feeds/videos.xml?channel_id=UCYO_jab_esuFRV4b17AJtAw
+https://www.youtube.com/feeds/videos.xml?channel_id=UC3s0BtrBJpwNDaflRSoiieQ
+https://www.youtube.com/feeds/videos.xml?channel_id=UC2eYFnH61tmytImy1mTYvhA
+https://www.youtube.com/feeds/videos.xml?channel_id=UClcE-kVhqyiHCcjYwcpfj9w
+
+https://www.bitchute.com/feeds/rss/channel/styxhexenhammer666/ "news"
+
+# Health
+https://www.youtube.com/feeds/videos.xml?channel_id=UCe0TLA0EsQbE-MjuHXevj2A "health"
+https://www.youtube.com/feeds/videos.xml?channel_id=UCSXFaThRuBGbqOaZsTxZnTQ "health"
+https://www.youtube.com/feeds/videos.xml?channel_id=UC0CRYvGlWGlsGxBNgvkUbAg "Gravity Transformation" "tuts" "health"
+
+
+https://www.hltv.org/rss/news "~HLTV.org" "recreation"
+https://www.verslozinios.lt/rss "~Verslo Zinios"
+http://www.bznstart.lt/verslas.rss "~Verslas (Bznstart)"
+http://www.bznstart.lt/idomybes.rss "~Įdomybės (Bznstart)"
+http://www.bznstart.lt/video.rss "~Video (Bznstart)"
+
+
+# Q
+https://8ch.net/qresearch/index.rss "~/qresearch/ - Q Board (8ch)" "chans"
+https://www.reddit.com/r/greatawakening/.rss 
+https://www.twitrss.me/twitter_user_to_rss/?user=prayingmedic "~Prayingmedic (twitter)"
+
+
+# siphon 
+
+https://megamorphf.github.io/feed.xml 
+
+
+
+

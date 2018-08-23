@@ -1,0 +1,268 @@
+#!/bin/bash
+#
+#####[Requirements]#####
+#
+# 1. Linux/UNIX system
+# 2. cURL
+# 3. rsstail; however, it will run but skip sections if you don't have it installed.
+#
+#####[Switch On/Off]#####
+#
+SWITCH_TWITCH=on
+SWITCH_YOUTUBE=on
+SWITCH_BITCHUTE=on #Uses rsstail; YouTube alternative
+SWITCH_TWITTER=on
+SWITCH_TUMBLR=on #Uses rsstail
+SWITCH_DEVIANTART=on #Uses rsstail
+SWITCH_SOUNDCLOUD=on #Uses rsstail
+SWITCH_RSS=on #Uses rsstail
+#
+#####[Channels, usernames, and RSS feeds]#####
+declare -a twitch=("theouterlinux"
+                "linuxgamecast"
+                "linuxgurugamer"
+                "food"
+                "bobross"
+                )
+declare -a youtube=("explainingcomputers" #Use username or channel ID
+                "knowhow" 
+                "techquickie"
+                "bryanlunduke"
+                "ctsdownloads"
+                "thelinuxgamer"
+                "makeuseoftv"
+                "UCFIjVWFZ__KhtTXHDJ7vgng" #Raspberry Pi
+                "tedtalksdirector"
+                "rhettandlink2"
+                )
+declare -a bitchute=("theouterlinux"
+                "hexdsl"
+                "chriswere"
+                "linuxlounge"
+                )                
+declare -a twitter=("theouterlinux"
+                    "opensourcenews"
+                    "puri_sm"
+                    "system76"
+                    "torproject"
+                    "nsf"
+                    "thingswork"
+                    "physorg_com"
+                    "bryanlunduke"
+                    "matthartley"
+                    "slashdot"
+                    "bbcworld"
+                )
+declare -a tumblr=("theouterlinux"
+                   "linuxawesome"
+                   "unixporn"
+                   "tecmint"
+                   "nixcraft"
+                   "linuxscoop"
+                   "linux-tutorial"
+                )
+declare -a deviantart=("theouterlinux"
+                       "inkscape"
+                       "project-gimpbc"
+                )
+declare -a soundcloud=("theouterlinux" #This is buggy; I think there's something wrong with Pro accounts
+                      )
+declare -a rss=("https://www.linux.com/feeds/news/desktop/rss"
+                "http://feeds.feedburner.com/linuxandubuntu"
+                "http://linuxgizmos.com/feed/"
+                "https://www.raspberrypi.org/feed/"
+                "http://www.linuxtoday.com/biglt.rss"
+                "https://distrowatch.com/news/dwd.xml"
+                "https://itsfoss.com/feed/"
+                "https://fossforce.com/feed/"
+                "http://www.linuxinsider.com/perl/syndication/rssfull.pl"
+                "https://feeds2.feedburner.com/Command-line-fu"
+               )
+#########################################################################
+#
+#####[The script; Don't edit below here]#####
+clear
+if [ "$SWITCH_TWITCH" = "on" ] || [ "$SWITCH_TWITCH" = "On" ] [ "$SWITCH_TWITCH" = "ON" ] || [ "$SWITCH_TWITCH" = "1" ]
+then
+    echo -e "\e[95m# Checking for Twitch streams..."
+    echo "################################"
+    for i in "${twitch[@]}"
+    do
+        stream="$(curl -s https://decapi.me/twitch/uptime?channel=$i | cut -d ' ' -f3)"
+        if [ "$stream" = "offline" ]
+        then
+            echo -e "\e[95m$i \e[0mis \e[31moffline"
+        else
+            echo -e "\e[95m$i \e[0mis \e[32mstreaming"
+        fi
+    done
+    if [ -f /usr/bin/mpv ]
+    then
+        echo -e "\e[95mUse \e[0mmpv https://twitch.tv/username\e[95m in the command-line to watch."
+    else
+        if [ -f /usr/bin/livestreamer ]
+        then
+            echo -e "\e[95mUse \e[0mlivestreamer https://twitch.tv/username best\e[95m in the command-line to watch."
+        fi
+    fi
+fi
+echo -e "\e[0m"
+echo ""
+if [ "$SWITCH_YOUTUBE" = "on" ] || [ "$SWITCH_YOUTUBE" = "On" ] || [ "$SWITCH_YOUTUBE" = "ON" ] || [ "$SWITCH_YOUTUBE" = "1" ]
+then
+    echo -e "\e[91m# Checking latest YouTube videos..."
+    echo "###################################"
+    for i in "${youtube[@]}"
+    do
+        user="$(curl -s https://decapi.me/youtube/latest_video?user=$i | grep -o invalid)"
+        if [ "$user" != "invalid" ]
+        then
+            echo ""
+            echo -n -e "\e[91m$i: \e[0m"
+            curl -s "https://decapi.me/youtube/latest_video?user=$i"
+            echo ""
+        fi
+        id="$(curl -s https://decapi.me/youtube/latest_video?id=$i | grep -o invalid)"
+        if [ "$id" != "invalid" ]
+        then
+            echo ""
+            echo -n -e "\e[91m$i: \e[0m"
+            curl -s "https://decapi.me/youtube/latest_video?id=$i"
+            echo ""
+        fi
+    done
+    if [ -f /usr/bin/mpv ]
+    then
+        echo ""
+        echo -e "\e[0mUse 'mpv [YouTube URL]' in the command-line to watch."
+    else
+        if [ -f /usr/bin/vlc ]
+        then
+            echo ""
+            echo -e "\e[0mUse 'cvlc [YouTube URL]' in the command-line to watch."
+        fi
+    fi
+fi
+echo ""
+if [ "$SWITCH_BITCHUTE" = "on" ] || [ "$SWITCH_BITCHUTE" = "On" ] || [ "$SWITCH_BITCHUTE" = "ON" ] || [ "$SWITCH_BITCHUTE" = "1" ]
+then
+    if [ -f /usr/bin/rsstail ]
+    then
+        echo ""
+        echo -e "\e[31m# Checking latest Bitchute videos..."
+        echo "####################################"
+        echo ""
+        for i in "${bitchute[@]}"
+        do
+            echo -n -e "\e[31m $i: \e[0m"
+            rsstail -lHr1u "https://www.bitchute.com/feeds/rss/channel/$i" | tail -n 2
+            echo ""
+        done
+    fi
+fi
+echo -e "\e[0m"
+if [ "$SWITCH_TWITTER" = "on" ] || [ "$SWITCH_TWITTER" = "On" ] || [ "$SWITCH_TWITTER" = "ON" ] || [ "$SWITCH_TWITTER" = "1" ]
+then
+    echo -e "\e[36m# Checking latest Tweets..."
+    echo "###########################"
+    for i in "${twitter[@]}"
+    do
+        name="$(curl -s https://decapi.me/twitter/latest?name=$i | grep -o Error)"
+        if [ "$name" != "Error" ]
+        then
+            echo ""
+            echo -n -e "\e[36m $i: "
+            latest="$(curl -s https://decapi.me/twitter/latest/$i?no_rts)"
+            echo -e "\e[0m$latest"
+            url="$(curl -s https://decapi.me/twitter/latest_url/$i)"
+            echo "Tweet url: $url"
+        fi
+    done
+fi
+echo ""
+if [ "$SWITCH_TUMBLR" = "on" ] || [ "$SWITCH_TUMBLR" = "On" ] || [ "$SWITCH_TUMBLR" = "ON" ] || [ "$SWITCH_TUMBLR" = "1" ]
+then
+    if [ -f /usr/bin/rsstail ]
+    then
+        echo ""
+        echo -e "\e[94m# Checking latest Tumblr posts..."
+        echo "#################################"
+        echo ""
+        for i in "${tumblr[@]}"
+        do
+            echo -n -e "\e[94m $i: \e[0m"
+            rsstail -lHr1u "http://$i.tumblr.com/rss" | tail -n 2
+            echo ""
+        done
+    fi
+fi
+echo ""
+if [ "$SWITCH_DEVIANTART" = "on" ] || [ "$SWITCH_DEVIANTART" = "On" ] || [ "$SWITCH_DEVIANTART" = "ON" ] || [ "$SWITCH_DEVIANTART" = "1" ]
+then
+    if [ -f /usr/bin/rsstail ]
+    then
+        echo -e "\e[90m# Checking latest DeviantArt submissions..."
+        echo "###########################################"
+        echo ""
+        for i in "${deviantart[@]}"
+        do
+            echo -n -e "\e[90m $i: \e[0m"
+            rsstail -lHr1u "https://backend.deviantart.com/rss.xml?q=gallery:$i" | tail -n 2
+            echo ""
+        done
+    fi
+fi
+echo ""
+if [ "$SWITCH_SOUNDCLOUD" = "on" ] || [ "$SWITCH_SOUNDCLOUD" = "On" ] || [ "$SWITCH_SOUNDCLOUD" = "ON" ] || [ "$SWITCH_SOUNDCLOUD" = "1" ]
+then
+    if [ -f /usr/bin/rsstail ]
+    then
+        echo -e "\e[38;5;208m# Checking latest Soundcloud releases..."
+        echo "########################################"
+        echo ""
+        for i in "${soundcloud[@]}"
+        do
+            user="$(curl -s https://soundcloud.com/$i | grep 'content="soundcloud://users:' | cut -d "<" -f9 | awk -F'//users:' '{print $2}' | cut -d '"' -f1)"
+            echo -n -e "\e[38;5;208m $i: \e[0m"
+            rsstail -lHr1u "http://feeds.soundcloud.com/users/soundcloud:users:$user/sounds.rss" | tail -n 2
+            echo ""
+        done
+    fi
+    if [ -f /usr/bin/mpv ]
+    then
+        echo ""
+        echo -e "\e[0mUse 'mpv [Soundcloud URL]' in the command-line to watch."
+    else
+        if [ -f /usr/bin/vlc ]
+        then
+            echo ""
+            echo -e "\e[0mUse 'cvlc [Soundcloud URL]' in the command-line to listen."
+        fi
+    fi
+fi
+if [ "$SWITCH_RSS" = "on" ] || [ "$SWITCH_RSS" = "On" ] || [ "$SWITCH_RSS" = "ON" ] || [ "$SWITCH_RSS" = "1" ]
+then
+    if [ -f /usr/bin/rsstail ]
+    then
+        alt=0
+        echo -e "\e[0m"
+        echo -e "\e[93m# Checking RSS feeds..."
+        echo "#######################"
+        for i in "${rss[@]}"
+        do
+            if [ "$alt" = "0" ]
+            then
+                echo -e "\e[33m"
+                rsstail -lHr1u "$i" | tail -n 2
+                alt="1"
+            else
+                echo -e "\e[93m"
+                rsstail -lHr1u "$i" | tail -n 2
+                alt="0"
+            fi
+        done
+    fi
+fi
+echo ""
+echo -e "\e[0mIf in TTY/console, use SHIFT+PageUp or SHIFT+PageDown to scroll."
+echo ""
