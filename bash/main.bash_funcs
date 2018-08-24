@@ -265,10 +265,8 @@ url="$(echo \"$PAGE\" | grep -Eoi '<source [^>]+>' | grep -Eo 'src="[^\"]+"' | g
 # url="$(curl -s $1 | grep -Eoi '<source [^>]+>' | grep -Eo 'src="[^\"]+"' | grep -Eo '(http|https)://[^"]+')"
 TITLE=$(echo \"$PAGE\" | grep -oEi "<title>(.*)</title>" | cut -d '>' -f2 | cut -d '<' -f1)
 
-mpv --ontop=yes --title="$TITLE" --snap-window --autofit-larger='25%' --geometry='-10-10' $url
+mpv --ontop=yes --title="$TITLE" --snap-window --autofit-larger='25%' --geometry='-10-10' --speed 1.75 $url
 }
-
-
 
 
 __grab_title(){
