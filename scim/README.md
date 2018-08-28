@@ -49,3 +49,5 @@ mod text
 
 
 scim  EMP_LDAP_LT_NEW.csv --txtdelim=";"
+
+[1]: https://www.youtube.com/watch?v=K_8_gazN7h0
