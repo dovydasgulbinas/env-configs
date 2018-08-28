@@ -26,5 +26,16 @@ color listfocus_unread yellow default bold
 color info red black bold
 color article cyan default
 
-browser open
-macro w open-in-browser
+browser open  
+# macro , open-in-browser
+macro v set browser "mpv"; open-in-browser ; set browser open
+macro l set browser "btdl"; open-in-browser ; set browser open
+macro b set browser "source $HOME/.bash_funcs && btpl "; open-in-browser ; set browser open
+
+display-article-progress yes
+
+bookmark-interactive yes
+# https://github.com/newsboat/newsboat/blob/master/contrib/bookmark-delicious.sh
+bookmark-cmd /Users/hermes/diy/env-configs/scripts/bookmark-util.sh
+
+# https://newsboat.org/releases/2.12/docs/newsboat.html#_query_feeds

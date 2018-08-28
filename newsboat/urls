@@ -1,12 +1,4 @@
 https://news.ycombinator.com/rss
-https://8ch.net/tech/index.rss "~/tech/ - Technology (8ch)" "chans"
-https://boards.4chan.org/g/index.rss "~/tech/ - Technology (4chan)" "chans"
-https://8ch.net/pol/index.rss "~/pol/ - Politically Incorrect (8ch)" "chans"
-https://boards.4chan.org/pol/index.rss "~/pol/ - Politically Incorrect (4chan)" "chans" 
-http://370chan.lt/b/index.rss "~Random (370chan)" "chans" "lt"
-http://370chan.lt/int/index.rss "~International (370chan)" "chans" "lt"
-
-https://www.reddit.com/r/selfhosted/.rss "reddit" "sw"
 
 # patina
 http://lukesmith.xyz/rss.xml "~Luke Smith's [Blog]" "tuts" "blog"
@@ -20,6 +12,10 @@ https://drewdevault.com/feed.xml "dev" "blog"
 https://rachelbythebay.com/w/atom.xml  "~Rachel By The Bay's Blog" "blog" "dev"
 https://www.bitchute.com/feeds/rss/channel/theouterlinux/ "tuts" "bt"
 https://www.nico-maas.de/?feed=rss2
+https://blog.stoplight.io/feed "blog" "dev"
+https://blog.scrt.ch/feed/ "blog" "hacking"
+http://tuxmachines.org/node/feed "linux" "dev"
+https://www.ynonperek.com/rss/ "dev" "blog"
 
 # podcasts
 https://www.podcastinit.com/feed/mp3/ "podcasts"
@@ -38,12 +34,16 @@ https://www.youtube.com/feeds/videos.xml?channel_id=UCrjKdwxaQMSV_NDywgKXVmw "~N
 https://www.troyhunt.com/rss/ "infosec"
 https://feeds.feedburner.com/IrongeeksSecuritySite "infosec"
 
-# opensource
+http://370chan.lt/b/index.rss "~Random (370chan)" "chans" "lt"
+http://370chan.lt/int/index.rss "~International (370chan)" "chans" "lt"
+https://www.reddit.com/r/selfhosted/.rss "reddit" "sw"
 
+# opensource
 https://newsboat.org/news.atom "opensource-sw"
 https://freshrss.org/feeds/all.atom.xml "opensource-sw"
 
 # Lithuanian Bloggers
+https://www.youtube.com/feeds/videos.xml?channel_id=UClkGCNKSeh49ymmtLwvl0Ag
 http://pamirsta.lt/feed/ "lt"
 http://www.vabolis.lt/rss "lt" "hw"
 http://www.protoarchitektas.lt/feed/ "lt" "productivity"
@@ -72,6 +72,7 @@ https://www.youtube.com/feeds/videos.xml?channel_id=UCYO_jab_esuFRV4b17AJtAw
 https://www.youtube.com/feeds/videos.xml?channel_id=UC3s0BtrBJpwNDaflRSoiieQ
 https://www.youtube.com/feeds/videos.xml?channel_id=UC2eYFnH61tmytImy1mTYvhA
 https://www.youtube.com/feeds/videos.xml?channel_id=UClcE-kVhqyiHCcjYwcpfj9w
+https://www.youtube.com/feeds/videos.xml?channel_id=UC2yjFWvWJ_NOkhJ22PswTbQ
 
 https://www.bitchute.com/feeds/rss/channel/styxhexenhammer666/ "news"
 
@@ -87,6 +88,11 @@ http://www.bznstart.lt/verslas.rss "~Verslas (Bznstart)"
 http://www.bznstart.lt/idomybes.rss "~Įdomybės (Bznstart)"
 http://www.bznstart.lt/video.rss "~Video (Bznstart)"
 
+https://8ch.net/tech/index.rss "~/tech/ - Technology (8ch)" "chans"
+https://8ch.net/g/index.rss "~/g/ - GNU Technology (8ch)" "chans"
+https://boards.4chan.org/g/index.rss "~/tech/ - Technology (4chan)" "chans"
+https://8ch.net/pol/index.rss "~/pol/ - Politically Incorrect (8ch)" "chans"
+
 
 # Q
 https://8ch.net/qresearch/index.rss "~/qresearch/ - Q Board (8ch)" "chans"
@@ -97,7 +103,6 @@ https://www.twitrss.me/twitter_user_to_rss/?user=prayingmedic "~Prayingmedic (tw
 # siphon 
 
 https://megamorphf.github.io/feed.xml 
-
-
+https://boards.4chan.org/pol/index.rss "~/pol/ - Politically Incorrect (4chan)" "chans" 
 
 
