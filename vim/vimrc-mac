@@ -93,10 +93,14 @@ nnoremap ,f :%s/search/replace/gc
 :set listchars=eol:$,tab:>-,trail:~,extends:>,precedes:<
 nnoremap ,l :set list
 nnoremap ,L :set nolist
+nnoremap ,b :set colorcolumn=81!
+nnoremap ,B :set colorcolumn=81
+
 map <C-n> :NERDTreeToggle<CR>
 noremap <C-l> :set number! relativenumber!<CR>
 " enbles spell check https://www.linux.com/learn/using-spell-checking-vim
 noremap <C-g> :setlocal spell! spelllang=en_us<CR>
+" colorcolumn=81
 
 set hlsearch
 set ignorecase
