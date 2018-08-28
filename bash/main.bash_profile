@@ -5,6 +5,7 @@ if [ "$(uname)" = 'Linux' ]; then
 elif [ "$(uname)" = 'Darwin' ]; then
     export HOSTNAME="$HOST" 
     export OS='Darwin'
+    alias browser="/usr/bin/open -a /Applications/Firefox.app"
 else
     echo "Sorry! Unsupported operating system :(";
 fi
@@ -41,5 +42,6 @@ export BLOG_DIR="$SYNC_DIR/diy/blog"
 export DIY_DIR="$SYNC_DIR/diy"
 export FSONG_FPATH="$SYNC_DIR/logs/to-listen.txt"
 
-export SCRIPTS_DIR="$HOME/diy/env-configs/scripts"
-export PROJECT_DIR="$HOME/Projects"
+export ENV_CONFIG_DIR="$HOME/diy/env-configs"
+export SCRIPTS_DIR="$ENV_CONFIG_DIR/scripts"
+export PROJECTS_DIR="$HOME/Projects"
