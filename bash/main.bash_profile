@@ -15,7 +15,7 @@ export LANG=en_US.UTF-8
 export LC_TYPE=en_US.UTF-8
 export LANGUAGE=en_US.UTF-8
 
-export PS1="\[\033[36m\]\u\[\033[m\]@\[\033[32m\]\h:\[\033[33;1m\]\w\[\033[m\]\$ "
+# export PS1="\[\033[36m\]\u\[\033[m\]@\[\033[32m\]\h:\[\033[33;1m\]\w\[\033[m\]\$ "
 export CLICOLOR=1
 export LSCOLORS=ExFxBxDxCxegedabagacad
 alias ls='ls -GFh'
@@ -37,11 +37,14 @@ export PATH=~/bin:$PATH
 
 # My Non Sys vars
 export SYNC_DIR="$HOME/Sync"
+export DIY_DIR="$HOME/diy"
+export BOOKS_DIR="$HOME/Books"
+export SCREENSHOTS_DIR="$SYNC_DIR/screen-shots"
 export NB_DIR="$SYNC_DIR/notebook"
 export BLOG_DIR="$SYNC_DIR/diy/blog"
 export DIY_DIR="$SYNC_DIR/diy"
 export FSONG_FPATH="$SYNC_DIR/logs/to-listen.txt"
 
-export ENV_CONFIG_DIR="$HOME/diy/env-configs"
+export ENV_CONFIG_DIR="$DIY_DIR/env-configs"
 export SCRIPTS_DIR="$ENV_CONFIG_DIR/scripts"
 export PROJECTS_DIR="$HOME/Projects"

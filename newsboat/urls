@@ -1,5 +1,8 @@
 https://news.ycombinator.com/rss
 
+http://370chan.lt/b/index.rss "~Random (370chan)" "chans" "lt"
+http://370chan.lt/int/index.rss "~International (370chan)" "chans" "lt"
+
 # patina
 http://lukesmith.xyz/rss.xml "~Luke Smith's [Blog]" "tuts" "blog"
 https://github.com/lukesmithxyz.atom "~Luke Smith's [Github]"
@@ -16,11 +19,13 @@ https://blog.stoplight.io/feed "blog" "dev"
 https://blog.scrt.ch/feed/ "blog" "hacking"
 http://tuxmachines.org/node/feed "linux" "dev"
 https://www.ynonperek.com/rss/ "dev" "blog"
+http://karlitschek.de/feed/ "dev" "blog"
 
 # podcasts
-https://www.podcastinit.com/feed/mp3/ "podcasts"
-https://talkpython.fm/episodes/rss "podcasts"
-https://philosophizethis.libsyn.com/rss "podcasts"
+https://philosophizethis.libsyn.com/rss "podcasts" 
+https://www.podcastinit.com/feed/mp3/ "podcasts" "python"
+https://talkpython.fm/episodes/rss "podcasts" "python"
+https://pythonbytes.fm/episodes/rss "podcasts" "python"
 
 # Growth
 https://www.youtube.com/feeds/videos.xml?channel_id=UCfzlCWGWYyIQ0aLC5w48gBQ "~Sentdex (youtube)" "tuts"
@@ -34,9 +39,10 @@ https://www.youtube.com/feeds/videos.xml?channel_id=UCrjKdwxaQMSV_NDywgKXVmw "~N
 https://www.troyhunt.com/rss/ "infosec"
 https://feeds.feedburner.com/IrongeeksSecuritySite "infosec"
 
-http://370chan.lt/b/index.rss "~Random (370chan)" "chans" "lt"
-http://370chan.lt/int/index.rss "~International (370chan)" "chans" "lt"
 https://www.reddit.com/r/selfhosted/.rss "reddit" "sw"
+
+https://www.occrp.org/en?format=feed&type=atom
+https://stallman.org/rss/rss.xml "news"
 
 # opensource
 https://newsboat.org/news.atom "opensource-sw"
