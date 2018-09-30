@@ -48,6 +48,9 @@ alias afind="cat $shellalias | grep"
 alias diy="cd $HOME/diy"
 alias cdir="cd $confdir"
 
+# productivity
+
+alias t="todo.sh"
 
 # music
 

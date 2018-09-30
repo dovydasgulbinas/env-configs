@@ -1,3 +1,11 @@
+#!/bin/bash
+
+findany() {
+  ag --vimgrep --hidden $1
+  ag --vimgrep -g $1 --hidden
+}
+alias findany=findany
+
 wttr()
 {
     # change Paris to your default location
@@ -12,7 +20,7 @@ echo "STMP: $1"
 }
 
 
-sto()
+stores()
 {
 echo "== Starting store check =="
 echo "for dir: $1"
@@ -20,9 +28,15 @@ du -h $1 | sort -h | less
 }
 
 
-base64_jpg()
+clip_image()
 {
-pbpaste | base64 --decode > /tmp/img.jpg; open /tmp/img.jpg
+paster | base64 --decode > /tmp/img.jpg; open /tmp/img.jpg
+}
+
+function web_encode(){
+    mime_type=$(file --mime-type $1 | awk -F ": " '{print $2}')
+    file_data=$(base64 $1)
+    echo "data:$mime_type;base64,$file_data"
 }
 
 
@@ -59,33 +73,41 @@ virushash()
 whois -h hash.cymru.com $1
 }
 
-f(){
 
-case "$1" in
-"dir")
-  echo "$PWD" > "$HOME/.favdir"
-  echo "updated your favourite dir to: $PWD"
-  ;;
-"go")
-  cd $(cat $HOME/.favdir)
-  ;;
-"song")
-  mpc | head -n 1 >> $FSONG_FPATH && tail -n 5 $FSONG_FPATH
-  ;;
-"list")
-  bak_list
-  ;;
-"rem8")
-  bak_rem8
-  ;;
-"cols")
-  bak_cols
-  ;;
-*)
-  echo 'Usage: f {song|dir|go|}'
-  ;;
-esac
-}
+# fav(){
+# 
+# case "$1" in
+# "dir")
+#   echo "$PWD" > "$HOME/.favdir"
+#   echo "updated your favourite dir to: $PWD"
+#   ;;
+# "dgo")
+#   cd $(cat $HOME/.favdir)
+#   ;;
+# "song")
+#   # mpc | head -n 1 >> $FSONG_FPATH && tail -n 5 $FSONG_FPATH
+#   cmus-remote -Q | grep file | sed "s/.*$BEETS_PARTIAL/../g" >> $FSONG_FPATH
+#   # let's remove duplicates
+#   sort -u $FSONG_FPATH -o $FSONG_FPATH
+#   # let's print last 5 files in the list
+#   echo "[...]"
+#   tail -n 5 $FSONG_FPATH
+# 
+#   ;;
+# "list")
+#   bak_list
+#   ;;
+# "rem8")
+#   bak_rem8
+#   ;;
+# "cols")
+#   bak_cols
+#   ;;
+# *)
+#   echo 'Usage: fav {song|dir|dgo|}'
+#   ;;
+# esac
+# }
 
 # =================== BLOG FUNCS ==================== 
 
@@ -142,47 +164,8 @@ __nb_commit(){
 }
 
 
-__nb_search(){
-  git grep -n --text $1 | nl
-  # tee the stream
-  # store result
-  # ask for a number
-  # grep inputed number
-  # awk filename 
-  # awk line
-  # vim filename + line
-  # https://stackoverflow.com/questions/10392424/how-can-i-open-vim-with-a-particular-line-number-at-the-top#10392451
-  # vim +248 Philos/exerpts-pale-horse.md -c 'normal zt'
-}
 
-function nbs_broken(){
-(
-IFS=$'\n';
-cd $NB_DIR;
-filelist="$(git grep -n --text $1 | xargs -0)";
-echo "$filelist";
-PS3='Select a file: ';
-select file in $filelist; do
-    if [[ -n $file ]]; then
-        FILE=$file
-        filename=$(echo $FILE | awk -F ":" '{print $1}')
-        grepline=$(echo $FILE | awk -F ":" '{print $2}')
-        echo "$filename $grepline"
-        # $EDITOR $filename
-        if [ "$EDITOR" = 'vim' ]; then
-            $EDITOR "+$grepline" $filename '-c normal z.'
-        else
-            $EDITOR $filename
-        fi
-        break
-    else
-        echo 'invalid selection'
-    fi
-done)
-}
-
-
-nb(){
+nbook(){
 
 case "$1" in
 "go")
@@ -204,7 +187,44 @@ case "$1" in
 esac
 }
 
+# Ag searches
+
+# https://github.com/ggreer/the_silver_searcher/blob/master/doc/ag.1.md "Source"
+# https://stackoverflow.com/questions/18713316/search-for-files-file-names-using-silver-searcher#28056235 "Search specific files"
+
+# Bash general
+
+# https://superuser.com/questions/106272/how-to-call-bash-functions
+
+# http://www.softpanorama.org/Scripting/Shellorama/Control_structures/select_statements.shtml
+# https://stackoverflow.com/questions/143171/how-can-i-use-xargs-to-copy-files-that-have-spaces-and-quotes-in-their-names#143222
+
+# READ THIS FIRST
+# http://www.tldp.org/LDP/Bash-Beginners-Guide/html/sect_09_06.html
+# https://stackoverflow.com/questions/1574898/bash-and-filenames-with-spaces#1574921
+# https://stackoverflow.com/questions/10392424/how-can-i-open-vim-with-a-particular-line-number-at-the-top
+
+
+
+function countdown(){
+    date1="$(($(date +%s) + $1))"
+
+   while [ "$date1" -ge $(date +%s) ]; do
+       echo -ne "$(date -u --date @$(($date1 - $(date +%s))) +%H:%M:%S)\r";
+     sleep 0.1
+   done
+}
+
+function stopwatch(){
+  date1=`date +%s`;
+   while true; do
+    echo -ne "$(date -u --date @$((`date +%s` - $date1)) +%H:%M:%S)\r";
+    sleep 0.1
+   done
+}
+
 # Paste this function in your ".bashrc" to enable the "pomo" command in your terminal
+
 # POMODORO Terminal:
 function pomo() {
     if [ "$1" = "-h" ] || [ "$1" = "--help" ]; then
@@ -217,38 +237,38 @@ function pomo() {
         return
     fi
 
+    clear
     SLEEPTIME=1500 # 25 minutes in seconds
-    TITLE="POMODOR0"
+    TITLE="CONSUMED A POMODORO"
     SUBTITLE="Take a Break"
     ICON="face-cool"
-    SOUND="beep -f 200 -d 1 -r 5 -n -f 300 -d 10 -r 4 -n -f  400 -d 100 -r 3"
+    SOUND="say \"$TITLE $SUBTITLE\""
 
     if [ "$1" = "long" ]; then
-        SLEEPTIME=900 # 15 minutes in seconds
-        TITLE="LONG BREAK FINISHED"
+        SLEEPTIME=5 # 15 minutes in seconds
+        TITLE="LONG BREAK FINISHED."
         SUBTITLE="Back to Work"
         ICON="face-monkey"
-        SOUND="beep -f 1000 -r 2 -n -r 5 -l 10 --new"
+        SOUND="say \"$TITLE $SUBTITLE\""
 
     elif [ "$1" = "short" ]; then
         SLEEPTIME=300 # 5 minutes in seconds
-        TITLE="SHORT BREAK FINISHED"
+        TITLE="SHORT BREAK FINISHED."
         SUBTITLE="Back to Work"
         ICON="face-monkey"
-        SOUND="beep -f 1000 -r 2 -n -r 5 -l 10 --new"
+        SOUND="say \"$TITLE $SUBTITLE\""
     fi
 
     # LINUX users
 
     if [ "$(uname)" = 'Linux' ]; then
-        echo "im in!"
-        eval "(sleep $SLEEPTIME && notify-send '$TITLE' '$SUBTITLE' --icon=$ICON && $SOUND &)"
+        eval "(countdown $SLEEPTIME && notify-send '$TITLE' '$SUBTITLE' --icon=$ICON && $SOUND &)"
 
     # MAC users
     elif [ "$(uname)" = 'Darwin' ]; then
-        eval "(sleep $SLEEPTIME && terminal-notifier -message '$SUBTITLE' -title 'Pomodoro' --subtitle '$TITLE' &)"
+        eval "(countdown $SLEEPTIME && terminal-notifier -message '$SUBTITLE' -title 'Pomodoro' --subtitle '$TITLE' && $SOUND &)"
     else
-        echo "Sorry! Unsupported operating system :(";
+        echo "Win and BSD Zealots BTFO!";
     fi
 }
 
@@ -257,11 +277,82 @@ ytdl(){
 ssh $media "cd /media/raid/media/youtube-videos && youtube-dl $1"
 }
 
+mtdl(){
+dlpath="/media/raid/media/ytdl-music"
+ssh $media "cd $dlpath && youtube-dl --verbose -x -c --audio-quality 1 --audio-format mp3 --embed-thumbnail $1 && beet --verbose import -s -p $dlpath"
+}
+
+badl(){
+dlroot="/media/raid/media/ytdl-music"
+echo "cd $dlroot && youtube-dl $1 && beet --verbose import -p $dlroot"| ssh -t $media
+
+#https://superuser.com/questions/261617/with-ssh-how-can-you-run-a-command-on-the-remote-machine-without-exiting#261619
+}
+
+badl320(){
+dlroot="/media/raid/media/ytdl-music"
+echo "cd $dlroot && youtube-dl -f mp3-320 $1 && beet --verbose import -p $dlroot && exit 0"| ssh -t $media
+}
+
+bsdl(){
+dlroot="/media/raid/media/ytdl-music"
+echo "cd $dlroot && youtube-dl $1 && beet --verbose import -s -p $dlroot"| ssh -t $media
+
+#https://superuser.com/questions/261617/with-ssh-how-can-you-run-a-command-on-the-remote-machine-without-exiting#261619
+}
+
 
 btdl(){
 url="$(curl -s $1 | grep -Eoi '<source [^>]+>' | grep -Eo 'src="[^\"]+"' | grep -Eo '(http|https)://[^"]+')"
 youtube-dl "$url"
 }
+
+
+build_daily_logs(){
+
+cd $DAILY_LOG_DIR
+cyear=$(date +%Y -d "this year")
+cmonth=$(date +%m -d "this month")
+cday=$(date +%d -d "this day")
+lday=$(date -d "$(($cmonth%12+1))/1 - 1 days" +%d)
+
+mkdir -p $cyear
+cd $cyear
+
+mkdir -p $cmonth
+cd $cmonth
+
+touch {$cday..$lday}.md
+
+echo "Files Built!"
+
+tree "$DAILY_LOG_DIR/$cyear/$cmonth"
+
+}
+alias build_daily_logs="build_daily_logs"
+
+daily_log(){
+
+cd $DAILY_LOG_DIR
+cyear=$(date +%Y -d "this year")
+cmonth=$(date +%m -d "this month")
+cday=$(date +%d -d "this day")
+lday=$(date -d "$(($cmonth%12+1))/1 - 1 days" +%d)
+
+fpath="$DAILY_LOG_DIR/$cyear/$cmonth/$cday.md"
+
+
+if [ -s $fpath ]
+then
+        echo "file is not empty"
+else
+        echo "$(date '+%Y-%m-%d %H:%M:%S')" >> $fpath
+fi
+
+$EDITOR "$fpath"
+}
+#alias daily_log="daily_log"
+
 
 btpl(){
 
@@ -272,7 +363,6 @@ TITLE=$(echo \"$PAGE\" | grep -oEi "<title>(.*)</title>" | cut -d '>' -f2 | cut 
 
 mpv --ontop=yes --title="$TITLE" --snap-window --autofit-larger='25%' --geometry='-10-10' --speed 1.75 "$url"
 }
-
 
 __grab_title(){
 TITLE=$(echo "$1" | grep -oEi "<title>(.*)</title>" | cut -d '>' -f2 | cut -d '<' -f1)
