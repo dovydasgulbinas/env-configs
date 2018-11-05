@@ -1,0 +1,67 @@
+conky.config = {
+
+background=true,
+double_buffer=true,
+width=300,
+
+
+-- background=true
+
+alignment='top_right',
+
+border_width=1,
+cpu_avg_samples=2,
+default_color='white',
+default_outline_color='white',
+default_shade_color='white',
+draw_borders=false,
+draw_graph_borders=true,
+draw_outline=false,
+draw_shades=false,
+
+gap_x=20,
+gap_y=40,
+net_avg_samples=2,
+no_buffers=true,
+out_to_console=false,
+out_to_stderr=false,
+extra_newline=false,
+
+own_window=true,
+own_window_type=normal,
+own_window_transparent=true,
+own_window_colour='000000',
+own_window_argb_visual=false,
+own_window_argb_value=0,
+own_window_hints='undecorated,below,sticky,skip_taskbar,skip_pager',
+
+minimum_width = 160,
+maximum_width = 160,
+
+stippled_borders=0,
+update_interval=2.0,
+uppercase=false,
+use_spacer=nil,
+
+show_graph_scale=false,
+show_graph_range=false,
+
+use_xft=true,
+xftalpha=0.1,
+--xftfont='Droid Sans:size=10',
+font='Droid Sans:size=10',
+color0='white',
+color1='EAEAEA',
+color2='FFA300',
+color3='grey',
+}
+
+conky.text = [[
+${color2}Download ${color0}${alignr}${downspeedf enp8s0} KiB/s
+${downspeedgraph enp8s0 80,}
+${color2}Upload ${color0}${alignr}${upspeedf enp8s0} KiB/s
+${upspeedgraph enp8s0 80,}
+${color2}Local${color0}${alignr}${addr enp8s0}
+${color2}Public${color0}${alignr}${execi 3600 wget -q -O /dev/stdout http://checkip.dyndns.org/ | cut -d : -f 2- | cut -d \< -f -1}
+]]
+

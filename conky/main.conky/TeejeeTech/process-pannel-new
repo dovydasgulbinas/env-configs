@@ -1,0 +1,94 @@
+conky.config = {
+background=true,
+double_buffer=true,
+
+alignment='middle_right',
+
+border_width=1,
+cpu_avg_samples=2,
+default_color='white',
+default_outline_color='white',
+default_shade_color='white',
+draw_borders=false,
+draw_graph_borders=true,
+draw_outline=false,
+draw_shades=false,
+
+gap_x=20,
+gap_y=300,
+net_avg_samples=2,
+no_buffers=true,
+out_to_console=false,
+out_to_stderr=false,
+extra_newline=false,
+
+own_window=true,
+own_window_type='normal',
+own_window_transparent=true,
+own_window_colour='000000',
+own_window_argb_visual=false,
+own_window_argb_value=0,
+own_window_hints='undecorated,below,sticky,skip_taskbar,skip_pager',
+
+minimum_width = 160, 
+maximum_width = 240,
+
+stippled_borders=0,
+update_interval=2.0,
+uppercase=false,
+use_spacer=nil,
+
+show_graph_scale=false,
+show_graph_range=false,
+
+use_xft=true,
+xftalpha=0.1,
+font='Droid Sans:size=10',
+color0='white',
+color1='EAEAEA',
+color2='FFA300',
+color3='grey',
+
+}
+
+
+conky.text = [[
+$stippled_hr
+${color2}CPU ${color0} ${cpu cpu0}%  ${color3}${cpubar cpu0 10,} 
+${top name 1} $alignr ${top cpu 1}%
+${top name 2} $alignr ${top cpu 2}%
+${top name 3} $alignr ${top cpu 3}%
+${top name 4} $alignr ${top cpu 4}%
+${top name 5} $alignr ${top cpu 5}%
+$stippled_hr
+${color2}RAM ${color0}${alignr}${mem}
+${membar 5,}
+${top_mem name 1} $alignr ${top_mem mem_res 1}
+${top_mem name 2} $alignr ${top_mem mem_res 2}
+${top_mem name 3} $alignr ${top_mem mem_res 3}
+${top_mem name 4} $alignr ${top_mem mem_res 4}
+${top_mem name 5} $alignr ${top_mem mem_res 5}
+$stippled_hr
+${color2}Download ${color0}${alignr}${downspeedf enp8s0} KiB/s
+${downspeedgraph enp8s0 80,}
+${color2}Upload ${color0}${alignr}${upspeedf enp8s0} KiB/s
+${upspeedgraph enp8s0 80,}
+${color2}Local${color0}${alignr}${addr enp8s0}
+${color2}Public${color0}${alignr}${execi 3600 wget -q -O /dev/stdout http://checkip.dyndns.org/ | cut -d : -f 2- | cut -d \< -f -1}
+$stippled_hr
+${color2}HDD $alignr ${color0}${fs_used /} / ${fs_size /}
+${color2}Free $alignr ${color0}${fs_free /}
+$stippled_hr
+
+${cpugraph cpu0 100,240}
+${cpugraph cpu1 50,60}${cpugraph cpu2 50,60}${cpugraph cpu3 50,60}${cpugraph cpu4 50,60}
+${cpugraph cpu5 50,60}${cpugraph cpu6 50,60}${cpugraph cpu7 50,60}${cpugraph cpu8 50,60}
+
+${voffset -140}${color3}${goto 10}1 ${goto 70}2 ${goto 130}3 ${goto 0} ${goto 190}4
+${voffset 50}${goto 10}5 ${goto 70}6 ${goto 130}7 ${goto 190}8
+
+${font Ubuntu:size=8}${voffset -90}${color3}${goto 12}${freq_g (1)}GHz ${goto 72}${freq_g (2)}GHz ${goto 132}${freq_g (3)}GHz ${goto 0} ${goto 192}${freq_g (4)}GHz
+${voffset 52}${goto 12}${freq_g (5)}GHz ${goto 72}${freq_g (6)}GHz ${goto 132}${freq_g (7)}GHz ${goto 192}${freq_g (8)}GHz
+
+
+]]

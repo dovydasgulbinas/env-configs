@@ -6,6 +6,14 @@ if [ -f ~/.bash_profile ]; then
     . ~/.bash_profile
   fi
 
+if [ -f ~/.bash_funcs ]; then
+    . ~/.bash_funcs
+  fi
+
+if [ -f ~/.bash_aliases ]; then
+    . ~/.bash_aliases
+  fi
+
 # Set name of the theme to load. Optionally, if you set this to "random"
 # it'll load a random theme each time that oh-my-zsh is loaded.
 # See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
@@ -71,21 +79,8 @@ source $ZSH/oh-my-zsh.sh
 #   export EDITOR='mvim'
 # fi
 
-# Compilation flags
-# export ARCHFLAGS="-arch x86_64"
 
-# ssh
-# export SSH_KEY_PATH="~/.ssh/rsa_id"
-
-# Set personal aliases, overriding those provided by oh-my-zsh libs,
-# plugins, and themes. Aliases can be placed here, though oh-my-zsh
-# users are encouraged to define aliases within the ZSH_CUSTOM folder.
-# For a full list of active aliases, run `alias`.
-#
-# Example aliases
-# alias zshconfig="mate ~/.zshrc"
-# alias ohmyzsh="mate ~/.oh-my-zsh"
-fortune | cowsay | lolcat 
+fortune | lolcat 
 PROMPT='${ret_status}%{$fg_bold[green]%}%p %{$fg[cyan]%}%c %{$fg_bold[blue]%}$(git_prompt_info)$(hg_prompt_info)%{$fg_bold[blue]%} % %{$reset_color%}'
 
 ZSH_THEME_HG_PROMPT_PREFIX="%{$fg_bold[magenta]%}hg:(%{$fg[red]%}"
@@ -94,15 +89,11 @@ ZSH_THEME_HG_PROMPT_DIRTY="%{$fg[magenta]%}) %{$fg[yellow]%}✗%{$reset_color%}"
 ZSH_THEME_HG_PROMPT_CLEAN="%{$fg[magenta]%})"
 
 
-alias momf="ssh ud_dovydas_gulbinas@momentcredit.lt -L 1521:moment:1521"
-alias mom="ssh ud_dovydas_gulbinas@momentcredit.lt"
 alias v="$EDITOR"
 
 alias dev="source activate deploy" # created using conda create -n deploy python=2.7 fabric
 
 
-alias moz-ro=" ssh ud_dovydas_gulbinas@194.0.160.12"
-alias moz-deploy-ro="/Users/hermes/Desktop/mc-notes/deploy/romania-test.sh"
 alias sconf="vim $HOME/.zshrc"
 alias fconf="vim $HOME/.bash_funcs"
 alias viconf="vim $HOME/.vimrc"
@@ -120,49 +111,14 @@ eval
         
 alias ubuntu="ssh parallels@ubuntu.local"
 alias ll="exa -la"
-#export PATH=$HOME/anaconda/bin:$PATH
+export PATH=$HOME/anaconda/bin:$PATH
 #export PATH=$HOME/anaconda/envs/dep/bin:$PATH
 # Add MacVim.app binaries
 export PATH=/Applications/MacVim.app/Contents/bin:$PATH
 
-alias ldap-adm="open http://localhost:8081/ldapadmin/ && ssh ud_dovydas_gulbinas@momentcredit.lt -L 8081:192.168.2.76:80 -f -N"
-#alias ldap-server-tls="ssh ud_dovydas_gulbinas@momentcredit.lt -L 8389:192.168.2.76:389 -f -N"
-alias ldap-server-tls="ssh ud_dovydas_gulbinas@momentcredit.lt -L 8389:192.168.2.76:389"
-alias ldapf="ssh ud_dovydas_gulbinas@momentcredit.lt -L 8389:192.168.2.76:389"
-alias ldap-server-ssl="ssh ud_dovydas_gulbinas@momentcredit.lt -L 8636:192.168.2.76:636 -f -N"
-alias portal-ssl="ssh ud_dovydas_gulbinas@momentcredit.lt -L 8443:192.168.2.81:443 -f -N"
-alias portal-plain="ssh ud_dovydas_gulbinas@momentcredit.lt -L 8080:192.168.2.81:80 -f -N"
-alias portal-django="ssh ud_dovydas_gulbinas@momentcredit.lt -L 8100:192.168.2.81:8000 -f -N"
-alias portal-zep="open http://zep.mozipo.com:8082 && ssh fabric@194.0.160.3 -p 1081 -L 8082:127.0.0.1:82 -f -N"
-alias portal-zeps="open https://zep.mozipo.com:8445 && ssh fabric@194.0.160.3 -p 1081 -L 8445:127.0.0.1:445 -f -N"
-alias portal-glab="open http://localhost:8080 && ssh fabric@194.0.160.3 -p 1081 -L 8445:127.0.0.1:445 -f -N"
-alias poland-tls="ssh ud_dovydas_gulbinas@momentcredit.lt -L 8443:192.168.2.77:443 -f -N"
-alias poland-tomcat="ssh ud_dovydas_gulbinas@momentcredit.lt -L 8080:192.168.2.77:8080 -f -N"
-alias poland="ssh ud_dovydas_gulbinas@momentcredit.lt -L 8080:192.168.2.77:80 -f -N"
-alias cenv="source /Users/hermes/Projects/ldap-project/ldapsite/certenv/bin/activate && cd /Users/hermes/Projects/ldap-project/ldapsite"
 alias sa="source activate"
 alias envs="conda info --envs"
 alias mc="LC_ALL=en_US.UTF-8 LANG=en_US.UTF-8 mc"
-
-alias portal="ssh fabric@194.0.160.3 -p 1081"
-alias hadoop="ssh fabric@194.0.160.3 -p 1052"
-alias hadoop-ambari= "open http://localhost:8080 && ssh fabric@194.0.160.3 -p 1052 -L 8080:127.0.0.1:8080 -f -N"
-alias hadoop-hue= "open http://localhost:8888 && ssh fabric@194.0.160.3 -p 1052 -L 8888:127.0.0.1:8888 -f -N"
-alias hadoop2="ssh fabric@194.0.160.3 -p 1078"
-alias hadoop3="ssh fabric@194.0.160.3 -p 1079"
-alias hadoop4="ssh fabric@194.0.160.3 -p 1087"
-alias hadoop5="ssh fabric@194.0.160.3 -p 1088"
-alias hadoop6="ssh fabric@194.0.160.3 -p 1089"
-alias scoring="ssh fabric@194.0.160.3 -p 1083"
-alias scoring-api-fw="open 'http://localhost:8000/api/v1.0/ethnicity/all/?name=dovydas&surname=gulbinas' && ssh fabric@194.0.160.3 -p 1083 -L 8000:127.0.0.1:8000"
-alias shinyproxy="ssh fabric@194.0.160.3 -p 1069"
-alias lt="ssh fabric@momentcredit.lt"
-alias dk="ssh fabric@mozipo.dk"
-alias ro="ssh fabric@mozipo.ro"
-alias pl="ssh fabric@mozipo.pl"
-alias moment="ssh ud_dovydas_gulbinas@194.0.160.3 -p 22"
-alias docsm="ssh docsmanager@194.0.160.3"
-
 alias sfind="cat ~/.zshrc | grep"
 alias py36="source activate py36"
 
@@ -172,7 +128,6 @@ alias discline="/Users/hermes/anaconda/envs/py36/bin/python /Users/hermes/diy/Di
 
 #alias dash='function _blah(){open dash:// $1;};_blah'
 export PATH="/usr/local/opt/sqlite/bin:$PATH"
-alias django-api="open http://localhost:8000/api/v1.0/ethnicity/all/ && ssh ud_dovydas_gulbinas@momentcredit.lt -L 8000:192.168.2.78:8000 -f -N"
 
 # eval "$(perl -I$HOME/perl5/lib/perl5 -Mlocal::lib)"
 eval "$(perl -I$HOME/perl5/lib/perl5 -Mlocal::lib)"
@@ -187,16 +142,6 @@ if [ -f '/Users/hermes/Desktop/google-cloud-sdk/completion.zsh.inc' ]; then sour
 export GOOGLE_APPLICATION_CREDENTIALS=/Users/hermes/Projects/tr-api/mozipo-ethnicity-a52c0f394e1a.json
 
 
-if [ -f ~/.bash_funcs ]; then
-    . ~/.bash_funcs
-  fi
 
-if [ -f ~/.bash_aliases ]; then
-    . ~/.bash_aliases
-  fi
-
-if [ -f ~/.bash_aliases_mac ]; then
-    . ~/.bash_aliases_mac
-  fi
 
 

@@ -15,3 +15,9 @@
 4. symlink `.bash_funcs`
 
     ln -s "$ENV_CONFIG_DIR/bash/main.bash_funcs" "$HOME/.bash_funcs"
+
+5. symlink `.bash_modules` and add to $PATH
+
+    ln -s "$ENV_CONFIG_DIR/bash/main.bash_modules" "$HOME/.bash_modules"
+
+    

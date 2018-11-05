@@ -1,6 +1,12 @@
 from fabric.decorators import task
 from fabric.state import env
 
+env.local = False # global value overrride if needed
+
+@task
+def _get_username():
+    import getpass
+    return getpass.getuser()
 
 @task
 def satellite():
@@ -60,6 +66,18 @@ def herver():
     env.alias = 'herver'
     host_distro('debian')
 
+@task
+def media():
+    herver()
+    env.user='media'
+
+@task
+def localhost():
+    env.user = _get_username()
+    env.local = True
+    env.hosts = ['127.0.0.1']
+    env.alias = 'localhost'
+    host_distro('debian')
 
 
 @task

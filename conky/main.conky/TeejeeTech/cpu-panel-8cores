@@ -5,10 +5,11 @@
 # **********************************************************************
 
 
-background yes
+#background yes
+background no
 double_buffer yes
 
-alignment bottom_left
+alignment bottom_right
 
 border_width 1
 cpu_avg_samples 2
@@ -21,7 +22,7 @@ draw_outline no
 draw_shades no
 
 gap_x 20
-gap_y 40
+gap_y 20
 net_avg_samples 2
 no_buffers yes
 out_to_console no
@@ -42,7 +43,7 @@ update_interval 1.0
 uppercase no
 use_spacer none
 
-show_graph_scale no
+show_graph_scale yes
 show_graph_range no
 
 use_xft yes

@@ -28,7 +28,10 @@ Plugin 'rstacruz/sparkup', {'rtp': 'vim/'}
 " Plugin 'ascenator/L9', {'name': 'newL9'}
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
+"are not working with todo.tx properly
+Plugin 'todo.txt-vim'
 Plugin 'scrooloose/nerdcommenter'
+"Plugin
 Plugin 'scrooloose/nerdtree'
 "Plugin 'dbext.vim'
 Plugin 'neocomplcache'
@@ -106,7 +109,7 @@ set hlsearch
 set ignorecase
 " FIXME: Remove for gvim 
 let g:neocomplcache_enable_at_startup = 1
-"let maplocalleader = '-'
+let maplocalleader = '\'
 "set background=dark
 "colorscheme hemisu
 "set spell spelllang=en_us
@@ -121,6 +124,7 @@ let g:neocomplcache_enable_at_startup = 1
 let g:airline#extensions#tabline#enabled = 1
 " explicit markdown
 au BufRead,BufNewFile /private/tmp/*,/private/var/*,/tmp/*,~/.calcurse/notes/* set filetype=markdown
+au BufRead,BufNewFile ~/.bash_funcs set filetype=sh
 au BufRead,BufNewFile /opt/world/nginx-config/nginx/* set filetype=conf
 "autocmd BufRead,BufNewFile /etc/nginx/sites-*/* setfiletype conf
 

@@ -10,18 +10,20 @@ import installers
 from installers import install_package
 import nodes
 
-env.user = 'hermes'
-env.hosts = ['192.168.0.7']
+env.user = nodes._get_username()
+env.hosts = ['127.0.0.1']
+env.alias = 'localhost'  # do not change this
+
 env.conf_repo = 'https://github.com/megamorphf/env-configs.git'
 env.parent_dir = '$HOME/diy'  # directory under which you store your confs and personal items
 env.parent_rel = './diy'  # directory under which you store your confs and personal items
 env.conf_folder = 'env-configs'
+
 # looks like /home/hermes/diy/env-configs
 env.conf_dir = os.path.join(env.parent_dir, env.conf_folder)
 env.vundle_dir = os.path.join(env.conf_dir, 'vim/hidden.vim/bundle')
 env.vundle_package_dir = os.path.join(env.vundle_dir, 'Vundle.vim')
 env.branch = 'master'
-env.alias = 'default'  # do not change this
 
 
 def dir_exists(directory, remote=True):
@@ -67,29 +69,39 @@ def get_timestamp():
     return int(time.time())
 
 
-def setup_any(confname, confdir, conffile):
+def setup_any(confname, confdir, conffile, conf_root_dir):
     """Takes a local config and install it on a host
 
-    :param confname: file name that will be installed eg. .bash_rc
+    :param confname: file name that will be installed eg. .bashrc
     :param confdir: the directory in which we want to install eg. /home/jimmy
     :param conffile: relative path to the conf file on the host machine
     :return:
     """
+
+    if not conf_root_dir:
+        conf_root_dir = env.conf_dir
+
     make_backup(confname, confdir)
     with cd(confdir):
-        targetdir = os.path.join(env.conf_dir, conffile)
+        targetdir = os.path.join(conf_root_dir, conffile)
         run('ln -s {} {}'.format(targetdir, confname))
         print("CREATING SYMLINK")
         run('ls -alt | grep {}'.format(confname))
 
 
-def setup_tmux(conffile='tmux/hidden.tmux.conf'):
-    setup_any('.tmux.conf', '$HOME', conffile)
+def setup_tmux(conffile='tmux/hidden.tmux.conf', conf_root_dir=None):
+    setup_any('.tmux.conf', '$HOME', conffile, conf_root_dir)
 
 
-def setup_vim(vimrc='vim/vimrc-mac', vim='vim/hidden.vim'):
-    setup_any('.vimrc', '$HOME', vimrc)
-    setup_any('.vim', '$HOME', vim)
+@task
+def setup_newsboat(conffile='app-shares/main.newsboat', conf_root_dir='$SYNC_DIR'):
+    """newsboat requires a cache folder in my case"""
+    setup_any('.newsboat', '$HOME', conffile, conf_root_dir)
+
+
+def setup_vim(vimrc='vim/vimrc-mac', vim='vim/hidden.vim', conf_root_dir=None):
+    setup_any('.vimrc', '$HOME', vimrc, conf_root_dir)
+    setup_any('.vim', '$HOME', vim, conf_root_dir)
 
 
 def setup_git(gitconfig='git/.gitconfig',
@@ -100,6 +112,11 @@ def setup_git(gitconfig='git/.gitconfig',
     """
     setup_any(".gitignore_global", '$HOME', 'git/.gitconfig')
     setup_any(".gitignore_global", '$HOME', 'git/.gitignore_global')
+
+
+def setup_bash(profile_conf,alias_conf, func_conf, bashrc_conf, conf_root_dir=None):
+    raise NotImplementedError("Write the magic function first!")
+    pass
 
 
 def install_vundle():
@@ -179,15 +196,20 @@ def grant_sudo(username):
     return True
 
 
-def setup_hassio():
+def setup_hassio(conf_root_dir=None):
     first_full_install()
-    setup_any('.profile', '$HOME', 'ash/hidden.profile')
+    setup_any('.profile', '$HOME', 'ash/hidden.profile', conf_root_dir)
 
 
 @task
 @with_settings(output_prefix=False)
 def first_full_install():
-    install_pub_key()
+
+    if env.local:
+        pass
+    else:
+        install_pub_key()
+
     install_package('git')
     setup_git()
     pull_confs()

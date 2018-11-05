@@ -31,6 +31,7 @@ browser open
 macro v set browser "mpv"; open-in-browser ; set browser open
 macro l set browser "btdl"; open-in-browser ; set browser open
 macro b set browser "source $HOME/.bash_funcs && btpl "; open-in-browser ; set browser open
+macro c set browser "source $HOME/.bash_funcs && yt_cacheit "; open-in-browser ; set browser open
 
 display-article-progress yes
 

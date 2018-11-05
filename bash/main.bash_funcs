@@ -13,6 +13,43 @@ wttr()
 }
 
 
+pub_ip(){
+wget http://checkip.dyndns.org/ -q -O - | grep -Eo '\<[[:digit:]]{1,3}(\.[[:digit:]]{1,3}){3}\>'
+}
+
+
+encrypt_aes(){
+    openssl aes-256-cbc -in $1 -out "$1.enc"
+    echo "decrypt this with: openssl aes-256-cbc -d -in $1.enc -out plain-text.txt"
+}
+
+decrypt_aes(){
+    openssl aes-256-cbc -d -in $1 -out $2
+}
+
+slink(){
+streamlink $1 best --player-passthrough rtmp -p "mpv --ontop=yes  --snap-window --autofit-larger='25%' --geometry='-10-10'"
+}
+
+
+wget_full_page(){
+    wget -m -p -E -k $1
+}
+
+markdown_epub(){
+    bname=$(basename "$1")
+    ext="${bname##*.}"
+    fname="${bname%.*}"
+    htmlname="$fname.html"
+    outname="$fname.epub"
+
+   #pandoc +raw_html $1 -o $htmlname
+   pandoc $1 -o $outname
+   # ebook-convert $htmlname $outname # installed with calibre!
+}
+
+
+
 deunix()
 {
 date -r $1 '+DATE: %Y-%m-%d %nTIME: %H:%M:%S'
@@ -165,7 +202,7 @@ __nb_commit(){
 
 
 
-nbook(){
+function nbook(){
 
 case "$1" in
 "go")
@@ -238,23 +275,23 @@ function pomo() {
     fi
 
     clear
-    SLEEPTIME=1500 # 25 minutes in seconds
-    TITLE="CONSUMED A POMODORO"
-    SUBTITLE="Take a Break"
+    SLEEPTIME=$((60 * 30)) # 
+    TITLE="Consumed a pomodoro"
+    SUBTITLE="ddding, Ding, chill time"
     ICON="face-cool"
     SOUND="say \"$TITLE $SUBTITLE\""
 
     if [ "$1" = "long" ]; then
-        SLEEPTIME=5 # 15 minutes in seconds
-        TITLE="LONG BREAK FINISHED."
-        SUBTITLE="Back to Work"
+        SLEEPTIME=900 # 15 minutes in seconds
+        TITLE="Ding, Dong, Sad Song LONG BREAK FINISHED."
+        SUBTITLE="Back to Making Stuff" 
         ICON="face-monkey"
         SOUND="say \"$TITLE $SUBTITLE\""
 
     elif [ "$1" = "short" ]; then
         SLEEPTIME=300 # 5 minutes in seconds
-        TITLE="SHORT BREAK FINISHED."
-        SUBTITLE="Back to Work"
+        TITLE="Ding, ding, ding, SHORT BREAK FINISHED."
+        SUBTITLE="Back to Making Stuff"
         ICON="face-monkey"
         SOUND="say \"$TITLE $SUBTITLE\""
     fi
@@ -273,42 +310,61 @@ function pomo() {
 }
 
 
-ytdl(){
+function ytdl(){
 ssh $media "cd /media/raid/media/youtube-videos && youtube-dl $1"
 }
 
-mtdl(){
+alias ytdl_wmeta="youtube-dl --add-metadata -ic"
+
+function yt_cacheit(){
+    cd $SYNC_DIR/yt-cache
+    ytdl_wmeta  $1
+    cd - # lets go back where we came from
+}
+
+function yt_cache_pl(){
+    cd $SYNC_DIR/yt-cache
+    ytdl_wmeta -o '%(playlist)s/%(playlist_index)s - %(title)s.%(ext)s' $1
+    cd - # lets go back where we came from
+}
+
+function mtdl(){
 dlpath="/media/raid/media/ytdl-music"
 ssh $media "cd $dlpath && youtube-dl --verbose -x -c --audio-quality 1 --audio-format mp3 --embed-thumbnail $1 && beet --verbose import -s -p $dlpath"
 }
 
-badl(){
+function badl(){
 dlroot="/media/raid/media/ytdl-music"
-echo "cd $dlroot && youtube-dl $1 && beet --verbose import -p $dlroot"| ssh -t $media
+echo "cd $dlroot && youtube-dl --add-metadata $1 && beet --verbose import -p $dlroot"| ssh -t $media
 
 #https://superuser.com/questions/261617/with-ssh-how-can-you-run-a-command-on-the-remote-machine-without-exiting#261619
 }
 
-badl320(){
+function badl320(){
 dlroot="/media/raid/media/ytdl-music"
 echo "cd $dlroot && youtube-dl -f mp3-320 $1 && beet --verbose import -p $dlroot && exit 0"| ssh -t $media
 }
 
-bsdl(){
+function bsdl(){
 dlroot="/media/raid/media/ytdl-music"
 echo "cd $dlroot && youtube-dl $1 && beet --verbose import -s -p $dlroot"| ssh -t $media
-
 #https://superuser.com/questions/261617/with-ssh-how-can-you-run-a-command-on-the-remote-machine-without-exiting#261619
 }
 
 
-btdl(){
+function btdl(){
 url="$(curl -s $1 | grep -Eoi '<source [^>]+>' | grep -Eo 'src="[^\"]+"' | grep -Eo '(http|https)://[^"]+')"
 youtube-dl "$url"
 }
 
 
-build_daily_logs(){
+function list_empty_logs(){
+
+    find $DAILY_LOG_DIR -type f -empty
+
+}
+
+function build_daily_logs(){
 
 cd $DAILY_LOG_DIR
 cyear=$(date +%Y -d "this year")
@@ -331,27 +387,157 @@ tree "$DAILY_LOG_DIR/$cyear/$cmonth"
 }
 alias build_daily_logs="build_daily_logs"
 
-daily_log(){
+_daily_log_template(){
 
-cd $DAILY_LOG_DIR
-cyear=$(date +%Y -d "this year")
-cmonth=$(date +%m -d "this month")
-cday=$(date +%d -d "this day")
-lday=$(date -d "$(($cmonth%12+1))/1 - 1 days" +%d)
-
-fpath="$DAILY_LOG_DIR/$cyear/$cmonth/$cday.md"
-
+fpath=$1
+msg=${2:-'Created for today:'}
 
 if [ -s $fpath ]
 then
         echo "file is not empty"
 else
-        echo "$(date '+%Y-%m-%d %H:%M:%S')" >> $fpath
-fi
 
-$EDITOR "$fpath"
+
+        templ=$(cat <<EOF
+$msg $(date '+%Y-%m-%d %H:%M:%S')
+---
+
+# Dump
+
+
+# Todo
+
+
+# Plan
+
+05-06:  #
+06-07:  #
+07-08:  #
+08-09:  #
+09-10:  #
+10-11:  #
+11-12:  #
+12-13:  #
+13-14:  #
+14-15:  #
+15-16:  #
+16-17:  #
+17-18:  #
+18-19:  #
+19-20:  #
+20-21:  #
+21-22:  #
+22-23:  #
+23-05:  #
+
+
+# Dreams
+
+
+# Insights
+
+
+# Questions
+
+
+# Grateful
+
+
+# Achieved
+
+
+# Fears
+
+
+EOF
+)
+
+printf $templ >> $fpath
+
+fi
 }
-#alias daily_log="daily_log"
+
+
+dlog(){
+
+cd $DAILY_LOG_DIR
+cyear=$(date +%Y -d "this year")
+cmonth=$(date +%m -d "this month")
+cday=$(date +%d -d "this day")
+
+fpath="$DAILY_LOG_DIR/$cyear/$cmonth/$cday.md"
+WSPC='\n\n\n'
+
+_daily_log_template $fpath
+
+$EDITOR -O "$fpath" $TODO_FILE $GOALS_FILE
+exit 0
+}
+
+alias dlog="dlog"
+
+ylog(){
+    # let's open log of the yesterday
+
+cd $DAILY_LOG_DIR
+tyear=$(date +%Y -d "-1 day")
+tmonth=$(date +%m -d "-1 day")
+tday=$(date +%d -d "-1 day")
+
+fpath="$DAILY_LOG_DIR/$tyear/$tmonth/$tday.md"
+
+$EDITOR -O "$fpath" 
+exit 0
+}
+
+alias ylog="ylog"
+
+tlog(){
+
+cd $DAILY_LOG_DIR
+tyear=$(date +%Y -d "+1 day")
+tmonth=$(date +%m -d "+1 day")
+tday=$(date +%d -d "+1 day")
+
+fpath="$DAILY_LOG_DIR/$tyear/$tmonth/$tday.md"
+WSPC='\n\n\n'
+
+_daily_log_template $fpath 'Created for tommorow:'
+
+$EDITOR -O "$fpath" $TODO_FILE $GOALS_FILE
+exit 0
+}
+
+alias tlog="tlog"
+
+dlogs(){
+
+cd $DAILY_LOG_DIR
+cyear=$(date +%Y -d "this year")
+cmonth=$(date +%m -d "this month")
+
+fpath="$DAILY_LOG_DIR/$cyear/$cmonth"
+
+
+$TERM_FILE_MANAGER "$fpath" 
+exit 0
+}
+
+alias dlogs="dlogs"
+
+ylog(){
+    # let's open log of the yesterday
+
+cd $DAILY_LOG_DIR
+tyear=$(date +%Y -d "-1 day")
+tmonth=$(date +%m -d "-1 day")
+tday=$(date +%d -d "-1 day")
+
+fpath="$DAILY_LOG_DIR/$tyear/$tmonth/$tday.md"
+
+$EDITOR -O "$fpath" 
+exit 0
+}
 
 
 btpl(){
@@ -373,4 +559,18 @@ __btpl(){
 url="$(curl -s $1 | grep -Eoi '<source [^>]+>' | grep -Eo 'src="[^\"]+"' | grep -Eo '(http|https)://[^"]+')"
 mpv --vo=opengl --ao=alsa "$url"
 }
+
+# alias cutfat="convert -strip -interlace Plane -gaussian-blur 0.05 -quality 60%"
+alias cutfat="convert -background white -strip -interlace Plane -gaussian-blur 0.05 -quality 60%"
+
+function stickyn {
+cd $STICKY_DIR
+$EDITOR $1
+}
+
+function stickyls {
+ls -alth $STICKY_DIR
+}
+
+
 

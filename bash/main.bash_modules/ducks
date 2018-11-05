@@ -18,4 +18,4 @@ do
    i+=1
 done
 
-open -a safari https://duckduckgo.com/?q=$q
+open https://duckduckgo.com/?q=$q
